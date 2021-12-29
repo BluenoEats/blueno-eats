@@ -7,22 +7,28 @@
   </head>
   
   <body>
-    <nav>
+    <div class="nav">
       <!-- TODO: add logo -->
       <ul>
         <li><a href="about.html"> About</a></li>
-        <li><a href="drop list"> Dining Halls</a></li>
-        <!-- TODO: dining hall drop list -->
+        <div class="dropdown">
+          <button class="dropbtn">Dining Halls</button>
+          <div class="dining_hall_dropdown">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
       </ul>
       <ul>
         <li><a href="contacts.html"> Contacts</a></li>
         <li><a href="log in link"> Log in</a></li>
         <!-- TODO: Profile manage page -->
       </ul>
-    </nav>
+    </div>
 
     <h1> Blueno Eats</h1>
-    <!-- TODO: Search Bar -->
+    <input type="text" placeholder="Search for food or dining hall">
     <!-- TODO: Cartoon image -->
     <h2> Best Food
       <ul>
