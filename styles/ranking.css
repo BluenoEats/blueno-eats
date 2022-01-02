@@ -1,0 +1,40 @@
+/* navigation bar */
+.rank {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-item {
+    flex: 50%;
+    max-width: 400px;
+    padding: 40px 6px 20px;
+    background-color: #fff4e9;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+}
+
+.flex-left {
+    margin: 20px 20px 40px 40px;
+}
+
+.flex-right {
+    margin: 20px 40px 40px 20px;
+}
+
+.rank a {
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+}
+
+@media (max-width: 800px) {
+    .rank {
+      flex-direction: column;
+    }
+
+    .flex-item {
+        width: 400px;
+        margin: 20px auto;
+    }
+  }

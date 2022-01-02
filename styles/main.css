@@ -6,32 +6,49 @@ html {
   background-color: white;
 }
 
-h1 {
-  font-size: 60px;
-  text-align: center;
-  margin: 100px 10px auto;
-  padding: 20px 0;
-  color: #144c8e;
-  text-shadow: 3px 3px 1px #6667ab;
-}
-
-p, li {
-  font-size: 14px;
-  line-height: 2;
-  letter-spacing: 0.5px;
-}
-
 body {
   width: 100%;
   margin: 0 auto;
   background-color: #fff;
+  overflow: auto;
+}
+
+h1 {
+  font-size: 60px;
+  text-align: center;
+  margin: 70px 10px auto;
+  padding: 20px 0;
+  color: #ff6a6a;
+  text-shadow: 3px 3px 1px #f3dbe4;
+}
+
+h2 {
+  font-size: 30px;
+  text-align: center;
+  margin: 0 auto;
+  color: #d26183;
+}
+
+p, li {
+  font-family: LibreBaskerville-Regular, Palatino Linotype,Times New Roman,serif;
+  font-size: 14px;
+  line-height: 3;
+  letter-spacing: 0.5px;
 }
 
 /* elements */
 
-img {
+.cartoon {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 25px auto 0px;
+}
+
+.additional-content {
   display: block;
   margin: 0 auto;
+  text-align: center;
 }
 
 /* Style the search box */
@@ -42,7 +59,7 @@ input[type=text] {
   position: relative;
   display: block;
   border: 1px solid #dfe1e5;
-  margin: 10px auto;
+  margin: 8px auto;
   text-align: left;
   font-size: 16px;
 }
