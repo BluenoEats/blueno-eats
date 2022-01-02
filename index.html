@@ -7,20 +7,31 @@
     <link href="styles/main.css" rel="stylesheet" type="text/css">
     <link href="styles/navigation.css" rel="stylesheet" type="text/css">
     <link href="styles/ranking.css" rel="stylesheet" type="text/css">
-
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   </head>
   
   <body>
+    <div class="nav">
+      <!-- TODO: add logo -->
+      <a href="index.html" class="nav-home nav-left">
+        <img src="img/placeholding.png" class="nav-logo" alt="Navigation Logo">
+      </a>
+      <a href="about.html" class="nav-left"> About</a></li>
+      <a href="contact.html" class="nav-left"> Contacts</a></li>
+      <div class="dropdown" class="nav-left">
+        <button class="dropbtn">Dining Halls 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Sharpe Refectory</a>
+          <a href="#">Andrews Commons</a>
+          <a href="#">Verney-Woolley</a>
+        </div>
+      </div>
 
-    <!--Navigation bar-->
-    <div id="nav-placeholder"> </div>
-    <script>
-      $(function(){
-        $("#nav-placeholder").load("nav.html");
-      });
-    </script>
-    <!--end of Navigation bar-->
+      <a href="log in link" class="nav-right"> Log in</a></li>
+      <a href="sign up link" class="nav-right"> Sign up</a></li>
+      <!-- TODO: Profile manage page -->
+    </div>
 
     <h1> Blueno Eats</h1>
     <input type="text" placeholder="Search for food or dining hall">
