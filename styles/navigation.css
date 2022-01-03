@@ -110,3 +110,9 @@ footer {
     font-size: 11px;
     color:white;
 }
+
+@media (max-width: 600px) {
+    .nav-hide {
+      display: none;
+    }
+  }
