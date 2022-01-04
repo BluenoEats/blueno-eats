@@ -1,0 +1,48 @@
+form {
+    position: relative;
+    display: block;
+    margin: auto;
+    max-width: 430px;
+  }
+  
+  /* Style the search box */
+  form.search-box input[type=text] {
+    float: left;
+    padding: 8px;
+    padding-left: 15px;
+    width: 360px;
+    border: 1px solid #dfe1e5;
+    border-right: none;
+    text-align: left;
+    font-size: 15px;
+    border-radius: 20px 0 0 20px;
+    z-index: 1;
+  }
+  
+  /* Style the submit button */
+  form.search-box button {
+    width: 40px;
+    padding: 9px;
+    padding-left: 12px;
+    padding-right: 15px;
+    background: #d26183;
+    color: white;
+    font-size: 15px;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  form.search-box button:hover {
+    background: #ff6a6a;
+  }
+  
+  /* Clear floats */
+  form.search::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  

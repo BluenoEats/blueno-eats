@@ -16,8 +16,9 @@ body {
 h1 {
   font-size: 60px;
   text-align: center;
-  margin: 70px 10px auto;
-  padding: 20px 0;
+  margin: 100px 0px auto;
+  padding: 10px 0;
+  padding-top: 30px;
   color: #ff6a6a;
   text-shadow: 3px 3px 1px #f3dbe4;
 }
@@ -32,7 +33,7 @@ h2 {
 p, li {
   font-family: LibreBaskerville-Regular, Palatino Linotype,Times New Roman,serif;
   font-size: 14px;
-  line-height: 3;
+  line-height: 2;
   letter-spacing: 0.5px;
 }
 
@@ -45,22 +46,16 @@ p, li {
   margin: 25px auto 0px;
 }
 
+.brief-content {
+  display: block;
+  margin: 0 auto;
+  margin-top: -10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
 .additional-content {
   display: block;
   margin: 0 auto;
   text-align: center;
 }
-
-/* Style the search box */
-input[type=text] {
-  padding: 8px;
-  width: 40%;
-  min-width: 400px;
-  position: relative;
-  display: block;
-  border: 1px solid #dfe1e5;
-  margin: 8px auto;
-  text-align: left;
-  font-size: 16px;
-}
-

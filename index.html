@@ -8,6 +8,7 @@
     <link href="styles/navigation.css" rel="stylesheet" type="text/css">
     <link href="styles/info.css" rel="stylesheet" type="text/css">
     <link href="styles/ranking.css" rel="stylesheet" type="text/css">
+    <link href="styles/search.css" rel="stylesheet" type="text/css">
   </head>
   
   <body>
@@ -37,11 +38,17 @@
     </div>
 
     <h1> Blueno Eats</h1>
-    <!-- TODO: add one line introduction -->
-    <input type="text" placeholder="Search for food or dining hall">
+    <p class="brief-content"> Intro to website intro to website intro to website</p>
+
+    <!-- TODO: Implement action -->
+    <form class="search-box" action="action_page.php">
+      <input type="text" placeholder="Search for food or dining hall..." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+
     <!-- TODO: Cartoon image -->
     <img src="img/placeholding.png" class="cartoon" alt="Cartoon image">
-    
+  
     <div class="additional-content">
       <p> Want to learn more about Dining Services at Brown? 
         <a href="https://dining.brown.edu/">Click here...</a>
