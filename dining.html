@@ -64,17 +64,20 @@
           </div>
         </div>
 
-    </div>
+        <div class="arrow">
+          <div class="arrow-left" onclick="plusDivs(-1)">&#10094;</div>
+          <div class="arrow-right" onclick="plusDivs(1)">&#10095;</div>
+        </div>
 
-    <div style="text-align:center">
-        <span class="dot" onclick="currentDiv(1)"></span> 
-        <span class="dot" onclick="currentDiv(2)"></span> 
-        <span class="dot" onclick="currentDiv(3)"></span> 
+        <div class="dot-container">
+          <span class="dot" onclick="currentDiv(1)"></span> 
+          <span class="dot" onclick="currentDiv(2)"></span> 
+          <span class="dot" onclick="currentDiv(3)"></span> 
+      </div>
     </div>
     
     <script src="scripts/main.js" type="text/javascript"></script>
-  
-    <br>
+
     
     <!-- TODO: Implement action -->
     <form class="search-box" action="action_page.php">
