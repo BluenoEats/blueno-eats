@@ -37,8 +37,27 @@
         <!-- TODO: Profile manage page -->
     </div>
 
-    <h1> Contact Us </h1>
-    <p> Get in touch via the form below, or by emailing bluenoeats@gmail.com.
+    <h1 id="contact-title"> Contact Us </h1>
+    <p id="contact-guide"> Get in touch via the form below, or by emailing
+        <a href="mailto:bluenoeats@gmail.com" target="_blank">bluenoeats@gmail.com</a>!</p>
+    <div class="contact-container" id="contact-form">
+        <form action="action_page.php">
+        
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name">
+        
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Your email">
+
+        
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Write something..." style="height:200px"></textarea>
+        
+            <input type="submit" value="Submit">
+        
+        </form>
+        </div>
+    
     
     
   <footer> Copyright © 2022 Blueno Eats, Brown University, Providence RI</footer>

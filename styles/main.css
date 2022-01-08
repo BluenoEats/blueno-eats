@@ -37,6 +37,14 @@ p, li {
   letter-spacing: 0.5px;
 }
 
+a {
+  color: black;
+}
+
+a:hover {
+  color: #ff6a6a;
+}
+
 /* elements */
 
 .cartoon {
