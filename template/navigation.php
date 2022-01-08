@@ -11,7 +11,7 @@
     </button>
     <div class="dropdown-content">
       <?php
-      $query = "SELECT id, official_name FROM ".DINING_HALL_DB." WHERE id != 0";
+      $query = "SELECT id, official_name FROM ".DINING_HALL_DB;
       $result = mysqli_query($dbc, $query);
 
       while ($row = mysqli_fetch_assoc($result)) {

@@ -12,4 +12,5 @@ $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE) OR die('Could 
 define('DINING_HALL_DB', 'hall_pages');
 define('DISH_DB', 'dish_pages');
 define('HALL_SLIDESHOW_DB', 'hall_slideshow');
+define('DISH_SLIDESHOW_DB', 'dish_slideshow');
 ?>

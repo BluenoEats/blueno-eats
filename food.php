@@ -1,6 +1,7 @@
 <?php
 include "config/setup.php";
 include "functions/get_page.php";
+include "functions/get_data.php";
 # Retrieve food page
 $page = get_dish_page($dbc, $_GET['dish']);
 ?>
@@ -32,21 +33,7 @@ $page = get_dish_page($dbc, $_GET['dish']);
         <div class="food-item food-left">
             <h1 id="food-name"><?php echo $page['name']; ?></h1>
         </div>
-        <div class="food-item food-right slideshow-container">
-            <?php echo $page['images']; ?>
-
-            <div class="arrow">
-                <div class="arrow-left" onclick="plusDivs(-1)">&#10094;</div>
-                <div class="arrow-right" onclick="plusDivs(1)">&#10095;</div>
-            </div>
-
-            <div class="dot-container">
-                <span class="dot" onclick="currentDiv(1)"></span>
-                <span class="dot" onclick="currentDiv(2)"></span>
-                <span class="dot" onclick="currentDiv(3)"></span>
-            </div>
-            <script src="scripts/auto-slide.js" type="text/javascript"></script>
-        </div>
+        <?php include D_TEMPLATE."dish_slideshow.php"; ?>
     </div>
 
      <p class="food-intro"><?php echo $page['content']; ?></p>
