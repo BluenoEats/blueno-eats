@@ -45,7 +45,7 @@
     </div>
 
     <?php include D_TEMPLATE."food_rank.php"; ?>
-    
+
     <?php include D_TEMPLATE."footer.php"; ?>
   </body>
 

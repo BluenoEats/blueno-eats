@@ -1,8 +1,10 @@
 <?php
 include "config/setup.php";
 include "functions/get_page.php";
+// include "functions/get_data.php";
 # Retrieve dining hall page
 $page = get_hall_page($dbc, $_GET['hall']);
+// $slideshow = get_hall_slideshow($dbc, $page['id']);
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +32,44 @@ $page = get_hall_page($dbc, $_GET['hall']);
       <h2><?php echo $page['name']; ?></h2>
 
     <!-- TODO: Dining hall image -->
-    <div class="slideshow-container">
+      <div class="slideshow-container">
+        <?php
+        if (isset($page['id'])) {
+          $query = "SELECT * FROM ".HALL_SLIDESHOW_DB." WHERE hall_id = ".$page['id'];
+          $result = mysqli_query($dbc, $query);
+          $num_rows = mysqli_num_rows($result);
+          if ($num_rows > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+              echo '
+              <div class="mySlides fade">
+                <img src="'.$row['img_src'].'" class="slide-img">
+                <div class="text">'.$row['assoc_text'].'</div>
+              </div>
+              ';
+            }
+
+            echo '
+            <div class="arrow">
+              <div class="arrow-left" onclick="plusDivs(-1)">&#10094;</div>
+              <div class="arrow-right" onclick="plusDivs(1)">&#10095;</div>
+            </div>
+
+            <div class="dot-container">';
+
+            for ($i=1; $i <= $num_rows; $i++) {
+              echo '<span class="dot" onclick="currentDiv('.$i.')"></span>';
+            }
+
+            echo '
+            </div>';
+          }
+        } else {
+          echo "The page doesn't exist";
+        }
+        ?>
+      </div>
+
+    <!-- <div class="slideshow-container">
 
         <div class="mySlides fade">
           <img src="img/placeholding.png" class="slide-img">
@@ -60,9 +99,9 @@ $page = get_hall_page($dbc, $_GET['hall']);
           <span class="dot" onclick="currentDiv(2)"></span>
           <span class="dot" onclick="currentDiv(3)"></span>
       </div>
-    </div>
+    </div> -->
 
-    <script src="scripts/auto-slide.js" type="text/javascript"></script>
+      <script src="scripts/auto-slide.js" type="text/javascript"></script>
 
     <!-- TODO: Implement action -->
         <form autocomplete="off" action="/action_page.php">
@@ -73,7 +112,7 @@ $page = get_hall_page($dbc, $_GET['hall']);
             <input type="submit">
         </form>
 
-    <br>
+        <br>
 
     <?php include D_TEMPLATE."food_rank.php"; ?>
 

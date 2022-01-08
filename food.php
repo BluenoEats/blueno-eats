@@ -33,17 +33,7 @@ $page = get_dish_page($dbc, $_GET['dish']);
             <h1 id="food-name"><?php echo $page['name']; ?></h1>
         </div>
         <div class="food-item food-right slideshow-container">
-            <div class="mySlides fade">
-                <img src="img/placeholding.png" class="slide-img">
-            </div>
-
-            <div class="mySlides fade">
-                <img src="img/place2.jpeg" class="slide-img">
-            </div>
-
-            <div class="mySlides fade">
-                <img src="img/place3.jpeg" class="slide-img">
-            </div>
+            <?php echo $page['images']; ?>
 
             <div class="arrow">
                 <div class="arrow-left" onclick="plusDivs(-1)">&#10094;</div>
@@ -65,15 +55,18 @@ $page = get_dish_page($dbc, $_GET['dish']);
         <h2> Reviews</h2>
         <div class="rate">
             <span class="heading">User Rating</span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <p>4.1 average based on 254 reviews.</p>
+            <?php for ($i=1; $i <= 5; $i++) {
+              if ($i < $page['rating']) {
+                echo '<span class="fa fa-star checked"></span>';
+              } else {
+                echo '<span class="fa fa-star"></span>';
+              }
+            } ?>
+            <?php echo '<p>'.$page['rating'].' average based on '.$page['num_reviews'].' reviews.</p>'; ?>
             <hr style="border:3px solid #f1f1f1">
 
             <div class="row">
+
             <div class="side">
                 <div>5 star</div>
             </div>
@@ -85,6 +78,7 @@ $page = get_dish_page($dbc, $_GET['dish']);
             <div class="side right">
                 <div>150</div>
             </div>
+
             <div class="side">
                 <div>4 star</div>
             </div>
