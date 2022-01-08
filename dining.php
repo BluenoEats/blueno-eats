@@ -1,3 +1,10 @@
+<?php
+include "config/setup.php";
+include "functions/get_page.php";
+# Retrieve dining hall page
+$page = get_hall_page($dbc, $_GET['hall']);
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,36 +21,13 @@
         <script src="scripts/auto-slide.js" type="text/javascript"></script>
         <script src="scripts/manual-slide.js" type="text/javascript"></script>
         <script src="scripts/modal.js" type="text/javascript"></script>
-      </head>
-      
-      <body>
-        <div class="nav">
-          <!-- TODO: add logo -->
-          <a href="index.html" class="nav-home nav-left">
-            <img src="img/placeholding.png" class="nav-logo" alt="Navigation Logo">
-          </a>
-          <a href="about.html" class="nav-left nav-hide"> About</a></li>
-          <a href="contact.html" class="nav-left nav-hide"> Contacts</a></li>
-          <div class="dropdown" class="nav-left">
-            <button class="dropbtn">Dining Halls 
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="dining.html">Sharpe Refectory</a>
-              <a href="dining.html">Andrews Commons</a>
-              <a href="dining.html">Verney-Woolley</a>
-              <a href="dining.html">Ivy Room</a>
-              <a href="dining.html">Josiah's</a>
-            </div>
-          </div>
-    
-          <a href="log in link" class="nav-right"> Log in</a></li>
-          <a href="sign up link" class="nav-right"> Sign up</a></li>
-          <!-- TODO: Profile manage page -->
-        </div>
+    </head>
 
-    <h1> Sharpe Refectory</h1>
-    <h2> "The Ratty" </h2>
+    <body>
+      <?php include D_TEMPLATE."navigation.php" ?>
+
+      <h1><?php echo $page['official_name']; ?></h1>
+      <h2><?php echo $page['name']; ?></h2>
 
     <!-- TODO: Dining hall image -->
     <div class="slideshow-container">
@@ -53,13 +37,13 @@
           <div class="text">The changes of the images may be automatic and at regular intervals or they may be manually controlled by a presenter or the viewer.
             </div>
         </div>
-        
+
         <div class="mySlides fade">
           <img src="img/place2.jpeg" class="slide-img">
           <div class="text">Today in this blog I'll share the image slideshow effect using javascript. In this program, there are five images, and these images automatically change after a certain period. I used JavaScript to change the image after a certain time interval.
           </div>
         </div>
-        
+
         <div class="mySlides fade">
           <img src="img/place3.jpeg" class="slide-img">
           <div class="text">You can copy the codes from the given boxes or download the code files from the given link but I recommend you to download the source code files instead of copying codes because you won't get images if you copy the codes
@@ -72,14 +56,14 @@
         </div>
 
         <div class="dot-container">
-          <span class="dot" onclick="currentDiv(1)"></span> 
-          <span class="dot" onclick="currentDiv(2)"></span> 
-          <span class="dot" onclick="currentDiv(3)"></span> 
+          <span class="dot" onclick="currentDiv(1)"></span>
+          <span class="dot" onclick="currentDiv(2)"></span>
+          <span class="dot" onclick="currentDiv(3)"></span>
       </div>
     </div>
-    
+
     <script src="scripts/auto-slide.js" type="text/javascript"></script>
-    
+
     <!-- TODO: Implement action -->
         <form autocomplete="off" action="/action_page.php">
             <div class="autocomplete" style="width:300px;">
@@ -91,29 +75,9 @@
 
     <br>
 
-    <div class="rank">
-      <div class="flex-item flex-left">
-        <h2> Best Food at the Ratty</h2>
-        <ol>
-          <li><a href="chicken page"> Chicken</a></li>
-          <li><a href="pizza page"> Pizza</a></li>
-          <li><a href="chicken page"> Chicken</a></li>
-          <li><a href="pizza page"> Pizza</a></li>
-          <li><a href="chicken page"> Chicken</a></li>
-        </ol>
-      </div>
-      <div class="flex-item flex-right">
-      <h2> Worst Food at the Ratty </h2>
-        <ol>
-          <li><a href="food.html"> Chicken</a></li>
-          <li><a href="pizza page"> Pizza</a></li>
-          <li><a href="chicken page"> Chicken</a></li>
-          <li><a href="pizza page"> Pizza</a></li>
-          <li><a href="chicken page"> Chicken</a></li>
-        </ol>
-      </div>
-    </div>
-  <footer> Copyright © 2022 Blueno Eats, Brown University, Providence RI</footer>
+    <?php include D_TEMPLATE."food_rank.php"; ?>
+
+    <?php include D_TEMPLATE."footer.php"; ?>
   </body>
-  
+
 </html>

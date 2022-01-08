@@ -1,0 +1,14 @@
+<?php
+# Defining folders
+define('D_TEMPLATE', 'template'.DIRECTORY_SEPARATOR);
+
+# Databse Connection
+define("DB_HOST", "localhost");
+define("DB_USER", "dev");
+define("DB_PASSWORD", "12345");
+define("DB_DATABASE", "blueno_eats");
+$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE) OR die('Could not connect because: '.mysqli_connect_error());
+
+define('DINING_HALL_DB', 'hall_pages');
+define('DISH_DB', 'dish_pages');
+?>

@@ -1,3 +1,10 @@
+<?php
+include "config/setup.php";
+include "functions/get_page.php";
+# Retrieve food page
+$page = get_dish_page($dbc, $_GET['dish']);
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,46 +24,23 @@
         <script src="scripts/manual-slide.js" type="text/javascript"></script>
         <script src="scripts/modal.js" type="text/javascript"></script>
     </head>
-      
-    <body>
-    <div class="nav">
-        <!-- TODO: add logo -->
-        <a href="index.html" class="nav-home nav-left">
-        <img src="img/placeholding.png" class="nav-logo" alt="Navigation Logo">
-        </a>
-        <a href="about.html" class="nav-left nav-hide"> About</a></li>
-        <a href="contact.html" class="nav-left nav-hide"> Contacts</a></li>
-        <div class="dropdown" class="nav-left">
-        <button class="dropbtn">Dining Halls 
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-            <a href="dining.html">Sharpe Refectory</a>
-            <a href="dining.html">Andrews Commons</a>
-            <a href="dining.html">Verney-Woolley</a>
-            <a href="dining.html">Ivy Room</a>
-            <a href="dining.html">Josiah's</a>
-        </div>
-        </div>
 
-        <a href="log in link" class="nav-right"> Log in</a></li>
-        <a href="sign up link" class="nav-right"> Sign up</a></li>
-        <!-- TODO: Profile manage page -->
-    </div>
+    <body>
+      <?php include D_TEMPLATE."navigation.php" ?>
 
     <div class="food">
         <div class="food-item food-left">
-            <h1 id="food-name"> Grilled Chicken </h1>
+            <h1 id="food-name"><?php echo $page['name']; ?></h1>
         </div>
         <div class="food-item food-right slideshow-container">
             <div class="mySlides fade">
                 <img src="img/placeholding.png" class="slide-img">
             </div>
-            
+
             <div class="mySlides fade">
                 <img src="img/place2.jpeg" class="slide-img">
             </div>
-            
+
             <div class="mySlides fade">
                 <img src="img/place3.jpeg" class="slide-img">
             </div>
@@ -67,20 +51,15 @@
             </div>
 
             <div class="dot-container">
-                <span class="dot" onclick="currentDiv(1)"></span> 
-                <span class="dot" onclick="currentDiv(2)"></span> 
-                <span class="dot" onclick="currentDiv(3)"></span> 
+                <span class="dot" onclick="currentDiv(1)"></span>
+                <span class="dot" onclick="currentDiv(2)"></span>
+                <span class="dot" onclick="currentDiv(3)"></span>
             </div>
             <script src="scripts/auto-slide.js" type="text/javascript"></script>
         </div>
     </div>
-        
-     <p class="food-intro"> Info about the chicken
-        There is an invisible line eighteen inches ahead of the front row in far too many classes at Brown: 
-        the instructor is on one side, the students on the other. Information flows from front to back, 
-        and rarely the other way. Both students and instructors must make a conscious effort to erase this line, 
-        for teaching and learning to be most effective
-     </p>
+
+     <p class="food-intro"><?php echo $page['content']; ?></p>
 
      <div class="review">
         <h2> Reviews</h2>
@@ -171,38 +150,38 @@
               <img src="img/placeholding.png" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
             </div>
           </div>
-          
+
           <div id="myModal" class="modal">
             <span class="close" onclick="closeModal()">&times;</span>
             <div class=" modal-content">
-          
+
               <div class="food-imgs-slide">
                 <div class="food-imgs-numtext">1 / 4</div>
                 <img src="img/place4.jpeg" style="width:100%">
               </div>
-          
+
               <div class="food-imgs-slide">
                 <div class="food-imgs-numtext">2 / 4</div>
                 <img src="img/place3.jpeg" style="width:100%">
               </div>
-          
+
               <div class="food-imgs-slide">
                 <div class="food-imgs-numtext">3 / 4</div>
                 <img src="img/place2.jpeg" style="width:100%">
               </div>
-              
+
               <div class="food-imgs-slide">
                 <div class="food-imgs-numtext">4 / 4</div>
                 <img src="img/placeholding.png" style="width:100%">
               </div>
-              
+
               <a class="food-imgs-prev" onclick="plusSlides(-1)">&#10094;</a>
               <a class="food-imgs-next" onclick="plusSlides(1)">&#10095;</a>
-          
+
               <div class="food-imgs-caption-container">
                 <p id="caption"></p>
               </div>
-          
+
               <div class="food-imgs-col">
                 <img class="food-imgs-cur cursor" src="img/place4.jpeg" style="width:100%" onclick="currentSlide(1)" alt="Nature and sunrise">
               </div>
@@ -216,13 +195,13 @@
                 <img class="food-imgs-cur cursor" src="img/placeholding.png" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
               </div>
             </div>
-          </div>          
+          </div>
     </div>
 
 
-    
-    
-  <footer> Copyright © 2022 Blueno Eats, Brown University, Providence RI</footer>
+
+
+    <?php include D_TEMPLATE."footer.php"; ?>
   </body>
-  
+
 </html>
