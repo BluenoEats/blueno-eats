@@ -24,7 +24,6 @@
 
     <h1> Blueno Eats</h1>
     <p class="brief-content"> Intro to website intro to website intro to website</p>
-    <?php echo hexdec(bin2hex(random_bytes(2))); ?>
 
     <!-- TODO: Implement action -->
 
