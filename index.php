@@ -26,7 +26,7 @@
     <p class="brief-content"> Intro to website intro to website intro to website</p>
 
     <!-- TODO: Implement action -->
-
+    <div class="search-bar">
     <form autocomplete="off" action="/action_page.php">
       <div class="autocomplete" style="width:300px;">
         <input id="myInput" type="text" name="search-bar" placeholder="Search for food or Dining hall...">
@@ -34,6 +34,7 @@
       </div>
       <input type="submit" value="">
     </form>
+  </div>
 
     <!-- TODO: Cartoon image -->
     <img src="img/placeholding.png" class="cartoon" alt="Cartoon image">

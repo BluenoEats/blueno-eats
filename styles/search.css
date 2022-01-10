@@ -1,3 +1,8 @@
+.search-bar {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
 form {
     position: center;
     display: block;
@@ -7,14 +12,6 @@ form {
 
 * {
   box-sizing: border-box;
-
-
-}
-
-body {
-  font-family: LibreBaskerville-Regular, Palatino Linotype,Times New Roman,serif;
-  font-size: 14px;
-  letter-spacing: 0.5px;
 }
 
 /*the container must be positioned relative:*/

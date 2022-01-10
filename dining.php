@@ -43,7 +43,7 @@ $page = get_hall_page($dbc, $_GET['hall']);
                 <input id="myInput" type="text" name="search-bar" placeholder="Search for food or Dining hall...">
                 <script src="scripts/search.js" type="text/javascript"></script>
             </div>
-            <input type="submit">
+            <input type="submit"><i class="fa fa-search"></i></input>
         </form>
 
         <br>
