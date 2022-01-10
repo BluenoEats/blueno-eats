@@ -38,13 +38,16 @@ $page = get_hall_page($dbc, $_GET['hall']);
     <script src="scripts/auto-slide.js" type="text/javascript"></script>
 
       <!-- TODO: Implement action -->
+      <div class="search-bar">
         <form autocomplete="off" action="/action_page.php">
-            <div class="autocomplete" style="width:300px;">
-                <input id="myInput" type="text" name="search-bar" placeholder="Search for food or Dining hall...">
-                <script src="scripts/search.js" type="text/javascript"></script>
-            </div>
-            <input type="submit"><i class="fa fa-search"></i></input>
+          <div class="autocomplete" style="width:300px;">
+            <input id="myInput" type="text" name="search-bar" placeholder="Search for food or Dining hall...">
+            <script src="scripts/search.js" type="text/javascript"></script>
+          </div>
+          <i class="fa fa-search input-icon"></i>
+          <input type="submit" value="">
         </form>
+      </div>
 
         <br>
 
