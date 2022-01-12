@@ -1,9 +1,18 @@
-// Open the Modal
-function openModal() {
-    document.getElementById("myModal").style.display = "block";
+function openModal(n) {
+  document.getElementById(n).style.display = "block";
+}
+function closeModal(n) {
+  document.getElementById(n).style.display = "none";
+}
+
+var wr_modal = document.getElementById("wr-modal");
+var food_pic_modal = document.getElementById("food-pic-modal");
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == wr_modal) {
+    wr_modal.style.display = "none";
   }
-  
-// Close the Modal
-function closeModal() {
-    document.getElementById("myModal").style.display = "none";
+  if (event.target == food_pic_modal) {
+    food_pic_modal.style.display = "none";
+  }
 }
