@@ -152,6 +152,8 @@ color: white;
     }
 }
 
+
+
 #wr-btn {
   display: block;
   margin: 0 auto;
@@ -172,6 +174,22 @@ color: white;
   background-color: #d26183;
   color: white;
 }
+
+.user-rate {
+  width: fit-content;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.rating__star {
+  font-size: 30px;
+  cursor: pointer;
+  color: #ffc700;
+  transition: filter linear .3s;
+}
+
+
+
 
 .food-imgs {
     margin: 20px 60px;

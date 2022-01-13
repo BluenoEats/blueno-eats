@@ -9,8 +9,6 @@
         <link href="styles/main.css" rel="stylesheet" type="text/css">
         <link href="styles/navigation.css" rel="stylesheet" type="text/css">
         <link href="styles/info.css" rel="stylesheet" type="text/css">
-        <link href="styles/ranking.css" rel="stylesheet" type="text/css">
-        <link href="styles/search.css" rel="stylesheet" type="text/css">
     </head>
 
     <body>

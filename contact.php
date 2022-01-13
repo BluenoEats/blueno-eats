@@ -9,8 +9,7 @@
         <link href="styles/main.css" rel="stylesheet" type="text/css">
         <link href="styles/navigation.css" rel="stylesheet" type="text/css">
         <link href="styles/info.css" rel="stylesheet" type="text/css">
-        <link href="styles/ranking.css" rel="stylesheet" type="text/css">
-        <link href="styles/search.css" rel="stylesheet" type="text/css">
+        <link href="styles/form.css" rel="stylesheet" type="text/css">
     </head>
 
     <body>
@@ -19,7 +18,7 @@
     <h1 id="contact-title"> Contact Us </h1>
     <p id="contact-guide"> Get in touch via the form below, or by emailing
         <a href="mailto:bluenoeats@gmail.com" target="_blank">bluenoeats@gmail.com</a>!</p>
-    <div class="contact-container" id="contact-form">
+    <div class="contact-container user-form">
         <form action="action_page.php">
 
             <label for="name">Name</label>

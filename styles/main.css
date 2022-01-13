@@ -45,26 +45,3 @@ a {
 a:hover {
   color: #ff6a6a;
 }
-
-/* elements */
-
-.cartoon {
-  width: 100%;
-  max-width: 600px;
-  display: block;
-  margin: 25px auto 0px;
-}
-
-.brief-content {
-  display: block;
-  margin: 0 auto;
-  margin-top: -10px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.additional-content {
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-}

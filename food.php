@@ -12,16 +12,14 @@ $page = get_dish_page($dbc, $_GET['dish']);
         <meta charset="utf-8">
         <title> Blueno Eats Website </title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/fa6b154dde.js" crossorigin="anonymous"></script>
         <link href="styles/main.css" rel="stylesheet" type="text/css">
         <link href="styles/navigation.css" rel="stylesheet" type="text/css">
-        <link href="styles/info.css" rel="stylesheet" type="text/css">
-        <link href="styles/ranking.css" rel="stylesheet" type="text/css">
-        <link href="styles/search.css" rel="stylesheet" type="text/css">
         <link href="styles/slideshow.css" rel="stylesheet" type="text/css">
         <link href="styles/food.css" rel="stylesheet" type="text/css">
         <link href="styles/modal.css" rel="stylesheet" type="text/css">
+        <link href="styles/form.css" rel="stylesheet" type="text/css">
 
-        <script src="scripts/auto-slide.js" type="text/javascript"></script>
         <script src="scripts/manual-slide.js" type="text/javascript"></script>
         <script src="scripts/modal.js" type="text/javascript"></script>
     </head>
@@ -42,17 +40,39 @@ $page = get_dish_page($dbc, $_GET['dish']);
 
       <!-- Trigger/Open The Modal -->
       <button id="wr-btn" onclick="openModal('wr-modal')">Write a Review...</button>
-
-      <!-- The Modal -->
       <div id="wr-modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close" onclick="closeModal('wr-modal')">&times;</span>
+            <h2> <?php echo $page['name']; ?> </h2>
+          </div>
+          <div class="modal-body">
+            <p>Some text in the Modal..</p>
+          
+        <!-- TODO: Hover effect -->
+            <div class="user-rate">
+              <i class="rating__star far fa-star"></i>
+              <i class="rating__star far fa-star"></i>
+              <i class="rating__star far fa-star"></i>
+              <i class="rating__star far fa-star"></i>
+              <i class="rating__star far fa-star"></i>
+            </div>
+            <script src="scripts/rate.js" type="text/javascript"></script>
+            <div class="user-form">
+              <form action="action_page.php">
+                  <label for="review-msg">Add a written review</label>
+                  <input type="text" id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?">
 
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('wr-modal')">&times;</span>
-        <p>Some text in the Modal..</p>
+                  <label for="review-img">Add a photo</label>
+                  <input type="file" id="review-img" name="review-img" accept="image/*" multiple>
+
+                  <input type="submit" value="Submit">
+              </form>
+            </div>
+          </div>  
+       </div>
       </div>
 
-      </div>
 
       <div class="food-imgs">
           <div class="food-imgs-row">

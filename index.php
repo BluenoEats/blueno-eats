@@ -11,12 +11,6 @@
     <link href="styles/info.css" rel="stylesheet" type="text/css">
     <link href="styles/ranking.css" rel="stylesheet" type="text/css">
     <link href="styles/search.css" rel="stylesheet" type="text/css">
-    <link href="styles/slideshow.css" rel="stylesheet" type="text/css">
-
-    <script src="scripts/auto-slide.js" type="text/javascript"></script>
-    <script src="scripts/manual-slide.js" type="text/javascript"></script>
-    <script src="scripts/modal.js" type="text/javascript"></script>
-
   </head>
 
   <body>

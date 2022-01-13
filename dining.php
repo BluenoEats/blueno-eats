@@ -21,8 +21,6 @@ $page = get_hall_page($dbc, $_GET['hall']);
         <link href="styles/search.css" rel="stylesheet" type="text/css">
         <link href="styles/slideshow.css" rel="stylesheet" type="text/css">
 
-        <script src="scripts/auto-slide.js" type="text/javascript"></script>
-        <script src="scripts/manual-slide.js" type="text/javascript"></script>
         <script src="scripts/modal.js" type="text/javascript"></script>
     </head>
 
