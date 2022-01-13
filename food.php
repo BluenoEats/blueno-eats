@@ -12,16 +12,14 @@ $page = get_dish_page($dbc, $_GET['dish']);
         <meta charset="utf-8">
         <title> Blueno Eats Website </title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/fa6b154dde.js" crossorigin="anonymous"></script>
         <link href="styles/main.css" rel="stylesheet" type="text/css">
         <link href="styles/navigation.css" rel="stylesheet" type="text/css">
-        <link href="styles/info.css" rel="stylesheet" type="text/css">
-        <link href="styles/ranking.css" rel="stylesheet" type="text/css">
-        <link href="styles/search.css" rel="stylesheet" type="text/css">
         <link href="styles/slideshow.css" rel="stylesheet" type="text/css">
         <link href="styles/food.css" rel="stylesheet" type="text/css">
         <link href="styles/modal.css" rel="stylesheet" type="text/css">
+        <link href="styles/form.css" rel="stylesheet" type="text/css">
 
-        <script src="scripts/auto-slide.js" type="text/javascript"></script>
         <script src="scripts/manual-slide.js" type="text/javascript"></script>
         <script src="scripts/modal.js" type="text/javascript"></script>
     </head>
@@ -43,71 +41,99 @@ $page = get_dish_page($dbc, $_GET['dish']);
 
       <?php include D_TEMPLATE."review_preview.php"; ?>
 
-      <button id="myBtn"> Write your review </button>
+      <!-- Trigger/Open The Modal -->
+      <button id="wr-btn" onclick="openModal('wr-modal')">Write a Review...</button>
+      <div id="wr-modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close" onclick="closeModal('wr-modal')">&times;</span>
+            <h2> <?php echo $page['name']; ?> </h2>
+          </div>
+          <div class="modal-body">
+            <p>Some text in the Modal..</p>
+          
+        <!-- TODO: Hover effect -->
+            <div class="user-rate">
+              <i class="rating__star far fa-star"></i>
+              <i class="rating__star far fa-star"></i>
+              <i class="rating__star far fa-star"></i>
+              <i class="rating__star far fa-star"></i>
+              <i class="rating__star far fa-star"></i>
+            </div>
+            <script src="scripts/rate.js" type="text/javascript"></script>
+            <div class="user-form">
+              <form action="action_page.php">
+                  <label for="review-msg">Add a written review</label>
+                  <input type="text" id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?">
 
-    <div class="food-imgs">
-        <div class="food-imgs-row">
-            <div class="food-imgs-col">
-              <img src="img/place4.jpeg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+                  <label for="review-img">Add a photo</label>
+                  <input type="file" id="review-img" name="review-img" accept="image/*" multiple>
+
+                  <input type="submit" value="Submit">
+              </form>
             </div>
-            <div class="food-imgs-col">
-              <img src="img/place3.jpeg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
-            </div>
-            <div class="food-imgs-col">
-              <img src="img/place2.jpeg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
-            </div>
-            <div class="food-imgs-col">
-              <img src="img/placeholding.png" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
-            </div>
+          </div>  
+       </div>
+      </div>
+
+
+      <div class="food-imgs">
+          <div class="food-imgs-row">
+              <div class="food-imgs-col">
+                <img src="img/place4.jpeg" style="width:100%" onclick="openModal('food-pic-modal');currentSlide(1)" class="hover-shadow cursor">
+              </div>
+              <div class="food-imgs-col">
+                <img src="img/place3.jpeg" style="width:100%" onclick="openModal('food-pic-modal');currentSlide(2)" class="hover-shadow cursor">
+              </div>
+              <div class="food-imgs-col">
+                <img src="img/place2.jpeg" style="width:100%" onclick="openModal('food-pic-modal');currentSlide(3)" class="hover-shadow cursor">
+              </div>
+              <div class="food-imgs-col">
+                <img src="img/placeholding.png" style="width:100%" onclick="openModal('food-pic-modal');currentSlide(4)" class="hover-shadow cursor">
+              </div>
           </div>
 
-          <div id="myModal" class="modal">
-            <span class="close" onclick="closeModal()">&times;</span>
+          <div id="food-pic-modal" class="modal">
+            <span class="close" onclick="closeModal('food-pic-modal')">&times;</span>
             <div class=" modal-content">
+                <div class="food-imgs-slide">
+                  <div class="food-imgs-numtext">1 / 4</div>
+                  <img src="img/place4.jpeg" style="width:100%">
+                </div>
+                <div class="food-imgs-slide">
+                  <div class="food-imgs-numtext">2 / 4</div>
+                  <img src="img/place3.jpeg" style="width:100%">
+                </div>
+                <div class="food-imgs-slide">
+                  <div class="food-imgs-numtext">3 / 4</div>
+                  <img src="img/place2.jpeg" style="width:100%">
+                </div>
+                <div class="food-imgs-slide">
+                  <div class="food-imgs-numtext">4 / 4</div>
+                  <img src="img/placeholding.png" style="width:100%">
+                </div>
+                <a class="food-imgs-prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="food-imgs-next" onclick="plusSlides(1)">&#10095;</a>
+                <div class="food-imgs-caption-container">
+                  <p id="caption"></p>
+                </div>
 
-              <div class="food-imgs-slide">
-                <div class="food-imgs-numtext">1 / 4</div>
-                <img src="img/place4.jpeg" style="width:100%">
-              </div>
-
-              <div class="food-imgs-slide">
-                <div class="food-imgs-numtext">2 / 4</div>
-                <img src="img/place3.jpeg" style="width:100%">
-              </div>
-
-              <div class="food-imgs-slide">
-                <div class="food-imgs-numtext">3 / 4</div>
-                <img src="img/place2.jpeg" style="width:100%">
-              </div>
-
-              <div class="food-imgs-slide">
-                <div class="food-imgs-numtext">4 / 4</div>
-                <img src="img/placeholding.png" style="width:100%">
-              </div>
-
-              <a class="food-imgs-prev" onclick="plusSlides(-1)">&#10094;</a>
-              <a class="food-imgs-next" onclick="plusSlides(1)">&#10095;</a>
-
-              <div class="food-imgs-caption-container">
-                <p id="caption"></p>
-              </div>
-
-              <div class="food-imgs-col">
-                <img class="food-imgs-cur cursor" src="img/place4.jpeg" style="width:100%" onclick="currentSlide(1)" alt="Nature and sunrise">
-              </div>
-              <div class="food-imgs-col">
-                <img class="food-imgs-cur cursor" src="img/place3.jpeg" style="width:100%" onclick="currentSlide(2)" alt="Snow">
-              </div>
-              <div class="food-imgs-col">
-                <img class="food-imgs-cur cursor" src="img/place2.jpeg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-              </div>
-              <div class="food-imgs-col">
-                <img class="food-imgs-cur cursor" src="img/placeholding.png" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-              </div>
+                <div class="food-imgs-col">
+                  <img class="food-imgs-cur cursor" src="img/place4.jpeg" style="width:100%" onclick="currentSlide(1)" alt="Nature and sunrise">
+                </div>
+                <div class="food-imgs-col">
+                  <img class="food-imgs-cur cursor" src="img/place3.jpeg" style="width:100%" onclick="currentSlide(2)" alt="Snow">
+                </div>
+                <div class="food-imgs-col">
+                  <img class="food-imgs-cur cursor" src="img/place2.jpeg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+                </div>
+                <div class="food-imgs-col">
+                  <img class="food-imgs-cur cursor" src="img/placeholding.png" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+                </div>
             </div>
           </div>
-    </div>
-
+      </div>
+      <script src="scripts/modal.js" type="text/javascript"></script>
 
 
 

@@ -21,8 +21,6 @@ $page = get_hall_page($dbc, $_GET['hall']);
         <link href="styles/search.css" rel="stylesheet" type="text/css">
         <link href="styles/slideshow.css" rel="stylesheet" type="text/css">
 
-        <script src="scripts/auto-slide.js" type="text/javascript"></script>
-        <script src="scripts/manual-slide.js" type="text/javascript"></script>
         <script src="scripts/modal.js" type="text/javascript"></script>
     </head>
 
@@ -38,18 +36,18 @@ $page = get_hall_page($dbc, $_GET['hall']);
     <script src="scripts/auto-slide.js" type="text/javascript"></script>
 
       <!-- TODO: Implement action -->
-      <div class="search-bar">
-        <form autocomplete="off" action="/action_page.php">
-          <div class="autocomplete" style="width:300px;">
-            <input id="myInput" type="text" name="search-bar" placeholder="Search for food or Dining hall...">
-            <script src="scripts/search.js" type="text/javascript"></script>
-          </div>
-          <i class="fa fa-search input-icon"></i>
-          <input type="submit" value="">
-        </form>
-      </div>
+    <div class="search-bar">
+      <form autocomplete="off" action="/action_page.php">
+        <div class="autocomplete" style="width:300px;">
+          <input id="myInput" type="text" name="search-bar" placeholder="Search for food or Dining hall...">
+          <script src="scripts/search.js" type="text/javascript"></script>
+        </div>
+        <i class="fa fa-search input-icon"></i>
+        <input type="submit" value="">
+      </form>
+    </div>
 
-        <br>
+    <br>
 
     <?php include D_TEMPLATE."food_rank.php"; ?>
 
