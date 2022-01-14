@@ -48,7 +48,6 @@ $page = get_dish_page($dbc, $_GET['dish']);
           </div>
           <div class="modal-body">
             <p>Some text in the Modal..</p>
-          
         <!-- TODO: Hover effect -->
             <div class="user-rate">
               <i class="rating__star far fa-star"></i>
@@ -59,7 +58,7 @@ $page = get_dish_page($dbc, $_GET['dish']);
             </div>
             <script src="scripts/rate.js" type="text/javascript"></script>
             <div class="user-form">
-              <form action="action_page.php">
+              <form>
                   <label for="review-msg">Add a written review</label>
                   <input type="text" id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?">
 
@@ -130,10 +129,48 @@ $page = get_dish_page($dbc, $_GET['dish']);
             </div>
           </div>
       </div>
-      <script src="scripts/modal.js" type="text/javascript"></script>
+      <p> See all images </p>
+      <div class="user-comment">
+        <p> Tiger </p>
+          <div class="user-rate">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        <p> Very Good! </p>
+
+        <button class="vote" id="upvote"><i class="fas fa-caret-up"></i></button>
+        <button class="vote" id="downvote"><i class="fas fa-caret-down"></i></button>
+        <span id="votenum"> 0 </span>
+        <script src="scripts/vote.js" type="text/javascript"></script>
+
+        <br>
+        <button onclick="openModal('report-modal')"> Report </button>
+        <div id="report-modal" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close" onclick="closeModal('report-modal')">&times;</span>
+              <h2> Report an issue</h2>
+            </div>
+          <div class="modal-body">
+              <p> If you find this content inappropriate and think it should be removed from the BluenoEats site, please help us to understand the problem. What is going on with this post? </p>
+              <form>
+                <input type="checkbox" name="report" value="Spam"> It's suspicious or spam <br>
+                <input type="checkbox" name="report" value="Abuse"> It's abusive or harmful<br>
+                <input type="checkbox" name="report" value="Mislead"> It's misleading<br>
+                <input type="checkbox" name="report" value="Suicide"> It expresses intentions of self-harm or suicide<br>
+                <input type="checkbox" name="report" value="Other"> Other<br>
+                <input type="submit" value="Submit">
+              </form>
+          </div>
+                  <!-- TODO: Show success after submit -->
+        </div>
 
 
 
+    <script src="scripts/modal.js" type="text/javascript"></script>
     <?php include D_TEMPLATE."footer.php"; ?>
   </body>
 
