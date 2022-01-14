@@ -177,8 +177,9 @@ color: white;
 
 .user-rate {
   width: fit-content;
-  margin: 0 auto;
   overflow: hidden;
+  color: #ffc700;
+  font-size: 20px;
 }
 
 .rating__star {
@@ -287,13 +288,21 @@ color: white;
 }
 
 .user-comment {
-  margin: 10px;
+  width: 60%;
+  min-width: 400px;
+  margin: 50px auto;
+  padding: 30px 50px;
+  box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+}
+
+.comment {
+  padding: 10px;
+  border: 1px solid #b3b3b3;
 }
 
 .vote {
-  margin: 0 5px;
   text-align: center;
-  font-size: 30px;
+  font-size: 40px;
   color: #b3b3b3;
   border: 0;
   background-color: transparent;
@@ -301,4 +310,16 @@ color: white;
 
 .vote.active{
   color: #ff6a6a;
+}
+
+.report {
+  background-color: white; 
+  color: black; 
+  font-family: LibreBaskerville-Regular, Palatino Linotype,Times New Roman,serif;
+  border: 2px solid #d26183;
+  border-radius: 8px;
+  padding: 2px 6px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
 }

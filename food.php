@@ -139,7 +139,8 @@ $page = get_dish_page($dbc, $_GET['dish']);
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
           </div>
-        <p> Very Good! </p>
+        <img src="img/place4.jpeg">
+        <p class="comment"> Very Good! </p>
 
         <button class="vote" id="upvote"><i class="fas fa-caret-up"></i></button>
         <button class="vote" id="downvote"><i class="fas fa-caret-down"></i></button>
@@ -147,28 +148,28 @@ $page = get_dish_page($dbc, $_GET['dish']);
         <script src="scripts/vote.js" type="text/javascript"></script>
 
         <br>
-        <button onclick="openModal('report-modal')"> Report </button>
+        <button onclick="openModal('report-modal')" class="report"> Report </button>
         <div id="report-modal" class="modal">
           <div class="modal-content">
             <div class="modal-header">
               <span class="close" onclick="closeModal('report-modal')">&times;</span>
               <h2> Report an issue</h2>
             </div>
-          <div class="modal-body">
-              <p> If you find this content inappropriate and think it should be removed from the BluenoEats site, please help us to understand the problem. What is going on with this post? </p>
-              <form>
-                <input type="checkbox" name="report" value="Spam"> It's suspicious or spam <br>
-                <input type="checkbox" name="report" value="Abuse"> It's abusive or harmful<br>
-                <input type="checkbox" name="report" value="Mislead"> It's misleading<br>
-                <input type="checkbox" name="report" value="Suicide"> It expresses intentions of self-harm or suicide<br>
-                <input type="checkbox" name="report" value="Other"> Other<br>
-                <input type="submit" value="Submit">
-              </form>
-          </div>
+            <div class="modal-body">
+                <p> If you find this content inappropriate and think it should be removed from the BluenoEats site, please help us to understand the problem. What is going on with this post? </p>
+                <form>
+                  <input type="checkbox" name="report" value="Spam"> It's suspicious or spam <br>
+                  <input type="checkbox" name="report" value="Abuse"> It's abusive or harmful<br>
+                  <input type="checkbox" name="report" value="Mislead"> It's misleading<br>
+                  <input type="checkbox" name="report" value="Suicide"> It expresses intentions of self-harm or suicide<br>
+                  <input type="checkbox" name="report" value="Other"> Other<br>
+                  <input type="submit" value="Submit">
+                </form>
+            </div>
                   <!-- TODO: Show success after submit -->
+          </div>
         </div>
-
-
+      </div>
 
     <script src="scripts/modal.js" type="text/javascript"></script>
     <?php include D_TEMPLATE."footer.php"; ?>
