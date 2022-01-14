@@ -131,7 +131,7 @@ $page = get_dish_page($dbc, $_GET['dish']);
       </div>
       <p> See all images </p>
       <div class="user-comment">
-        <p> Tiger </p>
+        <p> User Name </p>
           <div class="user-rate">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>

@@ -292,8 +292,13 @@ color: white;
 
 .vote {
   margin: 0 5px;
+  text-align: center;
+  font-size: 30px;
+  color: #b3b3b3;
+  border: 0;
+  background-color: transparent;
 }
 
 .vote.active{
-  border: 1px solid red;
+  color: #ff6a6a;
 }
