@@ -1,7 +1,7 @@
 <div class="review">
    <h2> Reviews</h2>
    <div class="rate">
-       <span class="heading">User Rating</span>
+       <h3> User Rating</h3>
        <?php for ($i=1; $i <= 5; $i++) {
          if ($i < $page['rating']) {
            echo '<span class="fa fa-star checked"></span>';

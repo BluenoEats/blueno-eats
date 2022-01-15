@@ -35,7 +35,7 @@
 }
 
 .review {
-    margin: 0 auto;
+    margin: 10px auto;
     margin-top: 40px;
 }
 
@@ -81,17 +81,10 @@
 }
 
 .rate {
-    font-family: Arial;
     margin: 0 auto; /* Center website */
     max-width: 800px; /* Max width */
     padding: 20px;
-    font-size: 15px;
     line-height: 1.5;
-}
-
-.rate .heading {
-    font-size: 25px;
-    margin-right: 25px;
 }
 
 .rate .fa {
@@ -177,8 +170,9 @@ color: white;
 
 .user-rate {
   width: fit-content;
-  margin: 0 auto;
   overflow: hidden;
+  color: #ffc700;
+  font-size: 20px;
 }
 
 .rating__star {
@@ -284,4 +278,41 @@ color: white;
 
 .hover-shadow:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.user-comment {
+  width: 60%;
+  min-width: 400px;
+  margin: 50px auto;
+  padding: 30px 50px;
+  box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+}
+
+.comment {
+  padding: 10px;
+  border: 1px solid #b3b3b3;
+}
+
+.vote {
+  text-align: center;
+  font-size: 40px;
+  color: #b3b3b3;
+  border: 0;
+  background-color: transparent;
+}
+
+.vote.active{
+  color: #ff6a6a;
+}
+
+.report {
+  background-color: white; 
+  color: black; 
+  font-family: LibreBaskerville-Regular, Palatino Linotype,Times New Roman,serif;
+  border: 2px solid #d26183;
+  border-radius: 8px;
+  padding: 2px 6px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
 }
