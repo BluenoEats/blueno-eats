@@ -31,6 +31,10 @@ h2 {
   color: #d26183;
 }
 
+h3 {
+  font-size: 30px;
+}
+
 p, li {
   font-family: LibreBaskerville-Regular, Palatino Linotype,Times New Roman,serif;
   font-size: 14px;

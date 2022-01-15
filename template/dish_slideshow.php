@@ -23,7 +23,7 @@
       for ($i=1; $i <= $num_rows; $i++) { ?>
         <span class="dot" onclick=<?php echo "\"currentDiv($i)\""; ?>></span>
       <?php } ?>
-      </div>'
+      </div>
       <script src="scripts/auto-slide.js" type="text/javascript"></script>
       <?php
     }

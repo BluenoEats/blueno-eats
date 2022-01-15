@@ -35,7 +35,7 @@
 }
 
 .review {
-    margin: 0 auto;
+    margin: 10px auto;
     margin-top: 40px;
 }
 
@@ -81,17 +81,10 @@
 }
 
 .rate {
-    font-family: Arial;
     margin: 0 auto; /* Center website */
     max-width: 800px; /* Max width */
     padding: 20px;
-    font-size: 15px;
     line-height: 1.5;
-}
-
-.rate .heading {
-    font-size: 25px;
-    margin-right: 25px;
 }
 
 .rate .fa {
