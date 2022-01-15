@@ -4,6 +4,7 @@ include "functions/get_page.php";
 include "functions/get_data.php";
 # Retrieve food page
 $page = get_dish_page($dbc, $_GET['dish']);
+[$rating, $num_reviews, $num_by_stars, $reviews] = get_reviews($dbc, $_GET['dish']);
 ?>
 
 <!DOCTYPE html>
@@ -41,121 +42,6 @@ $page = get_dish_page($dbc, $_GET['dish']);
 
       <?php include D_TEMPLATE."review_preview.php"; ?>
 
-
-      <!-- Trigger/Open The Modal -->
-      <button id="wr-btn" onclick="openModal('wr-modal')">Write a Review...</button>
-      <div id="wr-modal" class="modal">
-        <div class="modal-content">
-          <div class="modal-header">
-            <span class="close" onclick="closeModal('wr-modal')">&times;</span>
-            <h2> <?php echo $page['name']; ?> </h2>
-          </div>
-          <div class="modal-body">
-            <p>Some text in the Modal..</p>
-       <!-- TODO: Hover effect -->
-            <div class="user-rate">
-              <i class="rating__star far fa-star"></i>
-              <i class="rating__star far fa-star"></i>
-              <i class="rating__star far fa-star"></i>
-              <i class="rating__star far fa-star"></i>
-              <i class="rating__star far fa-star"></i>
-            </div>
-            <script src="scripts/rate.js" type="text/javascript"></script>
-            <div class="user-form">
-              <form>
-                  <label for="review-msg">Add a written review</label>
-                  <input type="text" id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?">
-
-                  <label for="review-img">Add a photo</label>
-                  <input type="file" id="review-img" name="review-img" accept="image/*" multiple>
-
-                  <input type="submit" value="Submit" onclick="send_form()">
-
-                  <button type="button" name="button" onclick="send_form()"></button>
-              </form>
-            </div>
-
-            <script type="text/javascript">
-            function send_form() {
-              const urlSearchParams = new URLSearchParams(window.location.search);
-              const params = Object.fromEntries(urlSearchParams.entries());
-              var author_id = 33774 // temporary val
-              var dish_id = urlSearchParams.get('dish')
-              var rating = document.getElementsByClassName("rating__star fas fa-star").length;
-              var content = document.getElementById("review-msg").value;
-
-              var xhttp = new XMLHttpRequest();
-              // assuming all fields are filled
-              xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                  document.getElementById("response").innerHTML = this.responseText;
-                }
-              };
-
-              xhttp.open("GET", "write_review.php?author="+author_id+"&dish="+dish_id+"&rating="+rating+"&review-msg="+content, true);
-              xhttp.send();
-             }
-            </script>
-          </div>
-       </div>
-      </div>
-
-      <div class="food-imgs">
-          <div class="food-imgs-row">
-              <div class="food-imgs-col">
-                <img src="img/place4.jpeg" style="width:100%" onclick="openModal('food-pic-modal');currentSlide(1)" class="hover-shadow cursor">
-              </div>
-              <div class="food-imgs-col">
-                <img src="img/place3.jpeg" style="width:100%" onclick="openModal('food-pic-modal');currentSlide(2)" class="hover-shadow cursor">
-              </div>
-              <div class="food-imgs-col">
-                <img src="img/place2.jpeg" style="width:100%" onclick="openModal('food-pic-modal');currentSlide(3)" class="hover-shadow cursor">
-              </div>
-              <div class="food-imgs-col">
-                <img src="img/placeholding.png" style="width:100%" onclick="openModal('food-pic-modal');currentSlide(4)" class="hover-shadow cursor">
-              </div>
-          </div>
-
-          <div id="food-pic-modal" class="modal">
-            <span class="close" onclick="closeModal('food-pic-modal')">&times;</span>
-            <div class=" modal-content">
-                <div class="food-imgs-slide">
-                  <div class="food-imgs-numtext">1 / 4</div>
-                  <img src="img/place4.jpeg" style="width:100%">
-                </div>
-                <div class="food-imgs-slide">
-                  <div class="food-imgs-numtext">2 / 4</div>
-                  <img src="img/place3.jpeg" style="width:100%">
-                </div>
-                <div class="food-imgs-slide">
-                  <div class="food-imgs-numtext">3 / 4</div>
-                  <img src="img/place2.jpeg" style="width:100%">
-                </div>
-                <div class="food-imgs-slide">
-                  <div class="food-imgs-numtext">4 / 4</div>
-                  <img src="img/placeholding.png" style="width:100%">
-                </div>
-                <a class="food-imgs-prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="food-imgs-next" onclick="plusSlides(1)">&#10095;</a>
-                <div class="food-imgs-caption-container">
-                  <p id="caption"></p>
-                </div>
-
-                <div class="food-imgs-col">
-                  <img class="food-imgs-cur cursor" src="img/place4.jpeg" style="width:100%" onclick="currentSlide(1)" alt="Nature and sunrise">
-                </div>
-                <div class="food-imgs-col">
-                  <img class="food-imgs-cur cursor" src="img/place3.jpeg" style="width:100%" onclick="currentSlide(2)" alt="Snow">
-                </div>
-                <div class="food-imgs-col">
-                  <img class="food-imgs-cur cursor" src="img/place2.jpeg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-                </div>
-                <div class="food-imgs-col">
-                  <img class="food-imgs-cur cursor" src="img/placeholding.png" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-                </div>
-            </div>
-          </div>
-      </div>
       <p> See all images </p>
       <div class="user-comment">
         <p> User Name </p>

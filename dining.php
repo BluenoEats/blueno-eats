@@ -2,10 +2,8 @@
 include "config/setup.php";
 include "functions/get_page.php";
 include "functions/get_data.php";
-// include "functions/get_data.php";
 # Retrieve dining hall page
 $page = get_hall_page($dbc, $_GET['hall']);
-// $slideshow = get_hall_slideshow($dbc, $page['id']);
 ?>
 
 <!DOCTYPE html>
