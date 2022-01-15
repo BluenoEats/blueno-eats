@@ -1,4 +1,9 @@
-.user-form input {
+.user-form {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.user-form input, textarea {
     display: block;
     margin-top: 6px; /* Add a top margin */
     margin-bottom: 15px; /* Bottom margin */
@@ -42,4 +47,10 @@
   /* When moving the mouse over the submit button, add a darker green color */
 .user-form input[type=submit]:hover {
     background: #ff6a6a;
+}
+
+@media (max-width: 900px) {
+    .user-form {
+        width: 80%;
+    }
 }

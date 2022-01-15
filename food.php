@@ -41,8 +41,7 @@ $page = get_dish_page($dbc, $_GET['dish']);
 
       <?php include D_TEMPLATE."review_preview.php"; ?>
 
-<<<<<<< HEAD
-=======
+
       <!-- Trigger/Open The Modal -->
       <button id="wr-btn" onclick="openModal('wr-modal')">Write a Review...</button>
       <div id="wr-modal" class="modal">
@@ -53,11 +52,7 @@ $page = get_dish_page($dbc, $_GET['dish']);
           </div>
           <div class="modal-body">
             <p>Some text in the Modal..</p>
-<<<<<<< HEAD
-
-=======
->>>>>>> 47eae4a8c812ad73b55e8a997178cf1465b22fd0
-        <!-- TODO: Hover effect -->
+       <!-- TODO: Hover effect -->
             <div class="user-rate">
               <i class="rating__star far fa-star"></i>
               <i class="rating__star far fa-star"></i>
@@ -105,8 +100,6 @@ $page = get_dish_page($dbc, $_GET['dish']);
        </div>
       </div>
 
-
->>>>>>> 299a08f7d24d0d1ca73739193d85136eda0c6cb2
       <div class="food-imgs">
           <div class="food-imgs-row">
               <div class="food-imgs-col">
