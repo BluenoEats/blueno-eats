@@ -1,5 +1,5 @@
 <?php
-include "config/setup.php";
+include "../config/setup.php";
 
 $db = ACCOUNT_DB;
 $email = $_GET['email'];

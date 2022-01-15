@@ -14,4 +14,6 @@ define('DISH_DB', 'dish_pages');
 define('HALL_SLIDESHOW_DB', 'hall_slideshow');
 define('DISH_SLIDESHOW_DB', 'dish_slideshow');
 define('ACCOUNT_DB', 'accounts');
+define('REVIEW_DB', 'reviews');
+
 ?>
