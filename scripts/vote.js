@@ -4,14 +4,14 @@ const downvote = document.getElementById("downvote")
 const votenum = document.getElementById("votenum")
 
 upvote.addEventListener('click', event => {
-    if (!(upvote === document.activeElement || downvote === document.activeElement)){
+    if (!(upvote.classList.contains('active') || downvote.classList.contains('active'))){
         numVotes++;
     }
-    else if (downvote === document.activeElement) {
+    else if (downvote.classList.contains('active')) {
         downvote.classList.toggle('active');
         numVotes += 2;
     }
-    else if (upvote === document.activeElement) {
+    else if (upvote.classList.contains('active')) {
         numVotes--;
     }
     upvote.classList.toggle('active');
@@ -19,14 +19,14 @@ upvote.addEventListener('click', event => {
 });
 
 downvote.addEventListener('click', event => {
-    if (!(upvote === document.activeElement || downvote === document.activeElement)){
+    if (!(upvote.classList.contains('active') || downvote.classList.contains('active'))){
         numVotes--;
     }
-    else if (upvote === document.activeElement) {
+    else if (upvote.classList.contains('active')) {
         upvote.classList.toggle('active');
         numVotes -= 2;
     }
-    else if (downvote === document.activeElement) {
+    else if (downvote.classList.contains('active')) {
         numVotes++;
     }
     downvote.classList.toggle('active');
