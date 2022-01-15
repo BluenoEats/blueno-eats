@@ -73,7 +73,7 @@
         width: 400px;
         margin: 0 auto;
     }
-    
+
   }
 
 .rate * {
@@ -159,8 +159,8 @@
 #wr-btn {
   display: block;
   margin: 0;
-  background-color: white; 
-  color: black; 
+  background-color: white;
+  color: black;
   font-family: LibreBaskerville-Regular, Palatino Linotype,Times New Roman,serif;
   border: 2px solid #d26183;
   border-radius: 8px;
@@ -205,7 +205,7 @@
 .food-imgs-row > .food-imgs-col {
     padding: 0 8px;
   }
-  
+
 .food-imgs-row:after {
   content: "";
   display: table;
@@ -315,8 +315,8 @@
 }
 
 .report {
-  background-color: white; 
-  color: black; 
+  background-color: white;
+  color: black;
   font-family: LibreBaskerville-Regular, Palatino Linotype,Times New Roman,serif;
   border: 2px solid #d26183;
   border-radius: 8px;

@@ -13,76 +13,23 @@
        <hr style="border:3px solid #f1f1f1">
 
        <div class="row">
-         <?php for ($i=5; $i > 0; $i--) { ?>
+         <?php for ($i=5; $i > 0; $i--) {
+           $width = ($page['num_reviews'] ? $page[$i.'_star']/$page['num_reviews']*100 : 0); ?>
            <div class="side">
                <div><?php echo $i; ?> star</div>
            </div>
            <div class="middle">
                <div class="bar-container">
-               <div class=<?php echo "\"bar-$i\""; ?>></div>
+               <div class="bar-<?php echo $i; ?>" id="bar-<?php echo $i; ?>"></div>
+               <script type="text/javascript">
+                  document.getElementById("bar-<?php echo $i; ?>").style.width="<?php echo $width; ?>%";
+               </script>
                </div>
            </div>
            <div class="side right">
                <div><?php echo $page[$i.'_star']; ?></div>
            </div>
          <?php } ?>
-
-       <!-- <div class="side">
-           <div>5 star</div>
-       </div>
-       <div class="middle">
-           <div class="bar-container">
-           <div class="bar-5"></div>
-           </div>
-       </div>
-       <div class="side right">
-           <div>150</div>
-       </div>
-
-       <div class="side">
-           <div>4 star</div>
-       </div>
-       <div class="middle">
-           <div class="bar-container">
-           <div class="bar-4"></div>
-           </div>
-       </div>
-       <div class="side right">
-           <div>63</div>
-       </div>
-       <div class="side">
-           <div>3 star</div>
-       </div>
-       <div class="middle">
-           <div class="bar-container">
-           <div class="bar-3"></div>
-           </div>
-       </div>
-       <div class="side right">
-           <div>15</div>
-       </div>
-       <div class="side">
-           <div>2 star</div>
-       </div>
-       <div class="middle">
-           <div class="bar-container">
-           <div class="bar-2"></div>
-           </div>
-       </div>
-       <div class="side right">
-           <div>6</div>
-       </div>
-       <div class="side">
-           <div>1 star</div>
-       </div>
-       <div class="middle">
-           <div class="bar-container">
-           <div class="bar-1"></div>
-           </div>
-       </div>
-       <div class="side right">
-           <div>20</div>
-       </div> -->
        </div>
    </div>
 </div>
