@@ -3,8 +3,8 @@
   <a href="index.php" class="nav-home nav-left">
     <img src="img/placeholding.png" class="nav-logo" alt="Navigation Logo">
   </a>
-  <a href="about.php" class="nav-left nav-hide"> About</a></li>
-  <a href="contact.php" class="nav-left nav-hide"> Contacts</a></li>
+  <a href="about.php" class="nav-left nav-hide"> About</a>
+  <a href="contact.php" class="nav-left nav-hide"> Contacts</a>
   <div class="dropdown" class="nav-left">
     <button class="dropbtn">Dining Halls
       <i class="fa fa-caret-down"></i>
@@ -21,7 +21,7 @@
     </div>
   </div>
 
-  <a href="log in link" class="nav-right"> Log in</a></li>
-  <a href="sign up link" class="nav-right"> Sign up</a></li>
+  <a href="login.php" class="nav-right"> Log in</a>
+  <a href="signup.php" class="nav-right"> Sign up</a>
   <!-- TODO: Profile manage page -->
 </div>

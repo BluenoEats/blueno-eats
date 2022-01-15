@@ -51,7 +51,7 @@ $page = get_dish_page($dbc, $_GET['dish']);
           </div>
           <div class="modal-body">
             <p>Some text in the Modal..</p>
-          
+
         <!-- TODO: Hover effect -->
             <div class="user-rate">
               <i class="rating__star far fa-star"></i>
@@ -62,17 +62,41 @@ $page = get_dish_page($dbc, $_GET['dish']);
             </div>
             <script src="scripts/rate.js" type="text/javascript"></script>
             <div class="user-form">
-              <form action="action_page.php">
+              <form>
                   <label for="review-msg">Add a written review</label>
                   <input type="text" id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?">
 
                   <label for="review-img">Add a photo</label>
                   <input type="file" id="review-img" name="review-img" accept="image/*" multiple>
 
-                  <input type="submit" value="Submit">
+                  <input type="submit" value="Submit" onclick="send_form()">
+
+                  <button type="button" name="button" onclick="send_form()"></button>
               </form>
             </div>
-          </div>  
+
+            <script type="text/javascript">
+            function send_form() {
+              const urlSearchParams = new URLSearchParams(window.location.search);
+              const params = Object.fromEntries(urlSearchParams.entries());
+              var author_id = 33774 // temporary val
+              var dish_id = urlSearchParams.get('dish')
+              var rating = document.getElementsByClassName("rating__star fas fa-star").length;
+              var content = document.getElementById("review-msg").value;
+
+              var xhttp = new XMLHttpRequest();
+              // assuming all fields are filled
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  document.getElementById("response").innerHTML = this.responseText;
+                }
+              };
+
+              xhttp.open("GET", "write_review.php?author="+author_id+"&dish="+dish_id+"&rating="+rating+"&review-msg="+content, true);
+              xhttp.send();
+             }
+            </script>
+          </div>
        </div>
       </div>
 
