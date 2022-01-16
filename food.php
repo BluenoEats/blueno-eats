@@ -27,7 +27,7 @@ $page = get_dish_page($dbc, $_GET['dish']);
     <body>
       <?php include D_TEMPLATE."navigation.php" ?>
 
-      <div class="food">
+      <div class="food-body food">
           <div class="food-item food-left">
               <h1 id="food-name"><?php echo $page['name']; ?></h1>
           </div>
@@ -41,9 +41,14 @@ $page = get_dish_page($dbc, $_GET['dish']);
 
       <?php include D_TEMPLATE."review_preview.php"; ?>
 
+      <?php include D_TEMPLATE."review_slideshow.php"; ?>
 
       <!-- Trigger/Open The Modal -->
+      <div class="food-body">
       <button id="wr-btn" onclick="openModal('wr-modal')">Write a Review...</button>
+      </div>
+
+      <!-- Write review Modal -->
       <div id="wr-modal" class="modal">
         <div class="modal-content">
           <div class="modal-header">
@@ -73,91 +78,13 @@ $page = get_dish_page($dbc, $_GET['dish']);
 
                   <button type="button" name="button" onclick="send_form()"></button>
               </form>
+              <script src="scripts/review-form.js" type="text/javascript"></script>
             </div>
-
-            <script type="text/javascript">
-            function send_form() {
-              const urlSearchParams = new URLSearchParams(window.location.search);
-              const params = Object.fromEntries(urlSearchParams.entries());
-              var author_id = 33774 // temporary val
-              var dish_id = urlSearchParams.get('dish')
-              var rating = document.getElementsByClassName("rating__star fas fa-star").length;
-              var content = document.getElementById("review-msg").value;
-
-              var xhttp = new XMLHttpRequest();
-              // assuming all fields are filled
-              xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                  document.getElementById("response").innerHTML = this.responseText;
-                }
-              };
-
-              xhttp.open("GET", "write_review.php?author="+author_id+"&dish="+dish_id+"&rating="+rating+"&review-msg="+content, true);
-              xhttp.send();
-             }
-            </script>
           </div>
        </div>
       </div>
 
-      <div class="food-imgs">
-          <div class="food-imgs-row">
-              <div class="food-imgs-col">
-                <img src="img/place4.jpeg" style="width:100%" onclick="openModal('food-pic-modal');currentSlide(1)" class="hover-shadow cursor">
-              </div>
-              <div class="food-imgs-col">
-                <img src="img/place3.jpeg" style="width:100%" onclick="openModal('food-pic-modal');currentSlide(2)" class="hover-shadow cursor">
-              </div>
-              <div class="food-imgs-col">
-                <img src="img/place2.jpeg" style="width:100%" onclick="openModal('food-pic-modal');currentSlide(3)" class="hover-shadow cursor">
-              </div>
-              <div class="food-imgs-col">
-                <img src="img/placeholding.png" style="width:100%" onclick="openModal('food-pic-modal');currentSlide(4)" class="hover-shadow cursor">
-              </div>
-          </div>
-
-          <div id="food-pic-modal" class="modal">
-            <span class="close" onclick="closeModal('food-pic-modal')">&times;</span>
-            <div class=" modal-content">
-                <div class="food-imgs-slide">
-                  <div class="food-imgs-numtext">1 / 4</div>
-                  <img src="img/place4.jpeg" style="width:100%">
-                </div>
-                <div class="food-imgs-slide">
-                  <div class="food-imgs-numtext">2 / 4</div>
-                  <img src="img/place3.jpeg" style="width:100%">
-                </div>
-                <div class="food-imgs-slide">
-                  <div class="food-imgs-numtext">3 / 4</div>
-                  <img src="img/place2.jpeg" style="width:100%">
-                </div>
-                <div class="food-imgs-slide">
-                  <div class="food-imgs-numtext">4 / 4</div>
-                  <img src="img/placeholding.png" style="width:100%">
-                </div>
-                <a class="food-imgs-prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="food-imgs-next" onclick="plusSlides(1)">&#10095;</a>
-                <div class="food-imgs-caption-container">
-                  <p id="caption"></p>
-                </div>
-
-                <div class="food-imgs-col">
-                  <img class="food-imgs-cur cursor" src="img/place4.jpeg" style="width:100%" onclick="currentSlide(1)" alt="Nature and sunrise">
-                </div>
-                <div class="food-imgs-col">
-                  <img class="food-imgs-cur cursor" src="img/place3.jpeg" style="width:100%" onclick="currentSlide(2)" alt="Snow">
-                </div>
-                <div class="food-imgs-col">
-                  <img class="food-imgs-cur cursor" src="img/place2.jpeg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-                </div>
-                <div class="food-imgs-col">
-                  <img class="food-imgs-cur cursor" src="img/placeholding.png" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-                </div>
-            </div>
-          </div>
-      </div>
-      <p> See all images </p>
-      <div class="user-comment">
+      <div class="food-body user-comment">
         <p> User Name </p>
           <div class="user-rate">
             <i class="fas fa-star"></i>

@@ -1,3 +1,8 @@
+.food-body {
+  width: 800px;
+  margin: 10px auto;
+}
+
 .food {
     display: flex;
     flex-direction: row;
@@ -34,11 +39,7 @@
     box-sizing: border-box;
 }
 
-.review {
-    margin: 10px auto;
-    margin-top: 40px;
-}
-
+/*
 @media (max-width: 1030px) {
     .food {
         align-items: center;
@@ -75,6 +76,7 @@
     }
     
   }
+  */
 
 .rate * {
     box-sizing: border-box;

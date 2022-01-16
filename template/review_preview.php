@@ -1,4 +1,4 @@
-<div class="review">
+<div class="food-body">
    <h2> Reviews</h2>
    <div class="rate">
        <h3 id="rate-header"> User Rating</h3>
