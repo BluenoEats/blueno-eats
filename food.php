@@ -35,14 +35,7 @@ $page = get_dish_page($dbc, $_GET['dish']);
           <?php include D_TEMPLATE."dish_slideshow.php"; ?>
       </div>
 
-<<<<<<< HEAD
-      <p class="food-intro"><?php echo $page['content']; ?></p>
-=======
-      <?php if (isset($page['content'])) {
-        // echo '<p class="food-intro">'.$page['content'].'</p>';
-      }?>
       <p class="food-intro food-body"><?php echo $page['content']; ?></p>
->>>>>>> 7c13d75f97cb695e0144acdaaca735869bb45238
 
       <?php include D_TEMPLATE."review_preview.php"; ?>
       <?php include D_TEMPLATE."review_slideshow.php"; ?>
