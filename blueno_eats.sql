@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 09, 2022 at 10:40 AM
+-- Generation Time: Jan 16, 2022 at 02:28 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.13
 
@@ -39,10 +39,8 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`id`, `email`, `password`, `username`) VALUES
-(2, 'a', 'b', 'hello'),
-(3, 'a', 'b', 'hello'),
-(11103, 'a', 'a', 'a'),
-(61731, '', '', '');
+(12421, '', '', ''),
+(33477, 'sd', 'sdf', 'fdsa');
 
 -- --------------------------------------------------------
 
@@ -156,6 +154,17 @@ CREATE TABLE `reviews` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `author_id`, `dish_id`, `rating`, `content`) VALUES
+(1, 33477, 1, 3, 'example'),
+(3, 33477, 2, 3, 'example'),
+(4, 33477, 3, 3, 'example'),
+(25, 33477, 4, 0, ''),
+(26, 12421, 1, 2, '');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -205,7 +214,7 @@ ALTER TABLE `hall_pages`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- Constraints for dumped tables
