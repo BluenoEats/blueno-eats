@@ -20,7 +20,7 @@ function display_review($dbc, $author_id, $rating, $content) {
           }
         } ?>
       </div>
-      <!-- TODO: get actual image from database -->
+    <!-- TODO: get actual image from database -->
     <img src="img/place4.jpeg">
     <p class="comment"><?php echo $content; ?></p>
 
