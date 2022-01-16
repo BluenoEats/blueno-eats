@@ -7,7 +7,6 @@ function executeRating(stars) {
   stars.map((star) => {
     star.onclick = () => {
       let i = stars.indexOf(star);
-      
       if (star.className===starClassInactive) {
         for (; i >= 0; --i)
           stars[i].className = starClassActive;
@@ -18,4 +17,5 @@ function executeRating(stars) {
     };
   });
 }
+
 executeRating(ratingStars);

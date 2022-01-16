@@ -4,6 +4,7 @@ include "functions/get_page.php";
 include "functions/get_data.php";
 # Retrieve food page
 $page = get_dish_page($dbc, $_GET['dish']);
+[$rating, $num_reviews, $num_by_stars, $reviews] = get_reviews($dbc, $_GET['dish']);
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +41,6 @@ $page = get_dish_page($dbc, $_GET['dish']);
       <p class="food-intro"><?php echo $page['content']; ?></p>
 
       <?php include D_TEMPLATE."review_preview.php"; ?>
-
       <?php include D_TEMPLATE."review_slideshow.php"; ?>
 
       <!-- Trigger/Open The Modal -->
@@ -85,6 +85,8 @@ $page = get_dish_page($dbc, $_GET['dish']);
       </div>
 
       <div class="food-body user-comment">
+      <p> See all images </p>
+      <div class="user-comment">
         <p> User Name </p>
           <div class="user-rate">
             <i class="fas fa-star"></i>
