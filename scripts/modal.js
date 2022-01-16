@@ -7,7 +7,7 @@ function closeModal(n) {
 
 var wr_modal = document.getElementById("wr-modal");
 var food_pic_modal = document.getElementById("food-pic-modal");
-var food_pic_modal = document.getElementById("report-modal");
+var report_modal = document.getElementById("report-modal");
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == wr_modal) {

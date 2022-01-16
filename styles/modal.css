@@ -12,12 +12,16 @@
   box-sizing: border-box;
 }
 
+.modal * {
+  box-sizing: border-box;
+}
+
 /* Modal Content */
 .modal-content {
   position: relative;
   background-color: #fefefe;
   margin: 10% auto;
-  padding: 20px;
+  padding: 30px 20px;
   width: 80%;
   max-width: 1000px;
   box-sizing: border-box;
@@ -25,10 +29,10 @@
   
 /* The Close Button */
 .close {
-  color: #f3dbe4;
+  color: #d26183b4;
   position: absolute;
-  top: 10px;
-  right: 25px;
+  top: 20px;
+  right: 30px;
   font-size: 35px;
   font-weight: bold;
 }
@@ -37,10 +41,6 @@
   color: #999;
   text-decoration: none;
   cursor: pointer;
-}
-
-.modal-header {
-  padding: 2px 16px;
 }
 
 /* Add Animation */
