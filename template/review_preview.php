@@ -1,4 +1,5 @@
 <div class="food-body">
+<<<<<<< HEAD
   <h2> Reviews</h2>
   <div class="rate">
     <h3 id="rate-header"> User Rating</h3>
@@ -11,6 +12,20 @@
     } ?>
     <?php echo "<p>$rating average based on $num_reviews reviews.</p>"; ?>
     <hr style="border:3px solid #f1f1f1">
+=======
+   <h2> Reviews</h2>
+   <div class="rate">
+       <h3 id="rate-header"> User Rating</h3>
+       <?php for ($i=1; $i <= 5; $i++) {
+         if ($i <= $rating) {
+           echo '<span class="fas fa-star"></span>';
+         } else {
+           echo '<span class="far fa-star"></span>';
+         }
+       } ?>
+       <?php echo "<p>$rating average based on $num_reviews reviews.</p>"; ?>
+       <hr style="border:3px solid #f1f1f1">
+>>>>>>> 9cd4c65340b79a73cd22c3f994f9e60fcbb2e4fd
 
     <div class="row">
      <?php for ($i=5; $i > 0; $i--) {
@@ -33,6 +48,7 @@
     </div>
   </div>
 
+<<<<<<< HEAD
   <!-- Trigger/Open The Modal -->
   <button id="wr-btn" onclick="openModal('wr-modal')">Write a Review...</button>
 
@@ -56,6 +72,29 @@
             <input type="hidden" id="author" name="author" value="placeholder" />
             <input type="hidden" id="dish" name="dish" value="<?php echo $_GET['dish']; ?>" />
             <input type="hidden" id="rating" name="rating" value="0" />
+=======
+   <!-- Trigger/Open The Modal -->
+   <button id="wr-btn" onclick="openModal('wr-modal')">Write a Review...</button>
+      <!-- Write review Modal -->
+      <div id="wr-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('wr-modal')">&times;</span>
+            <h2> <?php echo $page['name']; ?> </h2>
+            <p>Some text in the Modal..</p>
+            <!-- TODO: Hover effect -->
+            <div class="user-rate">
+                <i class="rating__star far fa-star"></i>
+                <i class="rating__star far fa-star"></i>
+                <i class="rating__star far fa-star"></i>
+                <i class="rating__star far fa-star"></i>
+                <i class="rating__star far fa-star"></i>
+            </div>
+            <script src="scripts/rate.js" type="text/javascript"></script>
+            <div class="user-form">
+                <form>
+                    <label for="review-msg">Add a written review</label>
+                    <input type="text" id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?">
+>>>>>>> 9cd4c65340b79a73cd22c3f994f9e60fcbb2e4fd
 
             <label for="review-msg">Add a written review</label>
             <input type="text" id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?">
