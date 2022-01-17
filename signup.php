@@ -14,20 +14,21 @@
 
    <body>
       <?php include D_TEMPLATE."navigation.php" ?>
-      <p>Add your details:</p>
-      <form>
-        Email: <input type="text" id="email" placeholder="example@domain.com">
-        <br>
-        <br>
-        Password: <input type="text" id="password" placeholder="password">
-        <br>
-        <br>
-        Username: <input type="text" id="username" placeholder="username">
-        <br>
-        <br>
+      <form class="user-form sign-log">
+         <label for="username">Username: </label>
+         <input input type="text" id="username" placeholder="username">
+
+         <label for="email">Email: </label>
+         <input type="text" id="email" name="email" placeholder="Your email">
+
+         <label for="password">Password</label>
+         <input type="text" id="password" placeholder="password">
+
+         <input type="submit" value="Sign up" onclick="myJsFunction()">
       </form>
-      <button onclick="myJsFunction()" style="height:20px;width:50px"></button>
-      <p id="response">response</p>
+      <!--<button onclick="myJsFunction()" style="height:20px;width:50px"></button>
+      <p id="response"></p>
+      -->
       <script type="text/javascript">
        function myJsFunction(){
           var email=document.getElementById("email").value;

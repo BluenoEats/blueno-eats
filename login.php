@@ -11,22 +11,18 @@
       <link href="styles/info.css" rel="stylesheet" type="text/css">
       <link href="styles/form.css" rel="stylesheet" type="text/css">
    </head>
-
    <body>
       <?php include D_TEMPLATE."navigation.php" ?>
-      <p>Add your details:</p>
-      <form>
-        Email: <input type="email" id="email" placeholder="example@domain.com">
-        <br>
-        <br>
-        Password: <input type="text" id="password" placeholder="password">
-        <br>
-        <br>
-        Username: <input type="text" id="username" placeholder="username">
-        <br>
-        <br>
+      <form class="user-form sign-log">
+         <label for="email">Email: </label>
+         <input type="text" id="email" name="email" placeholder="Your email">
+
+         <label for="password">Password</label>
+         <input type="text" id="password" placeholder="password">
+
+         <input type="submit" value="Sign up" onclick="myJsFunction()">
       </form>
-      <button onclick="myJsFunction()" style="height:20px;width:50px"></button>
+      <!--<button onclick="myJsFunction()" style="height:20px;width:50px"></button>
       <p id="response"></p>
       <script type="text/javascript">
        function myJsFunction(){
@@ -46,5 +42,6 @@
           // document.getElementById("response").innerHTML = "add_account.php?email="+email+"&password="+password+"&username="+username;
        }
       </script>
+            -->
    </body>
 </html>
