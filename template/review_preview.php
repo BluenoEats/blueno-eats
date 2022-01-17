@@ -48,7 +48,6 @@
     </div>
   </div>
 
-<<<<<<< HEAD
   <!-- Trigger/Open The Modal -->
   <button id="wr-btn" onclick="openModal('wr-modal')">Write a Review...</button>
 
@@ -72,29 +71,6 @@
             <input type="hidden" id="author" name="author" value="placeholder" />
             <input type="hidden" id="dish" name="dish" value="<?php echo $_GET['dish']; ?>" />
             <input type="hidden" id="rating" name="rating" value="0" />
-=======
-   <!-- Trigger/Open The Modal -->
-   <button id="wr-btn" onclick="openModal('wr-modal')">Write a Review...</button>
-      <!-- Write review Modal -->
-      <div id="wr-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('wr-modal')">&times;</span>
-            <h2> <?php echo $page['name']; ?> </h2>
-            <p>Some text in the Modal..</p>
-            <!-- TODO: Hover effect -->
-            <div class="user-rate">
-                <i class="rating__star far fa-star"></i>
-                <i class="rating__star far fa-star"></i>
-                <i class="rating__star far fa-star"></i>
-                <i class="rating__star far fa-star"></i>
-                <i class="rating__star far fa-star"></i>
-            </div>
-            <script src="scripts/rate.js" type="text/javascript"></script>
-            <div class="user-form">
-                <form>
-                    <label for="review-msg">Add a written review</label>
-                    <input type="text" id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?">
->>>>>>> 9cd4c65340b79a73cd22c3f994f9e60fcbb2e4fd
 
             <label for="review-msg">Add a written review</label>
             <input type="text" id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?">

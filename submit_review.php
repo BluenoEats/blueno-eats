@@ -32,7 +32,7 @@ if ($review_id) {
 
     // store img sources in database
     if ($success) {
-      
+      $query = 
     }
   }
 }
