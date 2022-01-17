@@ -38,30 +38,34 @@
 
   <!-- Write review Modal -->
   <div id="wr-modal" class="modal">
-    <div class="modal-content">
+    <div class="modal-content wr-review-modal">
       <span class="close" onclick="closeModal('wr-modal')">&times;</span>
-      <h2> <?php echo $page['name']; ?> </h2>
-      <p>Some text in the Modal..</p>
-      <!-- TODO: Hover effect -->
-      <div class="user-rate">
-          <i class="rating__star far fa-star"></i>
-          <i class="rating__star far fa-star"></i>
-          <i class="rating__star far fa-star"></i>
-          <i class="rating__star far fa-star"></i>
-          <i class="rating__star far fa-star"></i>
-      </div>
-      <script src="scripts/rate.js" type="text/javascript"></script>
+      <h2> Create a Review for <?php echo $page['name']; ?> </h2>
       <div class="user-form">
         <form action="submit_review.php" method="post" enctype="multipart/form-data" id="review_form">
+
+            <label>Overall Rating</label>
+            <!-- TODO: Hover effect -->
+            <div class="user-rate">
+                <i class="rating__star far fa-star"></i>
+                <i class="rating__star far fa-star"></i>
+                <i class="rating__star far fa-star"></i>
+                <i class="rating__star far fa-star"></i>
+                <i class="rating__star far fa-star"></i>
+            </div>
+            <script src="scripts/rate.js" type="text/javascript"></script>
+            <br>
+            
             <input type="hidden" id="author" name="author" value="placeholder" />
             <input type="hidden" id="dish" name="dish" value="<?php echo $_GET['dish']; ?>" />
             <input type="hidden" id="rating" name="rating" value="0" />
 
-            <label for="review-msg">Add a written review</label>
-            <input type="text" id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?">
-
             <label for="review-img">Add a photo</label>
-            <input type="file" id="review-img" name="review-img[]" accept="image/*" multiple>
+            <button class="add-photo" onclick="document.getElementById('review-img').click()"><i class="far fa-plus-square"></i></button>
+            <input type="file" id="review-img" name="review-img[]" accept="image/*" multiple style="display:none">
+
+            <label for="review-msg">Add a written review</label>
+            <textarea id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?"></textarea>
 
             <input type="submit" value="Submit" onclick="set_post_vars()">
         </form>
