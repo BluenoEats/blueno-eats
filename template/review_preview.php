@@ -41,9 +41,8 @@
     <div class="modal-content wr-review-modal">
       <span class="close" onclick="closeModal('wr-modal')">&times;</span>
       <h2> Create a Review for <?php echo $page['name']; ?> </h2>
-      <div class="user-form">
+      <div class="user-form" style="margin-top:15px">
         <form action="submit_review.php" method="post" enctype="multipart/form-data" id="review_form">
-
             <label>Overall Rating</label>
             <!-- TODO: Hover effect -->
             <div class="user-rate">
