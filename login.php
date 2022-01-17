@@ -20,7 +20,7 @@
          <label for="password">Password</label>
          <input type="text" id="password" placeholder="password">
 
-         <input type="submit" value="Sign up" onclick="myJsFunction()">
+         <input type="submit" value="Log in" onclick="myJsFunction()">
       </form>
       <!--<button onclick="myJsFunction()" style="height:20px;width:50px"></button>
       <p id="response"></p>
