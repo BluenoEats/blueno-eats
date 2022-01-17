@@ -40,11 +40,13 @@ $page = get_dish_page($dbc, $_GET['dish']);
       <?php include D_TEMPLATE."review_preview.php"; ?>
       <?php include D_TEMPLATE."review_slideshow.php"; ?>
 
+      <div class="food-body">
       <?php
       include D_TEMPLATE.'review_body.php';
       while ($review = mysqli_fetch_assoc($reviews)) {
         display_review($dbc, $review['author_id'], $review['rating'], $review['content']);
       }?>
+      </div>
 
       <script src="scripts/modal.js" type="text/javascript"></script>
       <?php include D_TEMPLATE."footer.php"; ?>

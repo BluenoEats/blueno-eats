@@ -24,7 +24,7 @@
       for ($i=1; $i <= $num_rows; $i++) { ?>
         <span class="dot" onclick=<?php echo "\"currentDiv($i)\""; ?>></span>
       <?php } ?>
-      </div>'
+      </div>
       <?php
     }
   } else {

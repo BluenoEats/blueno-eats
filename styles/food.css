@@ -281,16 +281,21 @@
   box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
 }
 
+.username {
+  padding-left: 6px;
+}
+
 .comment {
   padding: 10px;
-  border: 1px solid #b3b3b3;
+  border: 2px solid #f1f1f1;
+  border-radius: 5px;
 }
 
 .vote {
   text-align: center;
   font-size: 40px;
-  color: #b3b3b3;
   border: 0;
+  color: #b3b3b3;
   background-color: transparent;
 }
 
@@ -306,16 +311,13 @@
 #votenum {
   font-family: LibreBaskerville-Regular, Palatino Linotype,Times New Roman,serif;
   text-align: center;
-  vertical-align: middle;
 }
 
 .report {
   background-color: white;
   color: #6e6e6e;
   font-family: LibreBaskerville-Regular, Palatino Linotype,Times New Roman,serif;
-  border: 0px;
-  border-radius: 8px;
-  padding: 3px 10px;
+  border:0;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -324,4 +326,14 @@
 .report:hover {
   color: black;
   text-decoration: underline;
+}
+
+.user-img-container {
+  margin: 20px -3px;
+}
+
+/* width should vary based on num of images */
+.user-img {
+  display: inline-block;
+  padding: 0px 3px;
 }
