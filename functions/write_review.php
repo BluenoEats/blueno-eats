@@ -1,17 +1,21 @@
 <?php
-function write_review($dbc, $review_db, $author_id, $dish_id, $rating, $content) {
+function write_review($dbc, $review) {
+  $author_id = $review['author'];
+  $dish_id = $review['dish'];
+  $rating = $review['rating'];
+  $content = $review['review-msg'];
+
   // check if the user already wrote a review
-  // $query = "SELECT 1 FROM $review_db WHERE author_id=$author_id AND dish_id=$dish_id";
-  // $result = mysqli_query($dbc, $query);
-  // $exist = mysqli_num_rows($result);
-  $exist = 0;
+  $query = "SELECT 1 FROM ".REVIEW_DB." WHERE author_id=$author_id AND dish_id=$dish_id";
+  $result = mysqli_query($dbc, $query);
+  $exist = mysqli_num_rows($result);
 
   if ($exist) {
     echo "user #".$author_id." already wrote a review for dish #".$dish_id;
     return 0;
   } else {
     // insert the review into db
-    $query = "INSERT INTO $review_db (author_id, dish_id, rating, content)
+    $query = "INSERT INTO ".REVIEW_DB." (author_id, dish_id, rating, content)
     VALUES ($author_id, $dish_id, $rating, '$content')";
     $success = mysqli_query($dbc, $query);
 

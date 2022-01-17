@@ -1,5 +1,4 @@
 <?php
-
 function get_dish_page($dbc, $dish) {
   if (isset($dish)) {
     $id = $dish;

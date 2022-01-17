@@ -12,7 +12,6 @@ function get_reviews($dbc, $dish) {
 
   $query = "SELECT rating, COUNT(*) as num_reviews FROM ".REVIEW_DB." WHERE dish_id=$dish GROUP BY rating";
   $result = mysqli_query($dbc, $query);
-  // $num_by_stars = mysqli_query($dbc, $query);
 
   $num_by_stars = array(
     1    => 0,
@@ -29,13 +28,13 @@ function get_reviews($dbc, $dish) {
   $result = mysqli_query($dbc, $query);
   $num_reviews = mysqli_num_rows($result);
   $rating = ($num_reviews ? ($total_score / $num_reviews) : 0);
+  $rating = round($rating, 1);
 
   return [$rating, $num_reviews, $num_by_stars, $result];
 }
 
 function get_username($dbc, $user_id) {
-    $query = "SELECT username FROM accounts WHERE id = $user_id";
-    // $query = "SELECT username FROM ".ACCOUNT_DB." WHERE id = $user_id";
+    $query = "SELECT username FROM ".ACCOUNT_DB." WHERE id = $user_id";
     $result = mysqli_query($dbc, $query);
     $username = mysqli_fetch_assoc($result)['username'];
     return $username;

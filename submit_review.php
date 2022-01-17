@@ -15,7 +15,7 @@ echo '<p>dish: '.$dish_id.'</p>   ';
 echo '<p>rating: '.$rating.'</p>   ';
 echo '<p>content: '.$content.'</p>   ';
 
-$review_id = write_review($dbc, $review_db, $author_id, $dish_id, $rating, $content);
+$review_id = write_review($dbc, $_POST);
 
 if ($review_id) {
   echo "<p>uploading images..</p>";
@@ -39,7 +39,7 @@ if ($review_id) {
     if ($success) {
       $db = REVIEW_IMAGES;
       $img_src = "upload/".$file_info['name'];
-      $query = "INSERT INTO $db (`review_id`, `img_src`) VALUES ($review_id, $img_src)";
+      $query = "INSERT INTO $db (`review_id`, `img_src`) VALUES ($review_id, '$img_src')";
       mysqli_query($dbc, $query);
     }
   }
