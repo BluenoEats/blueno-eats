@@ -1,16 +1,9 @@
 <?php
-function get_uername($dbc, $user_id) {
-    $query = "SELECT username FROM ".ACCOUNT_DB." WHERE id = $user_id";
-    $result = mysqli_query($dbc, $query);
-    $username = mysqli_fetch_assoc($result);
-    return $result;
-}
-
 function display_review($dbc, $author_id, $rating, $content) {
-  // $username = get_username($dbc, $author_id);
-  $username = $author_id; ?>
+  $username = get_username($dbc, $author_id);
+  // $username = $author_id; ?>
   <div class="user-comment">
-    <p><?php echo $username; ?></p>
+    <p>Username: <?php echo $username; ?></p>
       <div class="user-rate">
         <?php for ($i=1; $i <= 5; $i++) {
           if ($i <= $rating) {
@@ -48,7 +41,7 @@ function display_review($dbc, $author_id, $rating, $content) {
               <input type="submit" value="Submit">
             </form>
         </div>
-              <!-- TODO: Show success after submit -->
+        <!-- TODO: Show success after submit -->
       </div>
     </div>
     <br>

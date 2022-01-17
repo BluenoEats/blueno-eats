@@ -33,10 +33,11 @@ function get_reviews($dbc, $dish) {
   return [$rating, $num_reviews, $num_by_stars, $result];
 }
 
-// function get_uername($dbc, $user_id) {
-//     $query = "SELECT username FROM ".ACCOUNT_DB." WHERE id = $user_id";
-//     $result = mysqli_query($dbc, $query);
-//     $username = mysqli_fetch_assoc($result);
-//     return $result;
-// }
+function get_username($dbc, $user_id) {
+    $query = "SELECT username FROM accounts WHERE id = $user_id";
+    // $query = "SELECT username FROM ".ACCOUNT_DB." WHERE id = $user_id";
+    $result = mysqli_query($dbc, $query);
+    $username = mysqli_fetch_assoc($result)['username'];
+    return $username;
+}
 ?>
