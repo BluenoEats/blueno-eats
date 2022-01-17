@@ -91,15 +91,11 @@
     line-height: 1.5;
 }
 
-.rate .fa-star {
+.fa-star {
   display: inline-block;
   font-size: 20px;
-  color: #b3b3b3;
+  color: #ffc700;
   margin: 3px;
-}
-
-.rate .checked {
-    color: #ffc700;
 }
 
 /* Three column layout */
@@ -180,10 +176,10 @@
   font-size: 20px;
 }
 
+
 .rating__star {
-  font-size: 30px;
+  font-size: 25px;
   cursor: pointer;
-  color: #ffc700;
   transition: filter linear .3s;
 }
 
@@ -305,6 +301,12 @@
 
 .vote.active{
   color: #ff6a6a;
+}
+
+#votenum {
+  font-family: LibreBaskerville-Regular, Palatino Linotype,Times New Roman,serif;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .report {

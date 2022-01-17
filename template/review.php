@@ -21,15 +21,15 @@ function display_review($dbc, $author_id, $rating, $content) {
         } ?>
       </div>
     <!-- TODO: get actual image from database -->
-    <img src="img/place4.jpeg">
     <p class="comment"><?php echo $content; ?></p>
 
-    <button class="vote" id="upvote"><i class="fas fa-caret-up"></i></button>
-    <button class="vote" id="downvote"><i class="fas fa-caret-down"></i></button>
-    <span id="votenum"> 0 </span>
-    <script src="scripts/vote.js" type="text/javascript"></script>
+    <div class="comment-control">
+      <button class="vote" id="upvote"><i class="fas fa-caret-up"></i></button>
+      <span id="votenum"> 0 </span>
+      <button class="vote" id="downvote"><i class="fas fa-caret-down"></i></button>
+      <script src="scripts/vote.js" type="text/javascript"></script>
+    </div>
 
-    <br>
     <button onclick="openModal('report-modal')" class="report"> Report </button>
     <div id="report-modal" class="modal">
       <div class="modal-content">
@@ -51,5 +51,7 @@ function display_review($dbc, $author_id, $rating, $content) {
               <!-- TODO: Show success after submit -->
       </div>
     </div>
+    <br>
+    <img src="img/place4.jpeg">
   </div>
 <?php } ?>

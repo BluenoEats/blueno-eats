@@ -4,9 +4,9 @@
        <h3 id="rate-header"> User Rating</h3>
        <?php for ($i=1; $i <= 5; $i++) {
          if ($i <= $rating) {
-           echo '<span class="fa fa-star checked"></span>';
+           echo '<span class="fas fa-star"></span>';
          } else {
-           echo '<span class="fa fa-star"></span>';
+           echo '<span class="far fa-star"></span>';
          }
        } ?>
        <?php echo "<p>$rating average based on $num_reviews reviews.</p>"; ?>
