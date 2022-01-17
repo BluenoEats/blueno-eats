@@ -1,31 +1,16 @@
 <div class="food-body">
-<<<<<<< HEAD
   <h2> Reviews</h2>
   <div class="rate">
     <h3 id="rate-header"> User Rating</h3>
     <?php for ($i=1; $i <= 5; $i++) {
        if ($i <= $rating) {
-         echo '<span class="fa fa-star checked"></span>';
+         echo '<span class="fas fa-star"></span>';
        } else {
-         echo '<span class="fa fa-star"></span>';
+         echo '<span class="far fa-star"></span>';
        }
     } ?>
     <?php echo "<p>$rating average based on $num_reviews reviews.</p>"; ?>
     <hr style="border:3px solid #f1f1f1">
-=======
-   <h2> Reviews</h2>
-   <div class="rate">
-       <h3 id="rate-header"> User Rating</h3>
-       <?php for ($i=1; $i <= 5; $i++) {
-         if ($i <= $rating) {
-           echo '<span class="fas fa-star"></span>';
-         } else {
-           echo '<span class="far fa-star"></span>';
-         }
-       } ?>
-       <?php echo "<p>$rating average based on $num_reviews reviews.</p>"; ?>
-       <hr style="border:3px solid #f1f1f1">
->>>>>>> 9cd4c65340b79a73cd22c3f994f9e60fcbb2e4fd
 
     <div class="row">
      <?php for ($i=5; $i > 0; $i--) {
@@ -76,7 +61,7 @@
             <input type="text" id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?">
 
             <label for="review-img">Add a photo</label>
-            <input type="file" id="review-img" name="review-img" accept="image/*" multiple>
+            <input type="file" id="review-img" name="review-img[]" accept="image/*" multiple>
 
             <input type="submit" value="Submit" onclick="set_post_vars()">
         </form>
