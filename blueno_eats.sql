@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 16, 2022 at 02:28 AM
+-- Generation Time: Jan 18, 2022 at 03:39 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.13
 
@@ -39,8 +39,8 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`id`, `email`, `password`, `username`) VALUES
-(12421, '', '', ''),
-(33477, 'sd', 'sdf', 'fdsa');
+(12421, 'austin@bronw.edu', '56789', 'Austin'),
+(33477, 'mikey@google.com', '12345', 'Mikey');
 
 -- --------------------------------------------------------
 
@@ -158,11 +158,32 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`id`, `author_id`, `dish_id`, `rating`, `content`) VALUES
-(1, 33477, 1, 3, 'example'),
-(3, 33477, 2, 3, 'example'),
-(4, 33477, 3, 3, 'example'),
-(25, 33477, 4, 0, ''),
-(26, 12421, 1, 2, '');
+(1, 33477, 1, 3, 'This is the best food'),
+(3, 33477, 2, 3, 'Princeton is the best'),
+(4, 33477, 3, 3, 'Brown sucks'),
+(44, 12421, 1, 4, 'just fine'),
+(45, 12421, 2, 4, 'Love the pizza!');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `review_images`
+--
+
+CREATE TABLE `review_images` (
+  `review_id` int(11) NOT NULL,
+  `img_src` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `review_images`
+--
+
+INSERT INTO `review_images` (`review_id`, `img_src`) VALUES
+(1, 'upload/149393877_2849454908652421_6832480318451813634_n.jpg'),
+(1, 'upload/F.R.I.E.N.D.S..jpg'),
+(44, 'upload/Statue of Liberty.jpeg'),
+(45, 'upload/IMG_9088.JPG');
 
 --
 -- Indexes for dumped tables
@@ -195,6 +216,12 @@ ALTER TABLE `reviews`
   ADD KEY `author_id` (`author_id`);
 
 --
+-- Indexes for table `review_images`
+--
+ALTER TABLE `review_images`
+  ADD KEY `review_id` (`review_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -214,7 +241,7 @@ ALTER TABLE `hall_pages`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- Constraints for dumped tables
@@ -226,6 +253,12 @@ ALTER TABLE `reviews`
 ALTER TABLE `reviews`
   ADD CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`dish_id`) REFERENCES `dish_pages` (`id`),
   ADD CONSTRAINT `reviews_ibfk_2` FOREIGN KEY (`author_id`) REFERENCES `accounts` (`id`);
+
+--
+-- Constraints for table `review_images`
+--
+ALTER TABLE `review_images`
+  ADD CONSTRAINT `review_images_ibfk_1` FOREIGN KEY (`review_id`) REFERENCES `reviews` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
