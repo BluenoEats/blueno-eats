@@ -1,5 +1,6 @@
 .user-form {
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -7,6 +8,15 @@
     display: block;
     margin-top: 6px; /* Add a top margin */
     margin-bottom: 15px; /* Bottom margin */
+}
+
+.user-form textarea {
+    height: 150px;
+}
+
+.user-form label {
+    font-family: LibreBaskerville-Regular, Palatino Linotype,Times New Roman,serif;
+    font-size: 14px;
 }
 
 /* Style inputs with type="text", select elements and textareas */
