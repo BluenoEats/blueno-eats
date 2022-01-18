@@ -60,8 +60,12 @@
             <input type="hidden" id="rating" name="rating" value="0" />
 
             <label for="review-img">Add a photo</label>
-            <button class="add-photo" onclick="document.getElementById('review-img').click()"><i class="far fa-plus-square"></i></button>
+            <br>
+            <!-- <button type="button" class="add-photo" onclick="document.getElementById('review-img').click()"><i class="far fa-plus-square"></i></button>
+             -->
+            <label for="review-img" class="add-photo"><i class="fa fa-plus-square"></i></label>
             <input type="file" id="review-img" name="review-img[]" accept="image/*" multiple style="display:none">
+            <br>      
 
             <label for="review-msg">Add a written review</label>
             <textarea id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?"></textarea>
