@@ -22,7 +22,10 @@
          <input type="text" id="email" name="email" placeholder="Your email">
 
          <label for="password">Password</label>
-         <input type="text" id="password" placeholder="password">
+         <input type="password" id="password" value="FakePSW" placeholder="password">
+
+         <label for="comfirm password">Confirm Password</label>
+         <input type="password" id="password_repeat" placeholder="confirm password">
 
          <input type="submit" value="Sign up" onclick="myJsFunction()">
       </form>
