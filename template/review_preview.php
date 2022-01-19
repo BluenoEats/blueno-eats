@@ -70,7 +70,7 @@
             <label for="review-msg">Add a written review</label>
             <textarea id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?"></textarea>
 
-            <input type="submit" value="Submit" onclick="set_post_vars()">
+            <input type="submit" value="Submit" id="submit-review" onclick="set_post_vars()">
         </form>
         <script type="text/javascript">
           function set_post_vars() {
@@ -78,6 +78,13 @@
             var rating = document.getElementsByClassName("rating__star fas fa-star").length;
             document.getElementById("author").value = user_id;
             document.getElementById("rating").value = rating;
+            var rating = document.getElementsByClassName("rating__star fas fa-star").length;
+            if (rating == 0) {
+              document.getElementById('submit-review').disabled = true;
+              alert("Please rate the dish before submit");
+            } else {
+              document.getElementById('submit-review').disabled = false;
+            }
           }
         </script>
         <!-- <script src="scripts/review-form.js" type="text/javascript"></script> -->

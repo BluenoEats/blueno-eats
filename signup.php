@@ -16,16 +16,18 @@
       <?php include D_TEMPLATE."navigation.php" ?>
       <form class="user-form sign-log">
          <label for="username">Username: </label>
-         <input input type="text" id="username" placeholder="username">
+         <input input type="text" id="username" placeholder="username" minlength="1" maxlength="12" required
+         oninvalid="this.setCustomValidity('Enter Username Here')"
+         oninput="this.setCustomValidity('')" >
 
          <label for="email">Email: </label>
-         <input type="text" id="email" name="email" placeholder="Your email">
+         <input type="text" id="email" name="email" placeholder="Your email" required>
 
          <label for="password">Password</label>
-         <input type="password" id="password" value="FakePSW" placeholder="password">
+         <input type="password" id="password" value="FakePSW" placeholder="password" minlength="4" maxlength="20" required>
 
          <label for="comfirm password">Confirm Password</label>
-         <input type="password" id="password_repeat" placeholder="confirm password">
+         <input type="password" id="password_repeat" placeholder="confirm password" required>
 
          <input type="submit" value="Sign up" onclick="myJsFunction()">
       </form>
