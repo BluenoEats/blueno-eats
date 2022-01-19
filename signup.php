@@ -14,43 +14,52 @@
 
    <body>
       <?php include D_TEMPLATE."navigation.php" ?>
-      <form class="user-form sign-log">
+      <form class="user-form sign-log" id="sign-up-form" autocomplete="off">
          <label for="username">Username: </label>
-         <input input type="text" id="username" placeholder="username" minlength="1" maxlength="12" required
-         oninvalid="this.setCustomValidity('Enter Username Here')"
-         oninput="this.setCustomValidity('')" >
+         <input input type="text" id="username" placeholder="username" minlength="1" maxlength="12" required>
 
          <label for="email">Email: </label>
          <input type="text" id="email" name="email" placeholder="Your email" required>
 
          <label for="password">Password</label>
-         <input type="password" id="password" value="FakePSW" placeholder="password" minlength="4" maxlength="20" required>
+         <input type="password" id="password" placeholder="password" minlength="8" required>
 
          <label for="comfirm password">Confirm Password</label>
          <input type="password" id="password_repeat" placeholder="confirm password" required>
 
-         <input type="submit" value="Sign up" onclick="myJsFunction()">
+         <input type="submit" value="Sign up" id="signup-form-submit" onclick="signup()">
       </form>
       <!--<button onclick="myJsFunction()" style="height:20px;width:50px"></button>
       <p id="response"></p>
       -->
-      <script type="text/javascript">
-       function myJsFunction(){
-          var email=document.getElementById("email").value;
-          var password=document.getElementById("password").value;
-          var username=document.getElementById("username").value;
-          var xhttp = new XMLHttpRequest();
-          // assuming all fields are filled
-          // xhttp.onreadystatechange = function() {
-          //   if (this.readyState == 4 && this.status == 200) {
-          //     document.getElementById("response").innerHTML = this.responseText;
-          //   }
-          // };
-          // xhttp.open("GET", "add_account.php?email=&password=&username=", true)
-          xhttp.open("GET", "functions/add_account.php?email="+email+"&password="+password+"&username="+username, true);
-          xhttp.send();
-          // document.getElementById("response").innerHTML = "functions/add_account.php?email="+email+"&password="+password+"&username="+username;
-       }
-      </script>
+      <!-- <script type="text/javascript">
+         function checkpass(){
+            if (document.getElementById('password').value == document.getElementById('password_repeat').value) {
+               document.getElementById('signup-form-submit').disabled = false;
+            } else {
+               document.getElementById('signup-form-submit').disabled = true;
+               alert("The passwords do not match");
+            }
+         }
+
+         function myJsFunction(){
+            var email=document.getElementById("email").value;
+            var password=document.getElementById("password").value;
+            var username=document.getElementById("username").value;
+            var xhttp = new XMLHttpRequest();
+            // assuming all fields are filled
+            // xhttp.onreadystatechange = function() {
+            //   if (this.readyState == 4 && this.status == 200) {
+            //     document.getElementById("response").innerHTML = this.responseText;
+            //   }
+            // };
+            // xhttp.open("GET", "add_account.php?email=&password=&username=", true)
+            xhttp.open("GET", "functions/add_account.php?email="+email+"&password="+password+"&username="+username, true);
+            xhttp.send();
+            // document.getElementById("response").innerHTML = "functions/add_account.php?email="+email+"&password="+password+"&username="+username;
+         }
+      </script> -->
+
+      <script src="scripts/signup.js" type="text/javascript"></script>
    </body>
 </html>
