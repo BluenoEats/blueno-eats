@@ -53,3 +53,20 @@
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
 }
+
+
+
+/*only for all-food-modal*/
+#all-food-modal-body {
+  align-content: center;
+  position: relative;
+  max-height: calc(100vh - 200px);
+  overflow-y: scroll;
+  /*margin-bottom: 20%;*/
+  box-sizing: border-box;
+}
+
+.all-image-modal{
+  margin: 10px 10px 5px 5px;
+
+}

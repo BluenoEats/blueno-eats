@@ -1,19 +1,30 @@
 <div class="food-body food-imgs">
     <div class="food-imgs-row">
         <div class="food-imgs-col">
-        <img src="img/place4.jpeg" style="width:100%" onclick="openModal('food-pic-modal');currentSlide(1)" class="hover-shadow cursor">
+        <img id="slide-im1" src="img/place4.jpeg" style="width:100%"  class="hover-shadow cursor">
         </div>
         <div class="food-imgs-col">
-        <img src="img/place3.jpeg" style="width:100%" onclick="openModal('food-pic-modal');currentSlide(2)" class="hover-shadow cursor">
+        <img id="slide-im2" src="img/place3.jpeg" style="width:100%"  class="hover-shadow cursor">
         </div>
         <div class="food-imgs-col">
-        <img src="img/place2.jpeg" style="width:100%" onclick="openModal('food-pic-modal');currentSlide(3)" class="hover-shadow cursor">
+        <img id="slide-im3" src="img/place2.jpeg" style="width:100%" class="hover-shadow cursor">
         </div>
         <div class="food-imgs-col">
-        <img src="img/placeholding.png" style="width:100%" onclick="openModal('food-pic-modal');currentSlide(4)" class="hover-shadow cursor">
+        <img id="slide-im4" src="img/placeholding.png" style="width:100%" class="hover-shadow cursor">
         </div>
+
+
     </div>
 
+        <button type="button" onclick="changeImg('left')">left</button>
+        <button type="button" onclick="changeImg('right')">right</button>
+
+         <script src="scripts/array-slide.js" type="text/javascript"></script>
+
+
+
+
+<!--hello
     <div id="food-pic-modal" class="modal">
     <div class=" modal-content">
         <span class="close" onclick="closeModal('food-pic-modal')">&times;</span>
@@ -49,6 +60,19 @@
             <img class="food-imgs-cur cursor" src="img/placeholding.png" style="width:100%" onclick="currentSlide(4)" alt="Food example 4">
         </div>
     </div>
+    -->
+
     </div>
-    <p> See all images </p>
+    <button onclick="openModal('all-food-modal')" class="report"> See all image here </button>
+    <div id="all-food-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal('all-food-modal')">&times;</span>
+                <h2> All images</h2>
+            </div>
+            <div class="modal-body" id="all-food-modal-body">
+
+            </div>
+        </div>
+    </div>
 </div>
