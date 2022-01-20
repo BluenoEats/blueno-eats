@@ -20,6 +20,9 @@ $page = get_dish_page($dbc, $_GET['dish']);
         <link href="styles/food.css" rel="stylesheet" type="text/css">
         <link href="styles/modal.css" rel="stylesheet" type="text/css">
         <link href="styles/form.css" rel="stylesheet" type="text/css">
+        <link href="styles/comment.css" rel="stylesheet" type="text/css">
+        <link href="styles/food-img.css" rel="stylesheet" type="text/css">
+        <link href="styles/rate.css" rel="stylesheet" type="text/css">
 
         <script src="scripts/manual-slide.js" type="text/javascript"></script>
         <script src="scripts/modal.js" type="text/javascript"></script>

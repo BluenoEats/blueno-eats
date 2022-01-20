@@ -47,7 +47,18 @@ function display_review($dbc, $review) {
     $num_rows = mysqli_num_rows($result);
     while ($row = mysqli_fetch_assoc($result)) { ?>
       <!-- TODO: Fix style -->
-      <img src="<?php echo $row['img_src']; ?>" class="user-img" style="width:200px;height:150px;">
+      <img src="<?php echo $row['img_src']; ?>" class="user-img" id = "<?php echo $row['img_src']; ?>" onclick="openModal('zoom')" style="width:200px;height:150px;">
+
+      <!-- The Modal -->
+      <div id="zoom" class="modal">
+          <span class="close" onclick="closeModal('zoom')">&times;</span>
+          <img src="<?php echo $row['img_src']; ?>" id = "<?php echo $row['img_src']; ?>">
+          <!-- Arrows not working -->
+          <div class="arrow">
+              <a class="food-imgs-prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="food-imgs-next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+    </div>
     <?php } ?>
     </div>
   </div>

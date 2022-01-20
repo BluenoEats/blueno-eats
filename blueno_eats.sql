@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 18, 2022 at 03:39 AM
+-- Generation Time: Jan 20, 2022 at 05:48 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.13
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `accounts` (
   `id` int(11) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `username` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -39,8 +39,11 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`id`, `email`, `password`, `username`) VALUES
-(12421, 'austin@bronw.edu', '56789', 'Austin'),
-(33477, 'mikey@google.com', '12345', 'Mikey');
+(12421, 'austin@brown.edu', '56789', 'Austin'),
+(14777, 'ran@gmail.com', '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', 'ran'),
+(31310, 'tiger@gmail.com', 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f', 'Tiger'),
+(33477, 'mikey@google.com', '12345', 'Mikey'),
+(65096, 'mikey@yahoo.com', '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', 'mikey');
 
 -- --------------------------------------------------------
 
@@ -162,7 +165,9 @@ INSERT INTO `reviews` (`id`, `author_id`, `dish_id`, `rating`, `content`) VALUES
 (3, 33477, 2, 3, 'Princeton is the best'),
 (4, 33477, 3, 3, 'Brown sucks'),
 (44, 12421, 1, 4, 'just fine'),
-(45, 12421, 2, 4, 'Love the pizza!');
+(45, 12421, 2, 4, 'Love the pizza!'),
+(46, 12421, 5, 0, ''),
+(47, 12421, 4, 0, '');
 
 -- --------------------------------------------------------
 
@@ -182,7 +187,7 @@ CREATE TABLE `review_images` (
 INSERT INTO `review_images` (`review_id`, `img_src`) VALUES
 (1, 'upload/149393877_2849454908652421_6832480318451813634_n.jpg'),
 (1, 'upload/F.R.I.E.N.D.S..jpg'),
-(44, 'upload/Statue of Liberty.jpeg'),
+(44, 'upload/Statue_of_Liberty.jpeg'),
 (45, 'upload/IMG_9088.JPG');
 
 --
@@ -241,7 +246,7 @@ ALTER TABLE `hall_pages`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- Constraints for dumped tables
