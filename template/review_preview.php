@@ -54,7 +54,7 @@
             </div>
             <script src="scripts/rate.js" type="text/javascript"></script>
             <br>
-            
+
             <input type="hidden" id="author" name="author" value="placeholder" />
             <input type="hidden" id="dish" name="dish" value="<?php echo $_GET['dish']; ?>" />
             <input type="hidden" id="rating" name="rating" value="0" />
@@ -62,6 +62,9 @@
             <label for="review-img">Add a photo</label>
             <button class="add-photo" onclick="document.getElementById('review-img').click()"><i class="far fa-plus-square"></i></button>
             <input type="file" id="review-img" name="review-img[]" accept="image/*" multiple style="display:none">
+
+            <!-- <label for="review-img">Add a photo</label>
+            <input type="file" id="review-img" name="review-img[]" accept="image/*" multiple> -->
 
             <label for="review-msg">Add a written review</label>
             <textarea id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?"></textarea>

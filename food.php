@@ -44,7 +44,9 @@ $page = get_dish_page($dbc, $_GET['dish']);
       <?php
       include D_TEMPLATE.'review_body.php';
       while ($review = mysqli_fetch_assoc($reviews)) {
-        display_review($dbc, $review);
+        if (!empty($review['content'])) {
+          display_review($dbc, $review);
+        }
       }?>
       </div>
 
