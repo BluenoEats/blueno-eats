@@ -35,7 +35,12 @@
     <!-- The Modal -->
     <div id="zoom-img" class="modal">
         <span class="close" onclick="closeModal('zoom-img')">&times;</span>
-        <img src="img/place2.jpeg" id="img01">
+        <img src="img/place2.jpeg" id="img01" >
+        <!-- Arrows not working -->
+        <div class="arrow">
+            <a class="food-imgs-prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="food-imgs-next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
     </div>
 
 </div>

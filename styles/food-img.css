@@ -47,7 +47,14 @@
   border-radius: 0 3px 3px 0;
   user-select: none;
   -webkit-user-select: none;
+  z-index: 20;
 }
+
+/* Position the "next button" to the right */
+.food-imgs-prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+  }
 
 /* Position the "next button" to the right */
 .food-imgs-next {
