@@ -21,15 +21,15 @@
     <div class="contact-container user-form">
         <form action="action_page.php">
 
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name">
+            <label for="contact-name">Name</label>
+            <input type="text" id="contact-name" name="contact-name" placeholder="Your name">
 
-            <label for="email">Email</label>
-            <input type="text" id="email" name="email" placeholder="Your email">
+            <label for="contact-email">Email</label>
+            <input type="text" id="contact-email" name="contact-email" placeholder="Your email">
 
 
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Write something..." style="height:200px"></textarea>
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="contact-message" placeholder="Write something..." style="height:200px"></textarea>
 
             <input type="submit" value="Submit">
 

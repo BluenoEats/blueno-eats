@@ -14,13 +14,13 @@
    <body>
       <?php include D_TEMPLATE."navigation.php" ?>
 
-      <form class="user-form sign-log">
+      <form class="user-form sign-log" onsubmit="return false">
          <label for="login-email">Email: </label>
          <input type="text" id="login-email" name="login-email" placeholder="Your email" required>
 
          <label for="login-password">Password</label>
-         <input type="password" name="login-password" id="password-field" class="login-form-field" placeholder="Password">
-         <a href="forgotpass">Forgot the username or password?</a>
+         <input type="password" name="login-password" id="login-password" placeholder="Password">
+         <a href="forgotpass">Forgot your password?</a>
 
          <input type="submit" value="Log in" onclick="log_in()">
       </form>
