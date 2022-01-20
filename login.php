@@ -14,22 +14,19 @@
    <body>
       <?php include D_TEMPLATE."navigation.php" ?>
       <form class="user-form sign-log">
-         <label for="login-email">Email: </label>
-         <input type="text" id="login-email" name="login-email" placeholder="Your email" required>
+         <label for="email">Email: </label>
+         <input type="text" id="email" name="email" placeholder="Your email" required>
 
-         <label for="login-password">Password</label>
-         <input type="password" id="login-password" placeholder="password" required>
-         <a href="forgotpass">Forgot the username or password?</a>
+         <label for="password">Password</label>
+         <input type="password" id="password" name="password" placeholder="Password" required>
 
-         <input type="submit" value="Log in" id="login-form-submit" onclick="login()">
-
+         <input type="submit" value="Log in" onclick="myJsFunction()">
       </form>
-      <script src="scripts/login-in.js" type="text/javascript"></script>
-      <!--<button onclick="myJsFunction()" style="height:20px;width:50px"></button>
+
+      <button onclick="myJsFunction()" style="height:20px;width:50px"></button>
       <p id="response"></p>
       <script type="text/javascript">
-
-       function myJsFunction(){
+        function myJsFunction(){
           var email=document.getElementById("email").value;
           var password=document.getElementById("password").value;
           var username=document.getElementById("username").value;
@@ -46,6 +43,5 @@
           // document.getElementById("response").innerHTML = "add_account.php?email="+email+"&password="+password+"&username="+username;
        }
       </script>
-            -->
    </body>
 </html>
