@@ -29,28 +29,29 @@ const validatePassword = (u) => {
 
 function signup() {
     // get element does not work
-    const email = signupForm.email.value;
-    const username = signupForm.username.value;
-    const password = signupForm.password.value;
-    const repeat = signupForm.password_repeat.value;
-    alert("id")
+    const email = document.getElementById('signup_email').value;
+    const username = document.getElementById('signup_username').value;
+    const password = document.getElementById('signup_password').value;
+    const repeat = document.getElementById('signup_password_repeat').value;
+    const submitbtn = document.getElementById('signup-form-submit');
     if ((!validateEmail(email)) || db2.includes(email)) {
         alert("Email is invalid or already taken.");
-        document.getElementById('signup-form-submit').disabled = true;
+        submitbtn.disabled = true;
     } else if (db1.includes(username)) {
-        alert("Username" + username + "is not avaliable. Please choose another.");
-        document.getElementById('signup-form-submit').disabled = true;
+        alert("Username is not avaliable. Please choose another.");
+        submitbtn.disabled = true;
     } else if (!validateUsername(username)){
         alert("Username is invalid.");
-        document.getElementById('signup-form-submit').disabled = true;
+        submitbtn.disabled = true;
     } else if (!validatePassword(password)) {
-        document.getElementById('signup-form-submit').disabled = true;
+        submitbtn.disabled = true;
         alert("The password should be eight characters minimum and contain at least one number and one special character.");
     } else if (password !== repeat) {
+        submitbtn.disabled = true;
         alert("The passwords do not match.");
     } else {
-        alert("np")
-        document.getElementById('signup-form-submit').disabled = false;
+        alert("np");
+        submitbtn.disabled = false;
         var xhttp = new XMLHttpRequest();
         // assuming all fields are filled
         // xhttp.onreadystatechange = function() {
