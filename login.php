@@ -23,25 +23,34 @@
          <input type="submit" value="Log in" onclick="myJsFunction()">
       </form>
 
-      <button onclick="myJsFunction()" style="height:20px;width:50px"></button>
-      <p id="response"></p>
+      <button onclick="log_in()" style="height:20px;width:50px"></button>
+      <p id="response">response</p>
       <script type="text/javascript">
-        function myJsFunction(){
-          var email=document.getElementById("email").value;
-          var password=document.getElementById("password").value;
-          var username=document.getElementById("username").value;
-          var xhttp = new XMLHttpRequest();
-          // assuming all fields are filled
-          xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-              document.getElementById("response").innerHTML = this.responseText;
-            }
-          };
-          // xhttp.open("GET", "add_account.php?email=&password=&username=", true)
-          xhttp.open("GET", "add_account.php?email="+email+"&password="+password+"&username="+username, true);
-          xhttp.send();
-          // document.getElementById("response").innerHTML = "add_account.php?email="+email+"&password="+password+"&username="+username;
-       }
+      async function SHA256(message) {
+        const msgUint8 = new TextEncoder().encode(message);                           // encode as (utf-8) Uint8Array
+        const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);           // hash the message
+        const hashArray = Array.from(new Uint8Array(hashBuffer));                     // convert buffer to byte array
+        const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string
+        return hashHex;
+      }
+
+      function log_in() {
+        const email = document.getElementById("email").value;
+        const raw_password = document.getElementById("password").value;
+        SHA256(raw_password).then(encrypted => verify_with_server(email, encrypted));
+      }
+
+      function verify_with_server(email, encrypted_password) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("response").innerHTML = this.responseText;
+          }
+        };
+        xhttp.open("POST", "functions/login.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("email="+email+"&password="+encrypted_password);
+      }
       </script>
    </body>
 </html>

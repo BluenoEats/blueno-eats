@@ -14,7 +14,7 @@
 
    <body>
       <?php include D_TEMPLATE."navigation.php" ?>
-      <form class="user-form sign-log" id="sign-up-form" autocomplete="off">
+      <form class="user-form sign-log" id="sign-up-form" autocomplete="off" onsubmit="return false">
          <label for="signup_username">Username: </label>
          <input input type="text" id="signup_username" placeholder="username" minlength="1" maxlength="12" required>
 
@@ -27,8 +27,9 @@
          <label for="comfirm password">Confirm Password</label>
          <input type="password" id="signup_password_repeat" placeholder="confirm password" required>
 
-         <input type="submit" value="Sign up" id="signup-form-submit" onclick="signup()">
+         <input type="submit" value="Sign up" id="signup-form-submit" onclick="sign_up()">
       </form>
+      <p id="response">response</p>
       <script src="scripts/signup.js" type="text/javascript"></script>
    </body>
 </html>
