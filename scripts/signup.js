@@ -1,30 +1,11 @@
 const signupForm = document.getElementById("signup-form");
 
-const validateEmail = (e) => {
-    return String(e)
-        .toLowerCase()
-        .match(
-            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        );
-};
+const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;;
+const usernameRegex = /^[A-Za-z][A-Za-z0-9_]{4,29}$/;
 
+//Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character:
+const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,29}$/;
 
-
-// redo this
-const validateUsername = (u) => {
-    return String(u).match( /^[A-Za-z][A-Za-z0-9_]{7,29}/);
-        // "^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
-
-
-};
-
-//check again
-//Minimum eight characters, at least one letter, one number and one special character:
-const validatePassword = (u) => {
-    return String(u).match(
-        "^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
-    );
-};
 
 async function SHA256(message) {
   const msgUint8 = new TextEncoder().encode(message);                           // encode as (utf-8) Uint8Array
@@ -39,20 +20,24 @@ function sign_up() {
     const username = document.getElementById('signup_username').value;
     const password = document.getElementById('signup_password').value;
     const repeat = document.getElementById('signup_password_repeat').value;
-    // const submitbtn = document.getElementById('signup-form-submit');
 
-    if (!validateEmail(email)) {
-        alert("Email is invalid.");
-        // submitbtn.disabled = true;
-    // } else if (!validateUsername(username)){
-    //     alert("Username is invalid.");
-    //     // submitbtn.disabled = true;
-    // } else if (!validatePassword(password)) {
-    //     // submitbtn.disabled = true;
-    //     alert("The password should be eight characters minimum and contain at least one number and one special character.");
+    document.getElementById("signup-error-msg-user").style.display = "none";
+    document.getElementById("signup-error-msg-email").style.display = "none";
+    document.getElementById("signup-error-msg-pass").style.display = "none";
+    document.getElementById("signup-error-msg-rep-pass").style.display = "none";
+
+    if (!usernameRegex.test(username)) {
+        // alert("Username is invalid.");
+        document.getElementById("signup-error-msg-user").style.display = "inline";
+    } else if (!emailRegex.test(email)) {
+        // alert("Email is invalid");
+        document.getElementById("signup-error-msg-email").style.display = "inline";
+    } else if (!passwordRegex.test(password)) {
+        document.getElementById("signup-error-msg-pass").style.display = "inline";
     } else if (password !== repeat) {
+        document.getElementById("signup-error-msg-rep-pass").style.display = "inline";
         // submitbtn.disabled = true;
-        alert("The passwords do not match.");
+        // alert("The passwords do not match.");
     } else {
         alert("np");
         // submitbtn.disabled = false;
