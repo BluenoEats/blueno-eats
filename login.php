@@ -23,11 +23,10 @@
          <input type="submit" value="Log in" onclick="myJsFunction()">
       </form>
 
-      <!-- <button onclick="myJsFunction()" style="height:20px;width:50px"></button>
+      <button onclick="myJsFunction()" style="height:20px;width:50px"></button>
       <p id="response"></p>
       <script type="text/javascript">
-
-       function myJsFunction(){
+        function myJsFunction(){
           var email=document.getElementById("email").value;
           var password=document.getElementById("password").value;
           var username=document.getElementById("username").value;
@@ -43,6 +42,6 @@
           xhttp.send();
           // document.getElementById("response").innerHTML = "add_account.php?email="+email+"&password="+password+"&username="+username;
        }
-      </script> -->
+      </script>
    </body>
 </html>
