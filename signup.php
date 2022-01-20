@@ -14,7 +14,7 @@
 
    <body>
       <?php include D_TEMPLATE."navigation.php" ?>
-      <form class="user-form sign-log" id="sign-up-form" autocomplete="off" onsubmit="return false">
+      <form class="user-form sign-log" id="sign-up-form" onsubmit="return false">
          <label for="signup_username">Username: </label>
          <input input type="text" id="signup_username" placeholder="username" minlength="1" maxlength="12" required>
 
