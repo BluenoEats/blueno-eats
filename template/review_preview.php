@@ -60,8 +60,12 @@
             <input type="hidden" id="rating" name="rating" value="0" />
 
             <label for="review-img">Add a photo</label>
-            <button class="add-photo" onclick="document.getElementById('review-img').click()"><i class="far fa-plus-square"></i></button>
+            <br>
+            <!-- <button type="button" class="add-photo" onclick="document.getElementById('review-img').click()"><i class="far fa-plus-square"></i></button>
+             -->
+            <label for="review-img" class="add-photo"><i class="fa fa-plus-square"></i></label>
             <input type="file" id="review-img" name="review-img[]" accept="image/*" multiple style="display:none">
+            <br>      
 
             <!-- <label for="review-img">Add a photo</label>
             <input type="file" id="review-img" name="review-img[]" accept="image/*" multiple> -->
@@ -69,7 +73,7 @@
             <label for="review-msg">Add a written review</label>
             <textarea id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?"></textarea>
 
-            <input type="submit" value="Submit" onclick="set_post_vars()">
+            <input type="submit" value="Submit" id="submit-review" onclick="set_post_vars()">
         </form>
         <script type="text/javascript">
           function set_post_vars() {
@@ -77,6 +81,13 @@
             var rating = document.getElementsByClassName("rating__star fas fa-star").length;
             document.getElementById("author").value = user_id;
             document.getElementById("rating").value = rating;
+            var rating = document.getElementsByClassName("rating__star fas fa-star").length;
+            if (rating == 0) {
+              document.getElementById('submit-review').disabled = true;
+              alert("Please rate the dish before submit");
+            } else {
+              document.getElementById('submit-review').disabled = false;
+            }
           }
         </script>
         <!-- <script src="scripts/review-form.js" type="text/javascript"></script> -->

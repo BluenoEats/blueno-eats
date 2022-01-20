@@ -15,16 +15,17 @@
       <?php include D_TEMPLATE."navigation.php" ?>
       <form class="user-form sign-log">
          <label for="email">Email: </label>
-         <input type="text" id="email" name="email" placeholder="Your email">
+         <input type="text" id="email" name="email" placeholder="Your email" required>
 
          <label for="password">Password</label>
-         <input type="text" id="password" placeholder="password">
+         <input type="password" id="password" value="FakePSW" placeholder="password" required>
 
          <input type="submit" value="Log in" onclick="myJsFunction()">
       </form>
       <!--<button onclick="myJsFunction()" style="height:20px;width:50px"></button>
       <p id="response"></p>
       <script type="text/javascript">
+
        function myJsFunction(){
           var email=document.getElementById("email").value;
           var password=document.getElementById("password").value;

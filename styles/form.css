@@ -2,6 +2,8 @@
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    font-family: LibreBaskerville-Regular, Palatino Linotype,Times New Roman,serif;
+    font-size: 14px;
 }
 
 .user-form input, textarea {
@@ -20,7 +22,7 @@
 }
 
 /* Style inputs with type="text", select elements and textareas */
-.user-form input[type=text], textarea {
+.user-form input[type=text], input[type=password], textarea {
     width: 100%; /* Full width */
     padding: 12px; /* Some padding */ 
     border: 1px solid #ccc; /* Gray border */
@@ -57,6 +59,11 @@
   /* When moving the mouse over the submit button, add a darker green color */
 .user-form input[type=submit]:hover {
     background: #ff6a6a;
+}
+
+.user-form input[type=checkbox] {
+    display: inline-block;
+    margin-right: 3px;
 }
 
 @media (max-width: 900px) {

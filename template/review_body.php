@@ -29,7 +29,7 @@ function display_review($dbc, $review) {
         <span class="close" onclick="closeModal('report-modal')">&times;</span>
         <h2> Report an issue</h2>
           <p> If you find this content inappropriate and think it should be removed from the BluenoEats site, please help us to understand the problem. What is going on with this post? </p>
-          <form>
+          <form class="user-form">
             <input type="checkbox" name="report" value="Spam"> It's suspicious or spam <br>
             <input type="checkbox" name="report" value="Abuse"> It's abusive or harmful<br>
             <input type="checkbox" name="report" value="Mislead"> It's misleading<br>

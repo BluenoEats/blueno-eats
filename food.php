@@ -23,6 +23,8 @@ $page = get_dish_page($dbc, $_GET['dish']);
 
         <script src="scripts/manual-slide.js" type="text/javascript"></script>
         <script src="scripts/modal.js" type="text/javascript"></script>
+        <script src="scripts/array-slide.js" type="text/javascript"></script>
+
     </head>
 
     <body>
@@ -51,6 +53,7 @@ $page = get_dish_page($dbc, $_GET['dish']);
       </div>
 
       <script src="scripts/modal.js" type="text/javascript"></script>
+      <script src="scripts/array-slide.js" type="text/javascript"></script>
       <?php include D_TEMPLATE."footer.php"; ?>
     </body>
 
