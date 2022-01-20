@@ -18,11 +18,12 @@
          <input type="text" id="email" name="email" placeholder="Your email" required>
 
          <label for="password">Password</label>
-         <input type="password" id="password" value="FakePSW" placeholder="password" required>
+         <input type="password" id="password" name="password" placeholder="Password" required>
 
          <input type="submit" value="Log in" onclick="myJsFunction()">
       </form>
-      <!--<button onclick="myJsFunction()" style="height:20px;width:50px"></button>
+
+      <!-- <button onclick="myJsFunction()" style="height:20px;width:50px"></button>
       <p id="response"></p>
       <script type="text/javascript">
 
@@ -42,7 +43,6 @@
           xhttp.send();
           // document.getElementById("response").innerHTML = "add_account.php?email="+email+"&password="+password+"&username="+username;
        }
-      </script>
-            -->
+      </script> -->
    </body>
 </html>
