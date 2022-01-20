@@ -3,7 +3,7 @@ function display_review($dbc, $review) {
   $username = get_username($dbc, $review['author_id']); ?>
   <div class="user-comment">
     <p class="username">Username: <?php echo $username; ?></p>
-    
+
     <div class="user-rate">
       <?php for ($i=1; $i <= 5; $i++) {
         if ($i <= $review['rating']) {
@@ -47,7 +47,7 @@ function display_review($dbc, $review) {
     $num_rows = mysqli_num_rows($result);
     while ($row = mysqli_fetch_assoc($result)) { ?>
       <!-- TODO: Fix style -->
-      <img src=<?php echo $row['img_src']; ?> class="user-img" style="width:200px;height:150px;">
+      <img src="<?php echo $row['img_src']; ?>" class="user-img" style="width:200px;height:150px;">
     <?php } ?>
     </div>
   </div>
