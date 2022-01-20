@@ -14,14 +14,17 @@
    <body>
       <?php include D_TEMPLATE."navigation.php" ?>
       <form class="user-form sign-log">
-         <label for="email">Email: </label>
-         <input type="text" id="email" name="email" placeholder="Your email" required>
+         <label for="login-email">Email: </label>
+         <input type="text" id="login-email" name="login-email" placeholder="Your email" required>
 
-         <label for="password">Password</label>
-         <input type="password" id="password" value="FakePSW" placeholder="password" required>
+         <label for="login-password">Password</label>
+         <input type="password" id="login-password" placeholder="password" required>
+         <a href="forgotpass">Forgot the username or password?</a>
 
-         <input type="submit" value="Log in" onclick="myJsFunction()">
+         <input type="submit" value="Log in" id="login-form-submit" onclick="login()">
+
       </form>
+      <script src="scripts/login-in.js" type="text/javascript"></script>
       <!--<button onclick="myJsFunction()" style="height:20px;width:50px"></button>
       <p id="response"></p>
       <script type="text/javascript">
