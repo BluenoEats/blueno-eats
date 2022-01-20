@@ -20,8 +20,16 @@ function openModal(n) {
     create_all_image_modal();
     count++;
   }
-
 }
+
+function openSlideModal(n, i) {
+  // document.getElementById("myImg").src = s;
+  document.getElementById("zoom-myImg").src = document.getElementById("slide-im"+i).src;
+  document.getElementById(n).style.display = "block";
+}
+
+
+
 function closeModal(n) {
   document.getElementById(n).style.display = "none";
 }

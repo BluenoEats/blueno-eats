@@ -1,16 +1,16 @@
 <div class="food-body food-imgs">
     <div class="food-imgs-row">
         <div class="food-imgs-col">
-        <img id="slide-im1" src="img/place4.jpeg" style="width:100%"  class="hover-shadow">
+        <img id="slide-im1" src="img/place4.jpeg" style="width:100%" onclick="openSlideModal('zoom-img','1')" class="hover-shadow">
         </div>
         <div class="food-imgs-col">
-        <img id="slide-im2" src="img/place3.jpeg" style="width:100%"  class="hover-shadow">
+        <img id="slide-im2" src="img/place3.jpeg" style="width:100%" onclick="openSlideModal('zoom-img','2')" class="hover-shadow">
         </div>
         <div class="food-imgs-col">
-        <img id="slide-im3" src="img/place2.jpeg" style="width:100%" class="hover-shadow">
+        <img id="slide-im3" src="img/place2.jpeg" style="width:100%" onclick="openSlideModal('zoom-img','3')" class="hover-shadow">
         </div>
         <div class="food-imgs-col">
-        <img id="slide-im4" src="img/placeholding.png" style="width:100%" class="hover-shadow">
+        <img id="slide-im4" src="img/placeholding.png" style="width:100%" onclick="openSlideModal('zoom-img','4')" class="hover-shadow">
         </div>
     </div>
     <div class="img-control">
@@ -30,17 +30,16 @@
         </div>
     </div>
 
-    <!-- Replace with source img -->
-    <img id="myImg" src="img/place2.jpeg" onclick="openModal('zoom-img')" alt="Food" style="width:100%;max-width:300px">
     <!-- The Modal -->
     <div id="zoom-img" class="modal">
         <span class="close" onclick="closeModal('zoom-img')">&times;</span>
-        <img src="img/place2.jpeg" id="img01" >
+        <img src="img/place2.jpeg" id="zoom-myImg" >
         <!-- Arrows not working -->
         <div class="arrow">
-            <a class="food-imgs-prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="food-imgs-next" onclick="plusSlides(1)">&#10095;</a>
+            <a class="food-imgs-prev" onclick="changeZoomImg('left')">&#10094;</a>
+            <a class="food-imgs-next" onclick="changeZoomImg('right')">&#10095;</a>
         </div>
+        <script src="scripts/zoom-slide.js" type="text/javascript"></script>
     </div>
 
 </div>
