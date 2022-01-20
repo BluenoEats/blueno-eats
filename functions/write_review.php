@@ -6,7 +6,7 @@ function write_review($dbc, $review) {
   $content = $review['review-msg'];
 
   // check if the user already wrote a review
-  $query = "SELECT 1 FROM ".REVIEW_DB." WHERE author_id=$author_id AND dish_id=$dish_id";
+  $query = "SELECT 1 FROM ".REVIEW_DB." WHERE author_id='$author_id' AND dish_id='$dish_id'";
   $result = mysqli_query($dbc, $query);
   $exist = mysqli_num_rows($result);
 

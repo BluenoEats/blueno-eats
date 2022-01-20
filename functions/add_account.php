@@ -1,16 +1,27 @@
 <?php
 include "../config/setup.php";
 
-$db = ACCOUNT_DB;
-$email = $_GET['email'];
-$password = $_GET['password'];
-$username = $_GET['username'];
+$username = $_POST['username'];
+$email = $_POST['email'];
+$password = $_POST['password'];
 
-do {
-  $uuid = hexdec(bin2hex(random_bytes(2)));
-  $query = "INSERT INTO $db (`id`, `email`, `password`, `username`)
-  VALUES ($uuid, '$email', '$password', '$username')";
-} while (!mysqli_query($dbc, $query));
+$query = "SELECT 1 FROM ".ACCOUNT_DB." WHERE email='$email'";
+$result = mysqli_query($dbc, $query);
+$exist = mysqli_num_rows($result);
 
-echo $_GET['username']."'s account created";
+if ($exist) {
+  echo "Email $email has already been used.";
+} else {
+  $counter = 0;
+  do {
+    $uuid = hexdec(bin2hex(random_bytes(2)));
+    $query = "INSERT INTO ".ACCOUNT_DB." (`id`, `email`, `password`, `username`)
+              VALUES ($uuid, '$email', '$password', '$username')";
+  } while (!mysqli_query($dbc, $query) && ++$counter < 100);
+  if ($counter == 100) {
+    echo "A problem occurs while creating your account. Please try again later.";
+  } else {
+    echo "Your account has been created.";
+  }
+}
 ?>

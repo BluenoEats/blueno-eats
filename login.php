@@ -13,35 +13,19 @@
    </head>
    <body>
       <?php include D_TEMPLATE."navigation.php" ?>
+
       <form class="user-form sign-log">
-         <label for="email">Email: </label>
-         <input type="text" id="email" name="email" placeholder="Your email" required>
+         <label for="login-email">Email: </label>
+         <input type="text" id="login-email" name="login-email" placeholder="Your email" required>
 
-         <label for="password">Password</label>
-         <input type="password" id="password" name="password" placeholder="Password" required>
+         <label for="login-password">Password</label>
+         <input type="password" name="login-password" id="password-field" class="login-form-field" placeholder="Password">
+         <a href="forgotpass">Forgot the username or password?</a>
 
-         <input type="submit" value="Log in" onclick="myJsFunction()">
+         <input type="submit" value="Log in" onclick="log_in()">
       </form>
-
-      <button onclick="myJsFunction()" style="height:20px;width:50px"></button>
-      <p id="response"></p>
-      <script type="text/javascript">
-        function myJsFunction(){
-          var email=document.getElementById("email").value;
-          var password=document.getElementById("password").value;
-          var username=document.getElementById("username").value;
-          var xhttp = new XMLHttpRequest();
-          // assuming all fields are filled
-          xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-              document.getElementById("response").innerHTML = this.responseText;
-            }
-          };
-          // xhttp.open("GET", "add_account.php?email=&password=&username=", true)
-          xhttp.open("GET", "add_account.php?email="+email+"&password="+password+"&username="+username, true);
-          xhttp.send();
-          // document.getElementById("response").innerHTML = "add_account.php?email="+email+"&password="+password+"&username="+username;
-       }
-      </script>
+      
+      <p id="response">response</p>
+      <script src="scripts/log-in.js" type="text/javascript"></script>
    </body>
 </html>
