@@ -3,6 +3,7 @@ var images = [
     'img/place3.jpeg',
     'img/place2.jpeg',
     'img/placeholding.png',
+    'upload/IMG_9088.JPG',
 ];
 
 var n = images.length;
