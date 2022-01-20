@@ -11,11 +11,13 @@ const validateEmail = (e) => {
         );
 };
 
+
+
 // redo this
 const validateUsername = (u) => {
-    return String(u).match(
-        "^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
-    );
+    return String(u).match( /^[A-Za-z][A-Za-z0-9_]{7,29}/);
+        // "^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+
 
 };
 
