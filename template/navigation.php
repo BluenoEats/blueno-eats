@@ -4,7 +4,7 @@
     <img src="img/placeholding.png" class="nav-logo" alt="Navigation Logo">
   </a>
   -->
-  <a href="" class="nav-left"> Home</a>
+  <a href="index.php" class="nav-left"> Home</a>
   <a href="about.php" class="nav-left nav-hide"> About</a>
   <a href="contact.php" class="nav-left nav-hide"> Contacts</a>
   <div class="dropdown" class="nav-left">
