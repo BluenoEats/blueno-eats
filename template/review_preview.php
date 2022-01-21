@@ -81,7 +81,6 @@
             const rating = document.getElementsByClassName("rating__star fas fa-star").length;
             document.getElementById("author").value = user_id;
             document.getElementById("rating").value = rating;
-            // var rating = document.getElementsByClassName("rating__star fas fa-star").length;
             // if (rating == 0) {
             //   document.getElementById('submit-review').disabled = true;
             //   alert("Please rate the dish before submit");
