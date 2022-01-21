@@ -1,5 +1,5 @@
 <?php
-function write_review($dbc, $review) {
+function insert_review($dbc, $review) {
   $author_id = $review['author'];
   $dish_id = $review['dish'];
   $rating = $review['rating'];

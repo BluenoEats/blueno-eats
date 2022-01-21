@@ -42,7 +42,7 @@
       <span class="close" onclick="closeModal('wr-modal')">&times;</span>
       <h2> Create a Review for <?php echo $page['name']; ?> </h2>
       <div class="user-form" style="margin-top:15px">
-        <form action="submit_review.php" method="post" enctype="multipart/form-data" id="review_form">
+        <form action="functions/submit_review.php" method="post" enctype="multipart/form-data" id="review_form">
             <label>Overall Rating</label>
             <!-- TODO: Hover effect -->
             <div class="user-rate">
@@ -55,9 +55,9 @@
             <script src="scripts/rate.js" type="text/javascript"></script>
             <br>
 
-            <input type="hidden" id="author" name="author" value="placeholder" />
-            <input type="hidden" id="dish" name="dish" value="<?php echo $_GET['dish']; ?>" />
-            <input type="hidden" id="rating" name="rating" value="0" />
+            <input type="hidden" id="author" name="author"/>
+            <input type="hidden" id="dish" name="dish" value="<?php echo $_GET['dish']; ?>"/>
+            <input type="hidden" id="rating" name="rating"/>
 
             <label for="review-img">Add a photo</label>
             <br>
@@ -77,17 +77,17 @@
         </form>
         <script type="text/javascript">
           function set_post_vars() {
-            var user_id = 12421; // temporary; wait for cookies to work
-            var rating = document.getElementsByClassName("rating__star fas fa-star").length;
+            const user_id = 31310; // temporary; wait for cookies to work
+            const rating = document.getElementsByClassName("rating__star fas fa-star").length;
             document.getElementById("author").value = user_id;
             document.getElementById("rating").value = rating;
-            var rating = document.getElementsByClassName("rating__star fas fa-star").length;
-            if (rating == 0) {
-              document.getElementById('submit-review').disabled = true;
-              alert("Please rate the dish before submit");
-            } else {
-              document.getElementById('submit-review').disabled = false;
-            }
+            // var rating = document.getElementsByClassName("rating__star fas fa-star").length;
+            // if (rating == 0) {
+            //   document.getElementById('submit-review').disabled = true;
+            //   alert("Please rate the dish before submit");
+            // } else {
+            //   document.getElementById('submit-review').disabled = false;
+            // }
           }
         </script>
         <!-- <script src="scripts/review-form.js" type="text/javascript"></script> -->
