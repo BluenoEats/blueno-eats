@@ -11,7 +11,11 @@ var n = images.length;
 function changeZoomImg(direction) {
     //change the index when the button is clicked
     var x = document.getElementById('zoom-myImg').src;
-    x = 'img' + x.split('/img')[1];
+    for (let i = 0; i < n ;i++) {
+        if (x.includes(images[i])) {
+            x = images[i];
+        }
+    }
 
     var index = images.indexOf(x);
     if (direction === 'left') {

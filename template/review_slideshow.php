@@ -35,7 +35,7 @@
         <span class="close" onclick="closeModal('zoom-img')">&times;</span>
         <img id="zoom-myImg" class="zoompic">
         <a class="food-imgs-prev" onclick="changeZoomImg('left')"><i class="fas fa-angle-double-left"></i></a>
-        <a class="food-imgs-next" onclick="changeZoomImg('right')"><i class="fas fa-angle-double-right"></i></a>
+        <a class="food-imgs-next"onclick="changeZoomImg('right')"><i class="fas fa-angle-double-right"></i></a>
         <script src="scripts/zoom-slide.js" type="text/javascript"></script>
     </div>
 
