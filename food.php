@@ -27,19 +27,19 @@ $page = get_dish_page($dbc, $_GET['dish']);
         <script src="scripts/manual-slide.js" type="text/javascript"></script>
         <script src="scripts/modal.js" type="text/javascript"></script>
         <script src="scripts/array-slide.js" type="text/javascript"></script>
-
     </head>
 
     <body>
       <?php include D_TEMPLATE."navigation.php" ?>
-
+      
+      <?php if (isset($page['id'])) { ?>
       <div class="food-body food">
           <div class="food-item food-left">
               <h1 id="food-name"><?php echo $page['name']; ?></h1>
           </div>
           <?php include D_TEMPLATE."dish_slideshow.php"; ?>
       </div>
-
+      
       <p class="food-intro food-body"><?php echo $page['content']; ?></p>
 
       <?php include D_TEMPLATE."review_preview.php"; ?>
@@ -55,8 +55,10 @@ $page = get_dish_page($dbc, $_GET['dish']);
       }?>
       </div>
 
-      <script src="scripts/modal.js" type="text/javascript"></script>
-      <script src="scripts/array-slide.js" type="text/javascript"></script>
+      <?php } else { ?>
+      <h1> The page doesn't exist.</h1>
+      <?php } ?>
+
       <?php include D_TEMPLATE."footer.php"; ?>
     </body>
 

@@ -15,21 +15,10 @@
 
   <body>
     <?php include D_TEMPLATE."navigation.php" ?>
-
+    
     <h1> Blueno Eats</h1>
     <p class="brief-content"> Intro to website intro to website intro to website</p>
-
-    <!-- TODO: Implement action -->
-    <div class="search-bar">
-    <form autocomplete="off" action="/action_page.php">
-      <div class="autocomplete" style="width:300px;">
-        <input id="myInput" type="text" name="search-bar" placeholder="Search for food or Dining hall...">
-        <script src="scripts/search.js" type="text/javascript"></script>
-      </div>
-      <i class="fa fa-search input-icon"></i>
-      <input type="submit" value="">
-    </form>
-  </div>
+    <?php include D_TEMPLATE."search_bar.php"; ?>
 
     <!-- TODO: Cartoon image -->
     <img src="img/placeholding.png" class="cartoon" alt="Cartoon image">
@@ -41,7 +30,6 @@
     </div>
 
     <?php include D_TEMPLATE."food_rank.php"; ?>
-
     <?php include D_TEMPLATE."footer.php"; ?>
   </body>
 

@@ -1,9 +1,9 @@
 <?php
 $num_dishes = 3;
 function echo_food_list($result) {
-  while ($row = mysqli_fetch_assoc($result)) {
-    echo '<li><a href="food.php?dish='.$row['id'].'">'.$row['name'].' (rating: '.$row['rating'].')</a></li>'."\n";
-  }
+  while ($row = mysqli_fetch_assoc($result)) { ?>
+    <li><a href="food.php?dish=<?php echo $row['id']; ?>"><?php echo $row['name']; ?> (rating: <?php echo $row['rating']; ?>)</a></li>
+  <?php }
 }
 ?>
 

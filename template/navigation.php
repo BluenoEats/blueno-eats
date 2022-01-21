@@ -4,7 +4,7 @@
     <img src="img/placeholding.png" class="nav-logo" alt="Navigation Logo">
   </a>
   -->
-  <a href="index.php" class="nav-left"> Home</a>
+  <a href="" class="nav-left"> Home</a>
   <a href="about.php" class="nav-left nav-hide"> About</a>
   <a href="contact.php" class="nav-left nav-hide"> Contacts</a>
   <div class="dropdown" class="nav-left">
@@ -15,11 +15,9 @@
       <?php
       $query = "SELECT id, official_name FROM ".DINING_HALL_DB;
       $result = mysqli_query($dbc, $query);
-
-      while ($row = mysqli_fetch_assoc($result)) {
-        echo '<a href="dining.php?hall='.$row['id'].'">'.$row['official_name'].'</a>'."\n";
-      }
-      ?>
+      while ($row = mysqli_fetch_assoc($result)) { ?>
+        <a href="dining.php?hall=<?php echo $row['id']; ?>"><?php echo $row['official_name']; ?></a>
+      <?php } ?>
     </div>
   </div>
 
