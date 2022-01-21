@@ -19,11 +19,11 @@
         <button type="button" class="all-btn all-right" onclick="changeImg('right')"><i class="fas fa-angle-double-right"></i></i></button>
         <script src="scripts/array-slide.js" type="text/javascript"></script>
     </div>
+
     <div id="all-food-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close" onclick="closeModal('all-food-modal')">&times;</span>
-                <!-- <h2> All images</h2> -->
             </div>
             <div class="modal-body" id="all-food-modal-body">
             </div>
@@ -33,12 +33,9 @@
     <!-- The Modal -->
     <div id="zoom-img" class="modal">
         <span class="close" onclick="closeModal('zoom-img')">&times;</span>
-        <img src="img/place2.jpeg" id="zoom-myImg" >
-        <!-- Arrows not working -->
-        <div class="arrow">
-            <a class="food-imgs-prev" onclick="changeZoomImg('left')">&#10094;</a>
-            <a class="food-imgs-next" onclick="changeZoomImg('right')">&#10095;</a>
-        </div>
+        <img id="zoom-myImg" class="zoompic">
+        <a class="food-imgs-prev" onclick="changeZoomImg('left')"><i class="fas fa-angle-double-left"></i></a>
+        <a class="food-imgs-next" onclick="changeZoomImg('right')"><i class="fas fa-angle-double-right"></i></a>
         <script src="scripts/zoom-slide.js" type="text/javascript"></script>
     </div>
 
