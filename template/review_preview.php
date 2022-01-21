@@ -9,7 +9,7 @@
          echo '<span class="far fa-star"></span>';
        }
     } ?>
-    <?php echo "<p>$rating average based on $num_reviews reviews.</p>"; ?>
+    <p><?php echo "$rating average based on $num_reviews reviews"; ?>.</p>
     <hr style="border:3px solid #f1f1f1">
 
     <div class="row">
@@ -81,19 +81,10 @@
             const rating = document.getElementsByClassName("rating__star fas fa-star").length;
             document.getElementById("author").value = user_id;
             document.getElementById("rating").value = rating;
-<<<<<<< HEAD
-            // if (rating == 0) {
-            //   document.getElementById('submit-review').disabled = true;
-            //   alert("Please rate the dish before submit");
-            // } else {
-            //   document.getElementById('submit-review').disabled = false;
-            // }
-=======
             if(rating == 0) { 
               alert("validation failed false");
               return false;
             }
->>>>>>> 35a49f92abef49c3ae9b3b64fbf20101a67cfd1e
           }
         </script>
         <!-- <script src="scripts/review-form.js" type="text/javascript"></script> -->
