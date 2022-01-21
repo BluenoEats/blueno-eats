@@ -42,7 +42,7 @@
       <span class="close" onclick="closeModal('wr-modal')">&times;</span>
       <h2> Create a Review for <?php echo $page['name']; ?> </h2>
       <div class="user-form" style="margin-top:15px">
-        <form action="functions/submit_review.php" method="post" enctype="multipart/form-data" id="review_form">
+        <form onsubmit="return validate_rate()" action="functions/submit_review.php" method="post" enctype="multipart/form-data" id="review_form">
             <label>Overall Rating</label>
             <!-- TODO: Hover effect -->
             <div class="user-rate">
@@ -73,20 +73,27 @@
             <label for="review-msg">Add a written review</label>
             <textarea id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?"></textarea>
 
-            <input type="submit" value="Submit" id="submit-review" onclick="set_post_vars()">
+            <input type="submit" value="Submit" id="submit-review">
         </form>
         <script type="text/javascript">
-          function set_post_vars() {
+          function validate_rate() {
             const user_id = 31310; // temporary; wait for cookies to work
             const rating = document.getElementsByClassName("rating__star fas fa-star").length;
             document.getElementById("author").value = user_id;
             document.getElementById("rating").value = rating;
+<<<<<<< HEAD
             // if (rating == 0) {
             //   document.getElementById('submit-review').disabled = true;
             //   alert("Please rate the dish before submit");
             // } else {
             //   document.getElementById('submit-review').disabled = false;
             // }
+=======
+            if(rating == 0) { 
+              alert("validation failed false");
+              return false;
+            }
+>>>>>>> 35a49f92abef49c3ae9b3b64fbf20101a67cfd1e
           }
         </script>
         <!-- <script src="scripts/review-form.js" type="text/javascript"></script> -->

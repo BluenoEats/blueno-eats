@@ -27,19 +27,19 @@ function sign_up() {
     document.getElementById("signup-error-msg-rep-pass").style.display = "none";
 
     if (!usernameRegex.test(username)) {
-        // alert("Username is invalid.");
+       // alert("Username is invalid.");
         document.getElementById("signup-error-msg-user").style.display = "inline";
     } else if (!emailRegex.test(email)) {
-        // alert("Email is invalid");
+        //alert("Email is invalid");
         document.getElementById("signup-error-msg-email").style.display = "inline";
     } else if (!passwordRegex.test(password)) {
+        //alert("The password should be eight characters minimum and contain at least one number and one special character.");
         document.getElementById("signup-error-msg-pass").style.display = "inline";
     } else if (password !== repeat) {
         document.getElementById("signup-error-msg-rep-pass").style.display = "inline";
-        // submitbtn.disabled = true;
-        // alert("The passwords do not match.");
+        //alert("The passwords do not match.");
     } else {
-        alert("np");
+        //alert("np");
         // submitbtn.disabled = false;
         document.getElementById("response").innerHTML = "creating an account...";
         SHA256(password).then(encrypted => send_to_server(username, email, encrypted));
