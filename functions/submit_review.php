@@ -10,6 +10,8 @@ if (isset($_SESSION['user_id'])) {
   $rating = $_POST['rating'];
   $content = $_POST['review-msg'];
   $review_id = insert_review($dbc, $author_id, $_POST);
+} else {
+  echo "<p>Please log in first.</p>";
 }
 
 if (isset($review_id) && $review_id) {
