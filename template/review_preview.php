@@ -39,7 +39,7 @@
   <!-- Write review Modal -->
   <div id="wr-modal" class="modal">
     <div class="modal-content wr-review-modal">
-      <span class="close" onclick="closeModal('wr-modal')">&times;</span>
+      <span class="close" onclick="closeModal('wr-modal')"><i class="fas fa-times"></i></span>
       <h2> Create a Review for <?php echo $page['name']; ?> </h2>
       <div class="user-form" style="margin-top:15px">
         <form onsubmit="return validate_rate()" action="functions/submit_review.php" method="post" enctype="multipart/form-data" id="review_form">
