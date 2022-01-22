@@ -58,7 +58,7 @@ function display_review($dbc, $review) {
               <a class="food-imgs-prev" onclick="plusSlides(-1)">&#10094;</a>
               <a class="food-imgs-next" onclick="plusSlides(1)">&#10095;</a>
           </div>
-    </div>
+      </div>
     <?php } ?>
     </div>
   </div>

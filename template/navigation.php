@@ -1,9 +1,4 @@
 <div class="nav">
-  <!-- TODO: add logo
-  <a href="index.php" class="nav-home nav-left">
-    <img src="img/placeholding.png" class="nav-logo" alt="Navigation Logo">
-  </a>
-  -->
   <a href="index.php" class="nav-left"> Home</a>
   <a href="about.php" class="nav-left nav-hide"> About</a>
   <a href="contact.php" class="nav-left nav-hide"> Contacts</a>
@@ -23,5 +18,7 @@
 
   <a href="login.php" class="nav-right"> Log in</a>
   <a href="signup.php" class="nav-right"> Sign up</a>
-  <!-- TODO: Profile manage page -->
+  <a href="index.php" class="nav-home nav-right">
+    <img src="img/profile.png" class="nav-logo" alt="Navigation Profile">
+  </a>
 </div>
