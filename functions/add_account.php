@@ -4,6 +4,7 @@ include "../config/setup.php";
 $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
+$hashed = hash('sha256', $password);
 
 $query = "SELECT 1 FROM ".ACCOUNT_DB." WHERE email='$email'";
 $result = mysqli_query($dbc, $query);
@@ -16,7 +17,7 @@ if ($exist) {
   do {
     $uuid = hexdec(bin2hex(random_bytes(2)));
     $query = "INSERT INTO ".ACCOUNT_DB." (`id`, `email`, `password`, `username`)
-              VALUES ($uuid, '$email', '$password', '$username')";
+              VALUES ($uuid, '$email', '$hashed', '$username')";
   } while (!mysqli_query($dbc, $query) && ++$counter < 100);
   if ($counter == 100) {
     echo "A problem occurs while creating your account. Please try again later.";

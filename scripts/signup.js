@@ -7,13 +7,13 @@ const usernameRegex = /^[A-Za-z][A-Za-z0-9_]{4,29}$/;
 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,29}$/;
 
 
-async function SHA256(message) {
-  const msgUint8 = new TextEncoder().encode(message);                           // encode as (utf-8) Uint8Array
-  const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);           // hash the message
-  const hashArray = Array.from(new Uint8Array(hashBuffer));                     // convert buffer to byte array
-  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string
-  return hashHex;
-}
+// async function SHA256(message) {
+//   const msgUint8 = new TextEncoder().encode(message);                           // encode as (utf-8) Uint8Array
+//   const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);           // hash the message
+//   const hashArray = Array.from(new Uint8Array(hashBuffer));                     // convert buffer to byte array
+//   const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string
+//   return hashHex;
+// }
 
 function sign_up() {
     const email = document.getElementById('signup_email').value;
@@ -42,18 +42,28 @@ function sign_up() {
         //alert("np");
         // submitbtn.disabled = false;
         document.getElementById("response").innerHTML = "creating an account...";
-        SHA256(password).then(encrypted => send_to_server(username, email, encrypted));
+        // SHA256(password).then(encrypted => send_to_server(username, email, encrypted));
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("response").innerHTML = this.responseText;
+          }
+        };
+        xhttp.open("POST", "functions/add_account.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("username="+username+"&email="+email+"&password="+password);
     }
 }
 
-function send_to_server(username, email, encrypted_password) {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("response").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("POST", "functions/add_account.php", true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send("username="+username+"&email="+email+"&password="+encrypted_password);
-}
+// function send_to_server(username, email, encrypted_password) {
+//   var xhttp = new XMLHttpRequest();
+//   xhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//       document.getElementById("response").innerHTML = this.responseText;
+//     }
+//   };
+//   xhttp.open("POST", "functions/add_account.php", true);
+//   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//   xhttp.send("username="+username+"&email="+email+"&password="+encrypted_password);
+// }

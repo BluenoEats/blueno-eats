@@ -15,7 +15,7 @@
 
    <body>
       <?php include D_TEMPLATE."navigation.php" ?>
-      <form class="user-form sign-log" id="sign-up-form">
+      <form class="user-form sign-log" id="sign-up-form" onsubmit="return false">
          <label for="signup_username">Username </label>
          <p class="signup-error-msg" id="signup-error-msg-user">error message 1</p> 
          <input input type="text" id="signup_username" placeholder="username" minlength="1" maxlength="12" required>
