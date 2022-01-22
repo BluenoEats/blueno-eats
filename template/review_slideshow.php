@@ -1,3 +1,5 @@
+<script src="scripts/zoom-slide.js" type="text/javascript"></script>
+
 <div class="food-body food-imgs">
     <div class="food-imgs-row">
         <div class="food-imgs-col">
@@ -31,7 +33,6 @@
                 <img id="zoomed-img" class="zoompic">
                 <a class="food-imgs-prev" onclick="changeZoomImg('left', 'zoomed-img')"><i class="fas fa-angle-double-left"></i></a>
                 <a class="food-imgs-next" onclick="changeZoomImg('right', 'zoomed-img')"><i class="fas fa-angle-double-right"></i></a>
-                <script src="scripts/zoom-slide.js" type="text/javascript"></script>
             </div>
         </div>
     </div>
@@ -42,9 +43,8 @@
         <img id="zoom-myImg" class="zoompic">
         <a class="food-imgs-prev" onclick="changeZoomImg('left', 'zoom-myImg')"><i class="fas fa-angle-double-left"></i></a>
         <a class="food-imgs-next" onclick="changeZoomImg('right', 'zoom-myImg')"><i class="fas fa-angle-double-right"></i></a>
-        <script src="scripts/zoom-slide.js" type="text/javascript"></script>
     </div>
-
+    
 </div>
 
 
