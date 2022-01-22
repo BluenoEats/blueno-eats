@@ -15,10 +15,15 @@
       <?php } ?>
     </div>
   </div>
-
-  <a href="login.php" class="nav-right"> Log in</a>
+  <?php if (!isset($_SESSION['user_id'])) { ?>
   <a href="signup.php" class="nav-right"> Sign up</a>
-  <a href="index.php" class="nav-home nav-right">
+  <?php } else { ?>
+    <a href="index.php" class="nav-home nav-right">
     <img src="img/profile.png" class="nav-logo" alt="Navigation Profile">
   </a>
+  <a href="login.php" class="nav-right"> Log in</a>
+  <!-- TODO: add profile -->
+  <!-- <a href="logout.php" class="nav-right"> Log out</a> -->
+  <?php } ?>
+  <!-- TODO: Profile manage page -->
 </div>

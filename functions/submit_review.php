@@ -15,7 +15,13 @@ if (isset($_SESSION['user_id'])) {
 }
 
 if (isset($review_id) && $review_id) {
+<<<<<<< HEAD
   $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/series/bluenoeats/upload/";
+=======
+  $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/websites/bluenoeats.github.io/upload/";
+  // $target_dir = dirname("../upload/");
+  // $target_dir = "../upload/";
+>>>>>>> c72e7621882a6ad957a1b206ae04125590ea41de
   $len = count($_FILES['review-img']['name']);
   if ($len > 0) {
     echo "<p>uploading images..</p>";

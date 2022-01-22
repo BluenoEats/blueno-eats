@@ -17,4 +17,5 @@ define('ACCOUNT_DB', 'accounts');
 define('REVIEW_DB', 'reviews');
 define('REVIEW_IMAGES', 'review_images');
 
+session_start();
 ?>
