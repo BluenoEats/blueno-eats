@@ -183,6 +183,8 @@
 .zoompic {
   display: block;
   padding: 0;
+  height: 80%;
+  width: auto;
   max-height: 100%;
   max-width: 100%;
   position: absolute;
