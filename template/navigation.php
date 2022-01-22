@@ -20,8 +20,11 @@
       <?php } ?>
     </div>
   </div>
-
-  <a href="login.php" class="nav-right"> Log in</a>
+  <?php if (isset($_SESSION['user_id'])) { ?>
   <a href="signup.php" class="nav-right"> Sign up</a>
+  <a href="login.php" class="nav-right"> Log in</a>
+  <?php } else { ?>
+  <!-- <a href="logout.php" class="nav-right"> Log out</a> -->
+  <?php } ?>
   <!-- TODO: Profile manage page -->
 </div>

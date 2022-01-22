@@ -19,7 +19,6 @@ $result = mysqli_query($dbc, $query);
 $valid = mysqli_num_rows($result);
 
 if ($valid) {
-  session_start();
   $user = mysqli_fetch_assoc($result);
   $_SESSION['user_id'] = $user['id'];
   $_SESSION['email'] = $user['email'];
