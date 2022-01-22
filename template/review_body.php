@@ -26,7 +26,7 @@ function display_review($dbc, $review) {
 
     <div id="report-modal" class="modal">
       <div class="modal-content">
-        <span class="close" onclick="closeModal('report-modal')">&times;</span>
+        <span class="close" onclick="closeModal('report-modal')"><i class="fas fa-times"></i></span>
         <h2> Report an issue</h2>
           <p> If you find this content inappropriate and think it should be removed from the BluenoEats site, please help us to understand the problem. What is going on with this post? </p>
           <form class="user-form">
@@ -51,7 +51,7 @@ function display_review($dbc, $review) {
 
       <!-- The Modal -->
       <div id="zoom" class="modal">
-          <span class="close" onclick="closeModal('zoom')">&times;</span>
+          <span class="close" onclick="closeModal('zoom')"><i class="fas fa-times"></i></span>
           <img src="<?php echo $row['img_src']; ?>" id = "<?php echo $row['img_src']; ?>">
           <!-- Arrows not working -->
           <div class="arrow">

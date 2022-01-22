@@ -23,19 +23,25 @@
     <div id="all-food-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <span class="close" onclick="closeModal('all-food-modal')">&times;</span>
+                <span class="close" onclick="closeModal('all-food-modal')"><i class="fas fa-times"></i></span>
             </div>
-            <div class="modal-body" id="all-food-modal-body">
+            <div class="modal-body" id="all-food-modal-body"></div>
+            <div id="all-img-zoom">
+                <span class="back-all"><i class="far fa-arrow-alt-circle-left" onclick="show_all_img()"></i> View Image Gallery</span>
+                <img id="zoomed-img" class="zoompic">
+                <a class="food-imgs-prev" onclick="changeZoomImg('left', 'zoomed-img')"><i class="fas fa-angle-double-left"></i></a>
+                <a class="food-imgs-next" onclick="changeZoomImg('right', 'zoomed-img')"><i class="fas fa-angle-double-right"></i></a>
+                <script src="scripts/zoom-slide.js" type="text/javascript"></script>
             </div>
         </div>
     </div>
 
     <!-- The Modal -->
     <div id="zoom-img" class="modal">
-        <span class="close" onclick="closeModal('zoom-img')">&times;</span>
+        <span class="close" onclick="closeModal('zoom-img')"><i class="fas fa-times"></i></span>
         <img id="zoom-myImg" class="zoompic">
-        <a class="food-imgs-prev" onclick="changeZoomImg('left')"><i class="fas fa-angle-double-left"></i></a>
-        <a class="food-imgs-next"onclick="changeZoomImg('right')"><i class="fas fa-angle-double-right"></i></a>
+        <a class="food-imgs-prev" onclick="changeZoomImg('left', 'zoom-myImg')"><i class="fas fa-angle-double-left"></i></a>
+        <a class="food-imgs-next" onclick="changeZoomImg('right', 'zoom-myImg')"><i class="fas fa-angle-double-right"></i></a>
         <script src="scripts/zoom-slide.js" type="text/javascript"></script>
     </div>
 
@@ -47,7 +53,7 @@
 <!--hello
     <div id="food-pic-modal" class="modal">
     <div class=" modal-content">
-        <span class="close" onclick="closeModal('food-pic-modal')">&times;</span>
+        <span class="close" onclick="closeModal('food-pic-modal')"><i class="fas fa-times"></i></span>
         <div class="food-imgs-slide">
             <div class="food-imgs-numtext">1 / 4</div>
             <img src="img/place4.jpeg" style="width:100%">

@@ -1,12 +1,18 @@
+function show_all_img(){
+  document.getElementById("all-food-modal-body").style.display = "block";
+  document.getElementById("all-img-zoom").style.display = "none";
+}
+
 function create_all_image_modal(){
     for (let i = 0; i < n; i++) {
       let img = document.createElement("img");
       img.src = images[i];
-      //change width and height later
-      img.setAttribute("class", "all-image-modal");
-      img.width = 200;
-      img.height = 150;
-      img.margin = 10;
+      img.className = "all-image-style";
+      img.addEventListener('click', function (event) {
+        document.getElementById("all-food-modal-body").style.display = "none";
+        document.getElementById("all-img-zoom").style.display = "block";
+        document.getElementById("zoomed-img").src = img.src;
+      });
       document.getElementById("all-food-modal-body").appendChild(img);
     }
 }

@@ -140,18 +140,56 @@
   box-sizing: border-box;
 }
 
-.all-image-modal{
+.all-image-style{
+  width: 200px;
+  height: 150px;
   margin: 8px;
 }
 
+#all-img-zoom {
+  display: none;
+  height: 80vh;
+}
+
+#all-img-zoom .food-imgs-prev,#all-img-zoom .food-imgs-next {
+  color: #d26183b4;
+}
+
+#all-img-zoom .food-imgs-prev:hover,#all-img-zoom .food-imgs-next:hover {
+  color: #d26183;
+  background-color: transparent;
+}
+
+.back-all {
+  color: #d26183;
+  position: absolute;
+  font-family: LibreBaskerville-Regular, Palatino Linotype,Times New Roman,serif;
+  top: 20px;
+  left: 30px;
+  font-size: 15px;
+  line-height: 25px;
+  z-index: 15;
+}
+
+.back-all .far {
+  color: #d26183b4;
+  font-size: 25px;
+}
+
+.back-all .far:hover {
+  cursor: pointer;
+}
+
 .zoompic {
-  padding: 0;
   display: block;
+  padding: 0;
+  height: 80%;
+  width: auto;
   max-height: 100%;
   max-width: 100%;
   position: absolute;
   margin: auto;
-  object-fit: contain;
+  object-fit: contain !important;
   top: 0;
   left: 0;
   right: 0;
