@@ -55,7 +55,7 @@
             <script src="scripts/rate.js" type="text/javascript"></script>
             <br>
 
-            <input type="hidden" id="author" name="author"/>
+            <!-- <input type="hidden" id="author" name="author"/> -->
             <input type="hidden" id="dish" name="dish" value="<?php echo $_GET['dish']; ?>"/>
             <input type="hidden" id="rating" name="rating"/>
 
@@ -77,9 +77,9 @@
         </form>
         <script type="text/javascript">
           function validate_rate() {
-            const user_id = 31310; // temporary; wait for cookies to work
+            // const user_id = 31310; // temporary; wait for cookies to work
             const rating = document.getElementsByClassName("rating__star fas fa-star").length;
-            document.getElementById("author").value = user_id;
+            // document.getElementById("author").value = user_id;
             document.getElementById("rating").value = rating;
             if(rating == 0) { 
               alert("validation failed false");

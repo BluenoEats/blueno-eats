@@ -1,6 +1,6 @@
 <?php
-function insert_review($dbc, $review) {
-  $author_id = $review['author'];
+function insert_review($dbc, $author_id, $review) {
+  // $author_id = $review['author'];
   $dish_id = $review['dish'];
   $rating = $review['rating'];
   $content = $review['review-msg'];

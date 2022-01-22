@@ -5,6 +5,9 @@ include "functions/get_data.php";
 # Retrieve food page
 $page = get_dish_page($dbc, $_GET['dish']);
 [$rating, $num_reviews, $num_by_stars, $reviews] = get_reviews($dbc, $_GET['dish']);
+
+session_start();
+$_SESSION['dish'] = $_GET['dish'];
 ?>
 
 <!DOCTYPE html>

@@ -9,19 +9,13 @@
     </body>
 </html> -->
 
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html>
   <body>
-    <div class="user-form">
-      <form action="test1.php" method="post" enctype="multipart/form-data">
-        <label for="review-msg">Add a written review</label>
-        <input type="text" id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?">
-
-        <label for="review-img">Add a photo</label>
-        <input type="file" id="review-img" name="review-img[]" accept="image/*" multiple>
-
-        <input type="submit" value="Submit">
-      </form>
-    </div>
+    <?php if (isset($_SESSION['user_id'])) { ?>
+      <p><?php echo $_SESSION['user_id']; ?></p>
+    <?php } ?>
   </body>
 </html>

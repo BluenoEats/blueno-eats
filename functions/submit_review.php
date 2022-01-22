@@ -3,17 +3,21 @@ include "../config/setup.php";
 include "upload_img.php";
 include "insert_review.php";
 
-$author_id = $_POST['author'];
-$dish_id = $_POST['dish'];
-$rating = $_POST['rating'];
-$content = $_POST['review-msg'];
+session_start();
+if (isset($_SESSION['user_id'])) {
+  $author_id = $_SESSION['user_id'];
+  $dish_id = $_POST['dish'];
+  $rating = $_POST['rating'];
+  $content = $_POST['review-msg'];
+  $review_id = insert_review($dbc, $author_id, $_POST);
+}
 
-$review_id = insert_review($dbc, $_POST);
-
-if ($review_id) {
-  echo "<p>uploading images..</p>";
+if (isset($review_id) && $review_id) {
   $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/websites/bluenoeats.github.io/upload/";
   $len = count($_FILES['review-img']['name']);
+  if ($len > 0) {
+    echo "<p>uploading images..</p>";
+  }
   for ($i=0; $i < $len; $i++) {
     $file_info = array(
       'name'      => $_FILES['review-img']['name'][$i],
