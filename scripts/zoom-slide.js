@@ -8,9 +8,9 @@ var images = [
 
 var n = images.length;
 
-function changeZoomImg(direction) {
+function changeZoomImg(direction, id) {
     //change the index when the button is clicked
-    var x = document.getElementById('zoom-myImg').src;
+    var x = document.getElementById(id).src;
     for (let i = 0; i < n ;i++) {
         if (x.includes(images[i])) {
             x = images[i];
@@ -35,5 +35,5 @@ function changeZoomImg(direction) {
     }
 
     //showing the images
-    document.getElementById('zoom-myImg').src = images[index];
+    document.getElementById(id).src = images[index];
 }

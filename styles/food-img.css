@@ -151,6 +151,15 @@
   height: 80vh;
 }
 
+#all-img-zoom .food-imgs-prev,#all-img-zoom .food-imgs-next {
+  color: #d26183b4;
+}
+
+#all-img-zoom .food-imgs-prev:hover,#all-img-zoom .food-imgs-next:hover {
+  color: #d26183;
+  background-color: transparent;
+}
+
 .back-all {
   color: #d26183;
   position: absolute;
@@ -167,6 +176,10 @@
   font-size: 25px;
 }
 
+.back-all .far:hover {
+  cursor: pointer;
+}
+
 .zoompic {
   display: block;
   padding: 0;
@@ -179,7 +192,4 @@
   left: 0;
   right: 0;
   bottom: 0;
-}
-
-#zoomed-img {
 }
