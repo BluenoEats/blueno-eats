@@ -44,22 +44,28 @@ function display_review($dbc, $review) {
     <div class="user-img-container">
     <?php
     $result = get_slideshow($dbc, REVIEW_IMAGES, 'review_id', $review['id']);
-    $num_rows = mysqli_num_rows($result);
-    while ($row = mysqli_fetch_assoc($result)) { ?>
+    $counter = 0;
+    while ($row = mysqli_fetch_assoc($result)) { 
+      $counter++; ?>
       <!-- TODO: Fix style -->
-      <img src="<?php echo $row['img_src']; ?>" class="user-img" id = "<?php echo $row['img_src']; ?>" onclick="openModal('zoom')" style="width:200px;height:150px;">
+      <img src="<?php echo $row['img_src']; ?>" class="user-img" id="img-<?php echo $counter; ?>" onclick="change_img('<?php echo $row['img_src']; ?>'); openModal('zoom_1')" style="width:200px;height:150px;">
+      <script text="JavaScript">
+        function change_img(img_src) {
+          document.getElementById("1").src = img_src;
+        }
+      </script>
+    <?php } ?>
 
       <!-- The Modal -->
-      <div id="zoom" class="modal">
-          <span class="close" onclick="closeModal('zoom')"><i class="fas fa-times"></i></span>
-          <img src="<?php echo $row['img_src']; ?>" id = "<?php echo $row['img_src']; ?>">
+      <div id="zoom_1" class="modal">
+          <span class="close" onclick="closeModal('zoom_1')"><i class="fas fa-times"></i></span>
+          <img src="" id="1">
           <!-- Arrows not working -->
           <div class="arrow">
               <a class="food-imgs-prev" onclick="plusSlides(-1)">&#10094;</a>
               <a class="food-imgs-next" onclick="plusSlides(1)">&#10095;</a>
           </div>
-    </div>
-    <?php } ?>
+      </div>
     </div>
   </div>
 <?php } ?>
