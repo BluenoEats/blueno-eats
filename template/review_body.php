@@ -48,7 +48,7 @@ function display_review($dbc, $review) {
     while ($row = mysqli_fetch_assoc($result)) { 
       $counter++; ?>
       <!-- TODO: Fix style -->
-      <img src="<?php echo $row['img_src']; ?>" class="user-img" id="img-<?php echo $counter; ?>" onclick="change_img('<?php echo $row['img_src']; ?>'); openModal('comment_modal')" style="width:200px;height:150px;">
+      <img src="<?php echo $row['img_src']; ?>" class="user-img" id="img-<?php echo $counter; ?>" onclick="change_img('<?php echo $row['img_src']; ?>'); openModal('comment_modal')">
       <script text="JavaScript">
         function change_img(img_src) {
           document.getElementById("comment-modal-img").src = img_src;
@@ -59,9 +59,7 @@ function display_review($dbc, $review) {
       <!-- The Modal -->
       <div id="comment_modal" class="modal">
         <span class="close" onclick="closeModal('comment_modal')"><i class="fas fa-times"></i></span>
-        <img id="comment-modal-img">
-        <a class="food-imgs-prev" onclick="changeZoomImg('left', 'comment-modal-img')"><i class="fas fa-angle-double-left"></i></a>
-        <a class="food-imgs-next" onclick="changeZoomImg('right', 'comment-modal-img')"><i class="fas fa-angle-double-right"></i></a>
+        <img id="comment-modal-img" class="zoompic">
       </div>
     </div>
   </div>
