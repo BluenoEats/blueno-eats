@@ -3,25 +3,20 @@ include "../config/setup.php";
 include "upload_img.php";
 include "insert_review.php";
 
-session_start();
 if (isset($_SESSION['user_id'])) {
   $author_id = $_SESSION['user_id'];
-  $dish_id = $_POST['dish'];
-  $rating = $_POST['rating'];
-  $content = $_POST['review-msg'];
+  // $dish_id = $_POST['dish'];
+  // $rating = $_POST['rating'];
+  // $content = $_POST['review-msg'];
   $review_id = insert_review($dbc, $author_id, $_POST);
 } else {
   echo "<p>Please log in first.</p>";
 }
 
 if (isset($review_id) && $review_id) {
-<<<<<<< HEAD
-  $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/series/bluenoeats/upload/";
-=======
   $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/websites/bluenoeats.github.io/upload/";
   // $target_dir = dirname("../upload/");
   // $target_dir = "../upload/";
->>>>>>> c72e7621882a6ad957a1b206ae04125590ea41de
   $len = count($_FILES['review-img']['name']);
   if ($len > 0) {
     echo "<p>uploading images..</p>";
