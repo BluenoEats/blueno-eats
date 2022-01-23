@@ -1,8 +1,23 @@
 <?php
-$num_dishes = 3;
-function echo_food_list($result) {
-  while ($row = mysqli_fetch_assoc($result)) { ?>
-    <li><a href="food.php?dish=<?php echo $row['id']; ?>"><?php echo $row['name']; ?> (rating: <?php echo $row['rating']; ?>)</a></li>
+$num_dishes = 5;
+
+function get_dish_name($dbc, $dish_id) {
+  $query = "SELECT name FROM ".DISH_DB." WHERE id = $dish_id";
+  $result = mysqli_query($dbc, $query);
+  $page = mysqli_fetch_assoc($result);
+
+  return $page['name'];
+}
+
+function echo_food_list($dbc, $result) {
+  while ($row = mysqli_fetch_assoc($result)) { 
+    $dish_id = $row['dish_id'];
+    $dish_name = get_dish_name($dbc, $dish_id);
+    $rating = number_format($row['rating'], 1, '.', '');
+    ?>
+    <li><a href="food.php?dish=<?php echo $dish_id; ?>">
+      <?php echo $dish_name ?> (rating: <?php echo $rating; ?>)
+    </a></li>
   <?php }
 }
 ?>
@@ -12,19 +27,20 @@ function echo_food_list($result) {
     <h2>Best Food</h2>
     <ol>
       <?php
-      $query = "SELECT id, name, rating FROM ".DISH_DB." ORDER BY rating DESC LIMIT $num_dishes";
+      $query = "SELECT dish_id, SUM(rating)/COUNT(rating) as rating FROM ".REVIEW_DB." GROUP BY dish_id ORDER BY rating DESC LIMIT $num_dishes";
       $result = mysqli_query($dbc, $query);
-      echo_food_list($result);
+      echo_food_list($dbc, $result);
       ?>
     </ol>
   </div>
+  
   <div class="flex-item flex-right">
-  <h2>Worst Food</h2>
+    <h2>Best Food</h2>
     <ol>
       <?php
-      $query = "SELECT id, name, rating FROM ".DISH_DB." ORDER BY rating ASC LIMIT $num_dishes";
+      $query = "SELECT dish_id, SUM(rating)/COUNT(rating) as rating FROM ".REVIEW_DB." GROUP BY dish_id ORDER BY rating ASC LIMIT $num_dishes";
       $result = mysqli_query($dbc, $query);
-      echo_food_list($result);
+      echo_food_list($dbc, $result);
       ?>
     </ol>
   </div>
