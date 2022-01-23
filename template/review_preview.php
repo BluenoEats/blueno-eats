@@ -41,8 +41,11 @@
     <div class="modal-content wr-review-modal">
       <span class="close" onclick="closeModal('wr-modal')"><i class="fas fa-times"></i></span>
       <?php if (!isset($_SESSION['user_id'])) { ?>
-        <p> Join Blueno Eats to start rating and commenting<a href="signup.php"><button>Join now!</button></a></p>
-        <p> Already have an account? <a href="login.php">Log in</a> </p>
+        <div class="review-sign">
+          <h3> Join Blueno Eats to start rating and commenting!</h3>
+          <a href="signup.php"><button class="review-signup">Sign up</button></a>
+          <p> Already have an account? <a href="login.php">Log in</a></p>
+      </div>
       <?php } else { ?>
         <h2> Create a Review for <?php echo $page['name']; ?> </h2>
         <div class="user-form" style="margin-top:15px">
@@ -68,7 +71,9 @@
               <!-- <button type="button" class="add-photo" onclick="document.getElementById('review-img').click()"><i class="far fa-plus-square"></i></button>
               -->
               <label for="review-img" class="add-photo"><i class="fa fa-plus-square"></i></label>
-              <input type="file" id="review-img" name="review-img[]" accept="image/*" multiple style="display:none">
+              <div id="upload-preview"></div>
+              <input type="file" id="review-img" name="review-img[]" accept="image/*" multiple style="display:none" onchange="loadFile(event);">
+          
               <br>      
 
               <!-- <label for="review-img">Add a photo</label>
@@ -83,6 +88,16 @@
           </form>
         </div>
         <script type="text/javascript">
+          var loadFile = function(event) {
+            var output = document.createElement("img");
+            output.className = "upload-img";
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.onload = function() {
+              URL.revokeObjectURL(output.src) // free memory
+            }
+            document.getElementById("upload-preview").appendChild(output);
+          };
+
           function validate_rate() {
             // const user_id = 31310; // temporary; wait for cookies to work
             const rating = document.getElementsByClassName("rating__star fas fa-star").length;

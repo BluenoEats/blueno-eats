@@ -32,12 +32,12 @@
     height: 30px;
 }
 
-.nav-home {
+/* .nav-home {
     width: 30px;
     height: 30px;
     margin: 10px;
     padding: 0px !important;
-}
+} */
 
 /* Style the "active" element to highlight the current page */
 .nav a.active {
@@ -49,7 +49,7 @@
 .dropdown {
     float: left;
     overflow: hidden;
-  }
+}
   
 /* Dropdown button */
 .dropdown .dropbtn {
@@ -64,7 +64,7 @@
 }
 
 /* Add a red background color to navbar links on hover */
-.nav a:hover, .dropdown:hover .dropbtn {
+.nav a:hover, .dropdown:hover, .dropbtn {
     background-color: #ff6a6a;
 }
 
@@ -115,4 +115,22 @@ footer {
     .nav-hide {
       display: none;
     }
+}
+
+.log-btn {
+    font-size: 16px;
+    color: white;
+    background-color: transparent;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: block;
+    border: none;
+    outline: none;
+    font-family: LibreBaskerville-Regular, Palatino Linotype,Times New Roman,serif;
+}
+
+.log-btn:hover {
+    background-color: #ff6a6a;
+    cursor: pointer;
 }
