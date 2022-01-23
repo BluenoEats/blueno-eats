@@ -1,8 +1,7 @@
 <?php
-function display_review($dbc, $review) {
-  $username = get_username($dbc, $review['author_id']); ?>
+function display_review($dbc, $review) { ?>
   <div class="user-comment">
-    <p class="username">Username: <?php echo $username; ?></p>
+    <p class="username">Username: <?php echo ($review['anonymous'] ? "Anonymous" : get_username($dbc, $review['author_id'])); ?></p>
 
     <div class="user-rate">
       <?php for ($i=1; $i <= 5; $i++) {
