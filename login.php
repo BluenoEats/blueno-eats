@@ -26,7 +26,8 @@
          <input type="submit" value="Log in" onclick="log_in()">
       </form>
       <?php } else { ?>
-         <p>You are already logged in!</p>
+         <!-- TODO: style this header -->
+         <h1>You are already logged in!</h1>
       <?php } ?>
 
       <!-- TODO: style the response -->
