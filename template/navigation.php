@@ -20,6 +20,19 @@
     <a href="login.php" class="nav-right"> Log in</a>
   <?php } else { ?>
     <a href="logout.php" class="nav-right"> Log out</a>
+    <button onclick="log_out()" class="nav-right">Log out</button>
+    <script>
+      function log_out() {
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            window.location.reload();
+          }
+          };
+          xhttp.open("GET", "functions/logout_func.php", true);
+          xhttp.send();
+      }
+    </script>
   <?php } ?>
   <!-- TODO: Profile manage page -->
     <!-- <a href="index.php" class="nav-home nav-right">
