@@ -28,7 +28,7 @@ function get_reviews($dbc, $dish) {
   $result = mysqli_query($dbc, $query);
   $num_reviews = mysqli_num_rows($result);
   $rating = ($num_reviews ? ($total_score / $num_reviews) : 0);
-  $rating = round($rating, 1);
+  $rating = number_format($rating, 1, '.', '');
 
   return [$rating, $num_reviews, $num_by_stars, $result];
 }
