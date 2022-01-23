@@ -40,41 +40,46 @@
   <div id="wr-modal" class="modal">
     <div class="modal-content wr-review-modal">
       <span class="close" onclick="closeModal('wr-modal')"><i class="fas fa-times"></i></span>
-      <h2> Create a Review for <?php echo $page['name']; ?> </h2>
-      <div class="user-form" style="margin-top:15px">
-        <form onsubmit="return validate_rate()" action="functions/submit_review.php" method="post" enctype="multipart/form-data" id="review_form">
-            <label>Overall Rating</label>
-            <!-- TODO: Hover effect -->
-            <div class="user-rate">
-                <i class="rating__star far fa-star"></i>
-                <i class="rating__star far fa-star"></i>
-                <i class="rating__star far fa-star"></i>
-                <i class="rating__star far fa-star"></i>
-                <i class="rating__star far fa-star"></i>
-            </div>
-            <script src="scripts/rate.js" type="text/javascript"></script>
-            <br>
+      <?php if (!isset($_SESSION['user_id'])) { ?>
+        <p> Join Blueno Eats to start rating and commenting<a href="signup.php"><button>Join now!</button></a></p>
+        <p> Already have an account? <a href="login.php">Log in</a> </p>
+      <?php } else { ?>
+        <h2> Create a Review for <?php echo $page['name']; ?> </h2>
+        <div class="user-form" style="margin-top:15px">
+          <form onsubmit="return validate_rate()" action="functions/submit_review.php" method="post" enctype="multipart/form-data" id="review_form">
+              <label>Overall Rating</label>
+              <!-- TODO: Hover effect -->
+              <div class="user-rate">
+                  <i class="rating__star far fa-star"></i>
+                  <i class="rating__star far fa-star"></i>
+                  <i class="rating__star far fa-star"></i>
+                  <i class="rating__star far fa-star"></i>
+                  <i class="rating__star far fa-star"></i>
+              </div>
+              <script src="scripts/rate.js" type="text/javascript"></script>
+              <br>
 
-            <!-- <input type="hidden" id="author" name="author"/> -->
-            <input type="hidden" id="dish" name="dish" value="<?php echo $_GET['dish']; ?>"/>
-            <input type="hidden" id="rating" name="rating"/>
+              <!-- <input type="hidden" id="author" name="author"/> -->
+              <input type="hidden" id="dish" name="dish" value="<?php echo $_GET['dish']; ?>"/>
+              <input type="hidden" id="rating" name="rating"/>
 
-            <label for="review-img">Add a photo</label>
-            <br>
-            <!-- <button type="button" class="add-photo" onclick="document.getElementById('review-img').click()"><i class="far fa-plus-square"></i></button>
-             -->
-            <label for="review-img" class="add-photo"><i class="fa fa-plus-square"></i></label>
-            <input type="file" id="review-img" name="review-img[]" accept="image/*" multiple style="display:none">
-            <br>      
+              <label for="review-img">Add a photo</label>
+              <br>
+              <!-- <button type="button" class="add-photo" onclick="document.getElementById('review-img').click()"><i class="far fa-plus-square"></i></button>
+              -->
+              <label for="review-img" class="add-photo"><i class="fa fa-plus-square"></i></label>
+              <input type="file" id="review-img" name="review-img[]" accept="image/*" multiple style="display:none">
+              <br>      
 
-            <!-- <label for="review-img">Add a photo</label>
-            <input type="file" id="review-img" name="review-img[]" accept="image/*" multiple> -->
+              <!-- <label for="review-img">Add a photo</label>
+              <input type="file" id="review-img" name="review-img[]" accept="image/*" multiple> -->
 
-            <label for="review-msg">Add a written review</label>
-            <textarea id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?"></textarea>
+              <label for="review-msg">Add a written review</label>
+              <textarea id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?"></textarea>
 
-            <input type="submit" value="Submit" id="submit-review">
-        </form>
+              <input type="submit" value="Submit" id="submit-review">
+          </form>
+        </div>
         <script type="text/javascript">
           function validate_rate() {
             // const user_id = 31310; // temporary; wait for cookies to work
@@ -87,8 +92,7 @@
             }
           }
         </script>
-        <!-- <script src="scripts/review-form.js" type="text/javascript"></script> -->
-      </div>
+      <?php } ?>
     </div>
   </div>
 </div>
