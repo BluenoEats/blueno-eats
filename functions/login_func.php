@@ -24,7 +24,5 @@ if ($valid) {
   $_SESSION['email'] = $user['email'];
   $_SESSION['username'] = $user['username'];
   echo bin2hex(random_bytes(8));
-} else {
-  echo 0;
 }
 ?>

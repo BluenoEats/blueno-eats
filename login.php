@@ -14,6 +14,8 @@
    <body>
       <?php include D_TEMPLATE."navigation.php" ?>
 
+      <?php if (!isset($_SESSION['user_id'])) { ?>
+         
       <form class="user-form sign-log" onsubmit="return false">
          <label for="login-email">Email: </label>
          <input type="text" id="login-email" name="login-email" placeholder="Your email" required>
@@ -25,7 +27,13 @@
          <input type="submit" value="Log in" onclick="log_in()">
       </form>
 
-      <p id="response">response</p>
+      <!-- TODO: style the response -->
+      <p id="response"></p>
       <script src="scripts/log-in.js" type="text/javascript"></script>
+
+      <?php } else { ?>
+         <!-- TODO: style this header -->
+         <h1>You are already logged in!</h1>
+      <?php } ?>
    </body>
 </html>

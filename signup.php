@@ -15,6 +15,9 @@
 
    <body>
       <?php include D_TEMPLATE."navigation.php" ?>
+      
+      <?php if (!isset($_SESSION['user_id'])) { ?>
+
       <form class="user-form sign-log" id="sign-up-form" onsubmit="return false">
          <label for="signup_username">Username </label>
          <p class="signup-error-msg" id="signup-error-msg-user"> Username is invalid.</p> 
@@ -36,7 +39,13 @@
 
          <input type="submit" value="Sign up" id="signup-form-submit" onclick="sign_up()">
       </form>
-      <p id="response">response</p>
+      <!-- TODO: style the response -->
+      <p id="response"></p>
       <script src="scripts/signup.js" type="text/javascript"></script>
+
+      <?php } else { ?>
+         <!-- TODO: style this header -->
+         <h1>You are already logged in!</h1>
+      <?php } ?>
    </body>
 </html>

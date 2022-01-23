@@ -14,7 +14,12 @@ function log_in() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("response").innerHTML = this.responseText;
+        // document.getElementById("response").innerHTML = this.responseText;
+        if (this.responseText) {
+            window.location.replace("index.php");
+        } else {
+            document.getElementById("response").innerHTML = "Incorrect email or password. Please try again.";
+        }
     }
     };
     xhttp.open("POST", "functions/login_func.php", true);
