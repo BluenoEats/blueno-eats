@@ -37,7 +37,8 @@
 
          <input type="submit" value="Sign up" id="signup-form-submit" onclick="sign_up()">
       </form>
-      <p id="response">response</p>
+      <!-- TODO: style the response -->
+      <p id="response"></p>
       <script src="scripts/signup.js" type="text/javascript"></script>
 
       <?php } else { ?>

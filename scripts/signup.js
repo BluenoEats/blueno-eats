@@ -47,7 +47,12 @@ function sign_up() {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("response").innerHTML = this.responseText;
+            // document.getElementById("response").innerHTML = this.responseText;
+            if (this.responseText === "Your account has been created.") {
+                window.location.replace("login.php");
+            } else {
+                document.getElementById("response").innerHTML = this.responseText;
+            }
           }
         };
         xhttp.open("POST", "functions/add_account.php", true);
