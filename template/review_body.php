@@ -1,6 +1,6 @@
 <?php
-function display_review($dbc, $review) { ?>
-  <div class="user-comment">
+function display_review($dbc, $review, $user_id) { ?>
+  <div class="user-comment" id="<?php echo $review['id']; ?>">
     <p class="username">Username: <?php echo ($review['anonymous'] ? "Anonymous" : get_username($dbc, $review['author_id'])); ?></p>
 
     <div class="user-rate">
@@ -22,32 +22,16 @@ function display_review($dbc, $review) { ?>
       <script src="scripts/vote.js" type="text/javascript"></script>
 
       <div class="ellipsis">
-        <i class="ellipsis-btn fas fa-ellipsis-h" onclick="ellipsis()"></i>
-        <div class="ellipsis-content" id="ellipsis-content">
+        <i class="ellipsis-btn fas fa-ellipsis-h" onclick="ellipsis(<?php echo $review['id']; ?>)"></i>
+        <div class="ellipsis-content" id="ellipsis-content-<?php echo $review['id']; ?>">
+          <?php if (isset($user_id) && $user_id == $review['author_id']) { ?>
+          <button onclick="delete_review(<?php echo $review['id']; ?>)"> Delete </button>
+          <?php } else { ?>
           <button onclick="openModal('report-modal')"> Report </button>
-          <button> Delete </button>
+          <?php } ?>
         </div>
       </div>
     </div>
-    <script>
-      function ellipsis() {
-        document.getElementById("ellipsis-content").classList.toggle("show");
-      }
-
-      // Close the dropdown menu if the user clicks outside of it
-      window.onclick = function(event) {
-        if (!event.target.matches('.ellipsis-btn')) {
-          var dropdowns = document.getElementsByClassName("ellipsis-content");
-          var i;
-          for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-              openDropdown.classList.remove('show');
-            }
-          }
-        }
-      }
-    </script>
 
     <div id="report-modal" class="modal">
       <div class="modal-content">
