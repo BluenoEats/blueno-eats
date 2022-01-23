@@ -77,6 +77,8 @@
               <label for="review-msg">Add a written review</label>
               <textarea id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?"></textarea>
 
+              <input type="checkbox" name="anonymous" value="anonymous"> anonymous <br>
+
               <input type="submit" value="Submit" id="submit-review">
           </form>
         </div>

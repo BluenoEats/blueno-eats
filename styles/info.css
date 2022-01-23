@@ -54,3 +54,15 @@
     margin-top: 100px !important;
 }
 
+.signup-error-msg{
+    display: none;
+    color: red;
+}
+
+.signup-reminder {
+    color: #ccc;
+    font-size: 12px;
+    line-height: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}

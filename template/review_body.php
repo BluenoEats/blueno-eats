@@ -21,7 +21,16 @@ function display_review($dbc, $review) {
       <span id="votenum"> 0 </span>
       <button class="vote" id="downvote"><i class="fas fa-caret-down"></i></button>
       <script src="scripts/vote.js" type="text/javascript"></script>
-      <button onclick="openModal('report-modal')" class="report"> Report </button>
+
+      <div class="ellipsis">
+        <button class="ellipsis-btn">
+          <i class="fas fa-ellipsis-h"></i>
+        </button>
+        <div class="ellipsis-content">
+          <button onclick="openModal('report-modal')" class="report"> Report </button>
+          <button onclick="openModal('report-modal')" class="report"> Delete the review </button>
+        </div>
+      </div>
     </div>
 
     <div id="report-modal" class="modal">

@@ -1,7 +1,7 @@
 const signupForm = document.getElementById("signup-form");
 
 const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;;
-const usernameRegex = /^[A-Za-z][A-Za-z0-9_]{4,29}$/;
+const usernameRegex = /^[A-Za-z][A-Za-z0-9_]{3,29}$/;
 
 //Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character:
 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,29}$/;
