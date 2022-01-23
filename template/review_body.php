@@ -23,15 +23,32 @@ function display_review($dbc, $review) {
       <script src="scripts/vote.js" type="text/javascript"></script>
 
       <div class="ellipsis">
-        <button class="ellipsis-btn">
-          <i class="fas fa-ellipsis-h"></i>
-        </button>
-        <div class="ellipsis-content">
-          <button onclick="openModal('report-modal')" class="report"> Report </button>
-          <button onclick="openModal('report-modal')" class="report"> Delete the review </button>
+        <i class="ellipsis-btn fas fa-ellipsis-h" onclick="ellipsis()"></i>
+        <div class="ellipsis-content" id="ellipsis-content">
+          <button onclick="openModal('report-modal')"> Report </button>
+          <button> Delete </button>
         </div>
       </div>
     </div>
+    <script>
+      function ellipsis() {
+        document.getElementById("ellipsis-content").classList.toggle("show");
+      }
+
+      // Close the dropdown menu if the user clicks outside of it
+      window.onclick = function(event) {
+        if (!event.target.matches('.ellipsis-btn')) {
+          var dropdowns = document.getElementsByClassName("ellipsis-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+    </script>
 
     <div id="report-modal" class="modal">
       <div class="modal-content">

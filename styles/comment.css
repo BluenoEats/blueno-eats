@@ -5,50 +5,35 @@
 }
 
 .username {
-padding-left: 6px;
+    padding-left: 6px;
 }
 
 .comment {
-padding: 10px;
-border: 2px solid #f1f1f1;
-border-radius: 5px;
+    padding: 10px;
+    border: 2px solid #f1f1f1;
+    border-radius: 5px;
 }
 
 .vote {
-text-align: center;
-font-size: 40px;
-border: 0;
-color: #b3b3b3;
-background-color: transparent;
+    text-align: center;
+    font-size: 40px;
+    border: 0;
+    color: #b3b3b3;
+    background-color: transparent;
 }
 
 .vote:hover {
-cursor: pointer;
-color: #ff6a6aaf;
+    cursor: pointer;
+    color: #ff6a6aaf;
 }
 
 .vote.active{
-color: #ff6a6a;
+    color: #ff6a6a;
 }
 
 #votenum {
     font-family: LibreBaskerville-Regular, Palatino Linotype,Times New Roman,serif;
     text-align: center;
-}
-
-.report {
-    background-color: white;
-    color: #6e6e6e;
-    font-family: LibreBaskerville-Regular, Palatino Linotype,Times New Roman,serif;
-    border:0;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.report:hover {
-    color: black;
-    text-decoration: underline;
 }
 
 .user-img-container {
@@ -65,7 +50,6 @@ color: #ff6a6a;
     width: auto;
 }
 
-
 /* The dropdown container */
 .ellipsis {
     float: right;
@@ -73,49 +57,45 @@ color: #ff6a6a;
 }
   
 /* Dropdown button */
-.ellipsis .ellipsis {
+.ellipsis .ellipsis-btn {
     font-size: 16px;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit; /* Important for vertical align on mobile phones */
+    color: #6e6e6e;
     margin: 0; /* Important for vertical align on mobile phones */
+    z-index: 2;
 }
 
 /* Add a red background color to navbar links on hover */
-.nav a:hover, .dropdown:hover .dropbtn {
-    background-color: #ff6a6a;
+.ellipsis-btn:hover {
+    cursor: pointer;
 }
 
 /* Dropdown content (hidden by default) */
-.dropdown-content {
+.ellipsis-content {
     display: none;
     position: absolute;
     background-color: white;
-    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-    float: none;
-    color: black;
-    font-size: 14px;
-    padding: 12px 16px;
-    text-decoration: none;
+.ellipsis-content button {
     display: block;
-    text-align: left;
+    padding: 5px auto;
+    background-color: white;
+    color: black;
+    font-family: LibreBaskerville-Regular, Palatino Linotype,Times New Roman,serif;
+    border:0;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    min-width: 70px;
+    min-height: 28px;
 }
 
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
+.ellipsis-content button:hover {
     background-color: #ddd;
 }
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
+.show {
+    display:block;
 }
