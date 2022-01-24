@@ -6,7 +6,7 @@
 //     return hashHex;
 // }
 
-function log_in() {
+function log_in(prev_page) {
     const email = document.getElementById("login-email").value;
     const password = document.getElementById("login-password").value;
     // SHA256(raw_password).then(encrypted => verify_with_server(email, encrypted));
@@ -16,7 +16,11 @@ function log_in() {
     if (this.readyState == 4 && this.status == 200) {
         // document.getElementById("response").innerHTML = this.responseText;
         if (this.responseText) {
-            window.location.replace("index.php");
+            if (typeof prev_page == "undefined") {
+                window.location.replace("/websites/bluenoeats.github.io/index.php");
+            } else {
+                window.location.replace(prev_page);
+            }
         } else {
             document.getElementById("response").innerHTML = "Incorrect email or password. Please try again.";
         }

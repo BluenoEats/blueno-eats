@@ -24,7 +24,7 @@
          <input type="password" name="login-password" id="login-password" placeholder="Password">
          <a href="forgotpass">Forgot your password?</a>
 
-         <input type="submit" value="Log in" onclick="log_in()">
+         <input type="submit" value="Log in" onclick="log_in('<?php if (isset($_SESSION['prev_page'])) { echo $_SESSION['prev_page']; } ?>')">
       </form>
 
       <!-- TODO: style the response -->
