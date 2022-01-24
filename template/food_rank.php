@@ -24,7 +24,7 @@ function echo_food_list($dbc, $result) {
 
 <div class="rank">
   <div class="flex-item flex-left">
-    <h2>Best Food</h2>
+    <h2>Best-rated Food</h2>
     <ol>
       <?php
       $query = "SELECT dish_id, SUM(rating)/COUNT(rating) as rating FROM ".REVIEW_DB." GROUP BY dish_id ORDER BY rating DESC LIMIT $num_dishes";
@@ -35,7 +35,7 @@ function echo_food_list($dbc, $result) {
   </div>
   
   <div class="flex-item flex-right">
-    <h2>Best Food</h2>
+    <h2>Worst-rated Food</h2>
     <ol>
       <?php
       $query = "SELECT dish_id, SUM(rating)/COUNT(rating) as rating FROM ".REVIEW_DB." GROUP BY dish_id ORDER BY rating ASC LIMIT $num_dishes";
