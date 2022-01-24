@@ -89,13 +89,15 @@
         </div>
         <script type="text/javascript">
           var loadFile = function(event) {
-            var output = document.createElement("img");
-            output.className = "upload-img";
-            output.src = URL.createObjectURL(event.target.files[0]);
-            output.onload = function() {
-              URL.revokeObjectURL(output.src) // free memory
-            }
-            document.getElementById("upload-preview").appendChild(output);
+            for (let i = 0, numFiles = event.target.files.length; i < numFiles; i++) {
+              var output = document.createElement("img");
+              output.className = "upload-img";
+              output.src = URL.createObjectURL(event.target.files[i]);
+              output.onload = function() {
+                URL.revokeObjectURL(output.src) // free memory
+              }
+              document.getElementById("upload-preview").appendChild(output);
+              }
           };
 
           function validate_rate() {
