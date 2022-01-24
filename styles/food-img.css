@@ -131,18 +131,9 @@
   color: #d26183;
 }
 
-/*only for all-food-modal*/
-#all-food-modal-body {
-  align-content: center;
-  position: relative;
-  max-height: calc(100vh - 200px);
-  overflow-y: scroll;
-  box-sizing: border-box;
-}
-
 .all-image-style{
-  width: 200px;
   height: 150px;
+  width: auto;
   margin: 8px;
 }
 
