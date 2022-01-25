@@ -9,7 +9,7 @@
 
 .food-imgs-row > .food-imgs-col {
     padding: 0 8px;
-  }
+}
 
 .food-imgs-row:after {
   content: "";
@@ -186,3 +186,19 @@
   right: 0;
   bottom: 0;
 }
+
+@media (max-width: 800px) {
+  #all-food-modal-body {
+      text-align: center;
+  }
+}    
+
+@media (max-width: 600px) {
+  .food-imgs-col{
+    width: 50%;
+  }
+
+  .food-imgs-row > .food-imgs-col {
+    padding: 4px;
+  }
+}    

@@ -103,8 +103,8 @@
 
 
 .wr-review-modal {
-  padding: 30px 50px !important;
-  padding-top: 50px !important;
+  padding: 30px 50px;
+  padding-top: 50px;
 }
 
 .add-photo {
@@ -147,4 +147,17 @@
   height: 100px;
   width: auto;
   margin: 8px;
+}
+
+@media (max-width: 800px) {
+  .wr-review-modal {
+    padding: 10px;
+    padding-top: 30px;
+  }
+
+  .wr-review-modal h2{
+    font-size: 20px;
+    padding: 0 20px;
+    padding-top: 30px;
+  }
 }

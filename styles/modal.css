@@ -58,3 +58,9 @@
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
 }
+
+@media (max-width: 800px) {
+  .modal-content {
+    padding: 25px 10px;
+  }
+}    

@@ -43,7 +43,7 @@
 /* width should vary based on num of images */
 .user-img {
     display: inline-block;
-    padding: 0px 3px;
+    padding: 3px;
     object-fit: cover;
     vertical-align: middle;
     height: 170px;
@@ -98,3 +98,9 @@
 .show {
     display:block;
 }
+
+@media (max-width: 800px) {
+    .user-img-container {
+        text-align: center;
+    }
+}    

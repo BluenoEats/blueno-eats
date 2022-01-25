@@ -34,7 +34,7 @@ $page = get_dish_page($dbc, $_GET['dish']);
       
       <?php if (isset($page['id'])) { ?>
       <div class="food-body food">
-          <div class="food-item food-left">
+          <div class="food-item">
               <h1 id="food-name"><?php echo $page['name']; ?></h1>
           </div>
           <?php include D_TEMPLATE."dish_slideshow.php"; ?>

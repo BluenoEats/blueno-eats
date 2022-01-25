@@ -1,5 +1,6 @@
 .food-body {
-  width: 800px;
+  width: 90%;
+  max-width: 800px;
   margin: 20px auto;
 }
 
@@ -36,6 +37,29 @@
     box-sizing: border-box;
 }
 
+@media (max-width: 800px) {
+    .food {
+      flex-direction: column;
+      margin-top: 50px;
+      padding-bottom: 10px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #food-name {
+        text-align: center;
+    }
+
+    .food img {
+        height: auto;
+    }
+
+    .food .slideshow-container {
+        width: 80%;
+        height: 150px;
+    }
+  }
+
 /*
 @media (max-width: 1030px) {
     .food {
@@ -43,10 +67,6 @@
         justify-content: center;
         margin-top: 80px;
         margin-left: 0px;
-    }
-
-    .food-intro {
-        margin: 0 auto;
     }
   }
 
@@ -65,11 +85,6 @@
 
     #food-name {
         text-align: center;
-    }
-
-    .food-intro {
-        width: 400px;
-        margin: 0 auto;
     }
 
   }

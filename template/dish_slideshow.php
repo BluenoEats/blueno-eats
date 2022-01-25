@@ -1,4 +1,4 @@
-<div class="food-item food-right slideshow-container">
+<div class="food-item slideshow-container">
   <?php
   $result = get_slideshow($dbc, DISH_SLIDESHOW_DB, 'dish_id', $page['id']);
   $num_rows = mysqli_num_rows($result);
