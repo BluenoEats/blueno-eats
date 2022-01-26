@@ -23,6 +23,7 @@ function log_in(prev_page) {
             if (this.responseText) {
                 document.getElementById("response").innerHTML = "You have successfully logged in! ";
                 setTimeout(function () {
+                    // TODO: handle circumstance that previous page is log in
                     if (typeof prev_page == "undefined") {
                         window.location.replace("/websites/bluenoeats.github.io/index.php");
                     } else {

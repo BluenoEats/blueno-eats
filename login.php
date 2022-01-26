@@ -31,7 +31,6 @@
       <script src="scripts/log-in.js" type="text/javascript"></script>
 
       <?php } else { ?>
-         <!-- TODO: style this header -->
          <h1>You are already logged in!</h1>
       <?php } ?>
    </body>
