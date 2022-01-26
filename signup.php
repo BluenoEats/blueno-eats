@@ -10,7 +10,6 @@
       <link href="styles/navigation.css" rel="stylesheet" type="text/css">
       <link href="styles/info.css" rel="stylesheet" type="text/css">
       <link href="styles/form.css" rel="stylesheet" type="text/css">
-      <link href="styles/signup.css" rel="stylesheet" type="text/css">
    </head>
 
    <body>
@@ -22,7 +21,7 @@
          <label for="signup_username">Username </label>
          <p class="signup-error-msg" id="signup-error-msg-user"> Username is invalid.</p> 
          <input input type="text" id="signup_username" minlength="3" maxlength="12" required>
-         <p class="signup-reminder"> Username must contain at least three characters.</p>
+         <p class="signup-reminder"> Username must contain at least four characters.</p>
 
          <label for="signup_email">Email </label>
          <p class="signup-error-msg" id="signup-error-msg-email"> Email is invalid</p> 
@@ -39,8 +38,8 @@
 
          <input type="submit" value="Sign up" id="signup-form-submit" onclick="sign_up()">
       </form>
-      <!-- TODO: style the response -->
-      <p id="response"></p>
+
+
       <script src="scripts/signup.js" type="text/javascript"></script>
 
       <?php } else { ?>

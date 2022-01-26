@@ -3,8 +3,8 @@ const signupForm = document.getElementById("signup-form");
 const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;;
 const usernameRegex = /^[A-Za-z][A-Za-z0-9_]{3,29}$/;
 
-//Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character:
-const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,29}$/;
+// Minimum eight characters, at least one letter and one number
+const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,29}$/;
 
 
 // async function SHA256(message) {
@@ -27,21 +27,15 @@ function sign_up() {
     document.getElementById("signup-error-msg-rep-pass").style.display = "none";
 
     if (!usernameRegex.test(username)) {
-       // alert("Username is invalid.");
         document.getElementById("signup-error-msg-user").style.display = "inline";
     } else if (!emailRegex.test(email)) {
-        //alert("Email is invalid");
         document.getElementById("signup-error-msg-email").style.display = "inline";
     } else if (!passwordRegex.test(password)) {
-        //alert("The password should be eight characters minimum and contain at least one number and one special character.");
         document.getElementById("signup-error-msg-pass").style.display = "inline";
     } else if (password !== repeat) {
         document.getElementById("signup-error-msg-rep-pass").style.display = "inline";
-        //alert("The passwords do not match.");
     } else {
-        //alert("np");
-        // submitbtn.disabled = false;
-        document.getElementById("response").innerHTML = "creating an account...";
+        document.getElementById("alert").style.display = "block";
         // SHA256(password).then(encrypted => send_to_server(username, email, encrypted));
 
         var xhttp = new XMLHttpRequest();

@@ -18,6 +18,7 @@
          
       <form class="user-form sign-log" onsubmit="return false">
          <label for="login-email">Email: </label>
+         <p class="signup-error-msg" id="login-error-msg-email"> Email is invalid</p> 
          <input type="text" id="login-email" name="login-email" placeholder="Your email" required>
 
          <label for="login-password">Password</label>
@@ -27,8 +28,6 @@
          <input type="submit" value="Log in" onclick="log_in('<?php if (isset($_SESSION['prev_page'])) { echo $_SESSION['prev_page']; } ?>')">
       </form>
 
-      <!-- TODO: style the response -->
-      <p id="response"></p>
       <script src="scripts/log-in.js" type="text/javascript"></script>
 
       <?php } else { ?>

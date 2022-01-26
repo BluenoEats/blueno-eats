@@ -134,3 +134,37 @@ footer {
     background-color: #ff6a6a;
     cursor: pointer;
 }
+
+
+
+.alert {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+    background-color: #ee81a1; /* Red */
+    color: white;
+    border-radius: 5px;
+    width: 75%;
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 100;
+    opacity: 1;
+  }
+  
+  .alert p{
+    margin: 0;
+  }
+  
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }

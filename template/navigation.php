@@ -42,3 +42,8 @@
   <!-- TODO: add profile -->
   <!-- <a href="logout.php" class="nav-right"> Log out</a> -->
 </div>
+
+<div class="alert" style="display:none;" id="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <p id="response"> </p>
+</div>
