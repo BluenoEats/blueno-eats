@@ -7,11 +7,11 @@ function get_slideshow($dbc, $db_name, $key, $id) {
 
 function get_reviews($dbc, $dish) {
   $query = "SELECT SUM(rating) as total_score FROM ".REVIEW_DB." WHERE dish_id = $dish";
-  $result = mysqli_query($dbc, $query);
-  $total_score = mysqli_fetch_assoc($result)['total_score'];
+  $sum_rating = mysqli_query($dbc, $query);
+  $total_score = mysqli_fetch_assoc($sum_rating)['total_score'];
 
   $query = "SELECT rating, COUNT(*) as num_reviews FROM ".REVIEW_DB." WHERE dish_id=$dish GROUP BY rating";
-  $result = mysqli_query($dbc, $query);
+  $rating_by_stars = mysqli_query($dbc, $query);
 
   $num_by_stars = array(
     1    => 0,
@@ -20,17 +20,27 @@ function get_reviews($dbc, $dish) {
     4    => 0,
     5    => 0,
   );
-  while($row = mysqli_fetch_assoc($result)) {
+  while($row = mysqli_fetch_assoc($rating_by_stars)) {
     $num_by_stars[$row['rating']] = $row['num_reviews'];
   }
 
   $query = "SELECT * FROM ".REVIEW_DB." WHERE dish_id = $dish";
-  $result = mysqli_query($dbc, $query);
-  $num_reviews = mysqli_num_rows($result);
+  $all_reviews = mysqli_query($dbc, $query);
+  $num_reviews = mysqli_num_rows($all_reviews);
   $rating = ($num_reviews ? ($total_score / $num_reviews) : 0);
   $rating = number_format($rating, 1, '.', '');
 
-  return [$rating, $num_reviews, $num_by_stars, $result];
+  // constructing an array containing image sources
+  $img_srcs = array();
+  while ($review = mysqli_fetch_assoc($all_reviews)) {
+    $result = get_slideshow($dbc, REVIEW_IMAGES, 'review_id', $review['id']);
+    while ($row = mysqli_fetch_assoc($result)) {
+      $img_srcs[] = $row['img_src'];
+    }
+  }
+
+  mysqli_data_seek($all_reviews, 0);
+  return [$rating, $num_reviews, $num_by_stars, $img_srcs, $all_reviews];
 }
 
 function get_username($dbc, $user_id) {

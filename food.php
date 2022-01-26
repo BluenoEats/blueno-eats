@@ -4,7 +4,8 @@ include "functions/get_page.php";
 include "functions/get_data.php";
 # Retrieve food page
 $page = get_dish_page($dbc, $_GET['dish']);
-[$rating, $num_reviews, $num_by_stars, $reviews] = get_reviews($dbc, $_GET['dish']);
+[$rating, $num_reviews, $num_by_stars, $img_srcs, $reviews] = get_reviews($dbc, $_GET['dish']);
+$num_images = count($img_srcs);
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +28,10 @@ $page = get_dish_page($dbc, $_GET['dish']);
         <script src="scripts/manual-slide.js" type="text/javascript"></script>
         <script src="scripts/modal.js" type="text/javascript"></script>
         <script src="scripts/array-slide.js" type="text/javascript"></script>
+        <script> 
+        var images = <?php echo json_encode($img_srcs); ?>;
+        var num_slides = <?php echo $num_images; ?>;
+        </script>
     </head>
 
     <body>
@@ -43,7 +48,7 @@ $page = get_dish_page($dbc, $_GET['dish']);
       <p class="food-intro food-body"><?php echo $page['content']; ?></p>
 
       <?php include D_TEMPLATE."review_preview.php"; ?>
-      <?php include D_TEMPLATE."review_slideshow.php"; ?>
+      <?php if ($num_images) { include D_TEMPLATE."review_slideshow.php"; } ?>
 
       <div class="food-body">
       <?php
@@ -52,7 +57,8 @@ $page = get_dish_page($dbc, $_GET['dish']);
         if (!empty($review['content'])) {
           display_review($dbc, $review, $_SESSION['user_id']);
         }
-      }?>
+      }
+      ?>
       </div>
 
       <script src="scripts/review_manage.js" type="text/javascript"></script>

@@ -2,21 +2,14 @@
 
 <div class="food-body food-imgs">
     <div class="food-imgs-row">
-        <div class="food-imgs-col">
-        <img id="slide-im1" src="img/place4.jpeg" style="width:100%" onclick="openSlideModal('zoom-img','1')" class="hover-shadow">
-        </div>
-        <div class="food-imgs-col">
-        <img id="slide-im2" src="img/place3.jpeg" style="width:100%" onclick="openSlideModal('zoom-img','2')" class="hover-shadow">
-        </div>
-        <div class="food-imgs-col">
-        <img id="slide-im3" src="img/place2.jpeg" style="width:100%" onclick="openSlideModal('zoom-img','3')" class="hover-shadow">
-        </div>
-        <div class="food-imgs-col">
-        <img id="slide-im4" src="img/placeholding.png" style="width:100%" onclick="openSlideModal('zoom-img','4')" class="hover-shadow">
-        </div>
+        <?php for ($i = 1; $i <= 4 && $i <= $num_images; $i++) { ?>
+            <div class="food-imgs-col">
+            <img id="slide-im<?php echo $i; ?>" src="<?php echo $img_srcs[$i-1]; ?>" style="width:100%" onclick="openSlideModal('zoom-img','<?php echo $i; ?>')" class="hover-shadow">
+            </div>
+        <?php } ?>
     </div>
-    
-    <div class="img-control">
+
+    <div class="img-control" >
         <button type="button" class="all-btn all-left" onclick="changeImg('left')"><i class="fas fa-angle-double-left"></i></button>
         <button onclick="openModal('all-food-modal')" class="all-img"> See all image here </button>
         <button type="button" class="all-btn all-right" onclick="changeImg('right')"><i class="fas fa-angle-double-right"></i></i></button>
@@ -47,3 +40,5 @@
     </div>
     
 </div>
+
+<!-- <script>changeImg('left'); changeImg('right');</script> -->

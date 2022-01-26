@@ -1,10 +1,10 @@
-var images = [
-    'img/place4.jpeg',
-    'img/place3.jpeg',
-    'img/place2.jpeg',
-    'img/placeholding.png',
-    'upload/IMG_9088.JPG',
-];
+// var images = [
+//     'img/place4.jpeg',
+//     'img/place3.jpeg',
+//     'img/place2.jpeg',
+//     'img/placeholding.png',
+//     'upload/IMG_9088.JPG',
+// ];
 
 var n = images.length;
 var index = 0;
@@ -28,7 +28,7 @@ function changeImg(direction) {
     }
 
     //showing the images
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 4 && i < num_slides; i++) {
         if (index + i >= n) {
             document.getElementById("slide-im" + (i+1)).src = images[index + i - n];
         } else {
