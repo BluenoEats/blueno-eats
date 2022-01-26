@@ -1,3 +1,8 @@
+<div class="alert" style="display:none;" id="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <p id="response"> </p>
+</div>
+
 <div class="nav">
   <a href="index.php" class="nav-left"> Home</a>
   <a href="about.php" class="nav-left nav-hide"> About</a>
@@ -22,15 +27,19 @@
     <button class="log-btn nav-right" onclick="log_out()" class="nav-right">Log out</button>
     <script>
       function log_out() {
-        alert("You have successfully logged out");
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          window.location.reload();
-        }
-        };
-        xhttp.open("GET", "functions/logout_func.php", true);
-        xhttp.send();
+        document.getElementById("alert").style.display = "block";
+        document.getElementById("response").innerHTML = "You have successfully logged out! ";
+        setTimeout(function () {
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            window.location.reload();
+          }
+          };
+          xhttp.open("GET", "functions/logout_func.php", true);
+          xhttp.send();
+        }, 3000);
+      
       }
     </script>
   <?php } ?>
@@ -41,9 +50,4 @@
    -->
   <!-- TODO: add profile -->
   <!-- <a href="logout.php" class="nav-right"> Log out</a> -->
-</div>
-
-<div class="alert" style="display:none;" id="alert">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <p id="response"> </p>
 </div>

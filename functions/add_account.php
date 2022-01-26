@@ -22,7 +22,7 @@ if ($exist) {
   if ($counter == 100) {
     echo "A problem occurs while creating your account. Please try again later.";
   } else {
-    echo "Your account has been created.";
+    echo "Your account has been successfully created.";
   }
 }
 ?>

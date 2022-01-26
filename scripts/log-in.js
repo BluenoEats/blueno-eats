@@ -21,12 +21,14 @@ function log_in(prev_page) {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("alert").style.display = "block";
             if (this.responseText) {
-                document.getElementById("response").innerHTML = "Successfully logged in! ";
-                if (typeof prev_page == "undefined") {
-                    window.location.replace("/websites/bluenoeats.github.io/index.php");
-                } else {
-                    window.location.replace(prev_page);
-                }
+                document.getElementById("response").innerHTML = "You have successfully logged in! ";
+                setTimeout(function () {
+                    if (typeof prev_page == "undefined") {
+                        window.location.replace("/websites/bluenoeats.github.io/index.php");
+                    } else {
+                        window.location.replace(prev_page);
+                    }
+                }, 3000);
             } else {
                 document.getElementById("response").innerHTML = "Incorrect email or password. Please try again.";
             }
