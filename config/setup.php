@@ -18,8 +18,12 @@ define('REVIEW_DB', 'reviews');
 define('REVIEW_IMAGES', 'review_images');
 
 session_start();
-if ($_SERVER['REQUEST_URI'] !== "/series/bluenoeats/login.php") {
+if (!str_contains($_SERVER['REQUEST_URI'], 'login.php')) {
     $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
 }
-echo $_SERVER['REQUEST_URI'];
+
+// if ($_SERVER['REQUEST_URI'] !== "/websites/bluenoeats.github.io/login.php") {
+//     $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
+// }
 ?>
+

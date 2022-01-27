@@ -14,8 +14,9 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <?php if (isset($_SESSION['user_id'])) { ?>
+    <!-- <?php if (isset($_SESSION['user_id'])) { ?>
       <p><?php echo $_SESSION['user_id']; ?></p>
-    <?php } ?>
+    <?php } ?> -->
+    <!-- <?php echo isset($i); ?> -->
   </body>
 </html>

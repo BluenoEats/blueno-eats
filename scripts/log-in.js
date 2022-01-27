@@ -25,7 +25,7 @@ function log_in(prev_page) {
                 setTimeout(function () {
                     // TODO: handle circumstance that previous page is log in
                     if (typeof prev_page == "undefined") {
-                        window.location.replace("/series/bluenoeats/login.php");
+                        window.location.replace("index.php");
                     } else {
                         window.location.replace(prev_page);
                     }
