@@ -9,6 +9,7 @@
         <?php } ?>
     </div>
 
+    <?php if ($num_images > 4) { ?>
     <div class="img-control" >
         <button type="button" class="all-btn all-left" onclick="changeImg('left')"><i class="fas fa-angle-double-left"></i></button>
         <button onclick="openModal('all-food-modal')" class="all-img"> See all image here </button>
@@ -30,6 +31,7 @@
             </div>
         </div>
     </div>
+    <?php } ?>
 
     <!-- The Modal -->
     <div id="zoom-img" class="modal">
