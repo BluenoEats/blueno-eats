@@ -1,7 +1,7 @@
 <?php
 function upload_img($target_dir, $file_info) {
   // $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/websites/bluenoeats.github.io/upload/";
-  $target_file = $target_dir.basename($file_info["name"]);
+  $target_file = $target_dir.basename($file_info["tmp_name"]);
   $uploadOk = 1;
   $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
@@ -49,8 +49,5 @@ function upload_img($target_dir, $file_info) {
       return 0;
     }
   }
-
-  // echo $file_info["tmp_name"].'    ';
-  // echo $target_file;
 }
 ?>
