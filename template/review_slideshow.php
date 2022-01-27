@@ -2,20 +2,14 @@
 
 <div class="food-body food-imgs">
     <div class="food-imgs-row">
-        <div class="food-imgs-col">
-        <img id="slide-im1" src="img/place4.jpeg" style="width:100%" onclick="openSlideModal('zoom-img','1')" class="hover-shadow">
-        </div>
-        <div class="food-imgs-col">
-        <img id="slide-im2" src="img/place3.jpeg" style="width:100%" onclick="openSlideModal('zoom-img','2')" class="hover-shadow">
-        </div>
-        <div class="food-imgs-col">
-        <img id="slide-im3" src="img/place2.jpeg" style="width:100%" onclick="openSlideModal('zoom-img','3')" class="hover-shadow">
-        </div>
-        <div class="food-imgs-col">
-        <img id="slide-im4" src="img/placeholding.png" style="width:100%" onclick="openSlideModal('zoom-img','4')" class="hover-shadow">
-        </div>
+        <?php for ($i = 1; $i <= 4 && $i <= $num_images; $i++) { ?>
+            <div class="food-imgs-col">
+            <img id="slide-im<?php echo $i; ?>" src="<?php echo $img_srcs[$i-1]; ?>" style="width:100%" onclick="openSlideModal('zoom-img','<?php echo $i; ?>')" class="hover-shadow">
+            </div>
+        <?php } ?>
     </div>
-    <div class="img-control">
+
+    <div class="img-control" >
         <button type="button" class="all-btn all-left" onclick="changeImg('left')"><i class="fas fa-angle-double-left"></i></button>
         <button onclick="openModal('all-food-modal')" class="all-img"> See all image here </button>
         <button type="button" class="all-btn all-right" onclick="changeImg('right')"><i class="fas fa-angle-double-right"></i></i></button>
@@ -47,43 +41,4 @@
     
 </div>
 
-
-
-
-<!--hello
-    <div id="food-pic-modal" class="modal">
-    <div class=" modal-content">
-        <span class="close" onclick="closeModal('food-pic-modal')"><i class="fas fa-times"></i></span>
-        <div class="food-imgs-slide">
-            <div class="food-imgs-numtext">1 / 4</div>
-            <img src="img/place4.jpeg" style="width:100%">
-        </div>
-        <div class="food-imgs-slide">
-            <div class="food-imgs-numtext">2 / 4</div>
-            <img src="img/place3.jpeg" style="width:100%">
-        </div>
-        <div class="food-imgs-slide">
-            <div class="food-imgs-numtext">3 / 4</div>
-            <img src="img/place2.jpeg" style="width:100%">
-        </div>
-        <div class="food-imgs-slide">
-            <div class="food-imgs-numtext">4 / 4</div>
-            <img src="img/placeholding.png" style="width:100%">
-        </div>
-        <a class="food-imgs-prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="food-imgs-next" onclick="plusSlides(1)">&#10095;</a>
-
-        <div class="food-imgs-col">
-            <img class="food-imgs-cur cursor" src="img/place4.jpeg" style="width:100%" onclick="currentSlide(1)" alt="Food example 1">
-        </div>
-        <div class="food-imgs-col">
-            <img class="food-imgs-cur cursor" src="img/place3.jpeg" style="width:100%" onclick="currentSlide(2)" alt="Food example 2">
-        </div>
-        <div class="food-imgs-col">
-            <img class="food-imgs-cur cursor" src="img/place2.jpeg" style="width:100%" onclick="currentSlide(3)" alt="Food example 3">
-        </div>
-        <div class="food-imgs-col">
-            <img class="food-imgs-cur cursor" src="img/placeholding.png" style="width:100%" onclick="currentSlide(4)" alt="Food example 4">
-        </div>
-    </div>
-    -->
+<!-- <script>changeImg('left'); changeImg('right');</script> -->

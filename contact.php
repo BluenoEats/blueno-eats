@@ -19,7 +19,7 @@
     <p id="contact-guide"> Get in touch via the form below, or by emailing
         <a href="mailto:bluenoeats@gmail.com" target="_blank">bluenoeats@gmail.com</a>!</p>
     <div class="contact-container user-form">
-        <form action="action_page.php">
+        <form>
 
             <label for="contact-name">Name</label>
             <input type="text" id="contact-name" name="contact-name" placeholder="Your name">
@@ -31,11 +31,21 @@
             <label for="contact-message">Message</label>
             <textarea id="contact-message" name="contact-message" placeholder="Write something..." style="height:200px"></textarea>
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" onclick="openMail()">
 
         </form>
         </div>
 
+<script>
+    function openMail() {
+        var emailTo = 'bluenoeats@gmail.com';
+        var emailSub = 'Message from ' + document.getElementById('contact-name').value;
+        var emailBody = document.getElementById('contact-message').value;
+        var emailCC = '';
+        window.open('mailto:'+emailTo+'?cc='+emailCC+'&subject='+emailSub+'&body='+emailBody, '_self');
+
+    }
+</script>
 
 
     <?php include D_TEMPLATE."footer.php"; ?>
