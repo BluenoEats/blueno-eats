@@ -45,7 +45,8 @@ function sign_up() {
             if (this.responseText === "Your account has been successfully created.") {
                 setTimeout(function () {
                     window.location.replace("login.php");
-                }, 3000);
+                }, 2000);
+                
             }
           }
         };

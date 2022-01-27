@@ -25,11 +25,11 @@ function log_in(prev_page) {
                 setTimeout(function () {
                     // TODO: handle circumstance that previous page is log in
                     if (typeof prev_page == "undefined") {
-                        window.location.replace("/websites/bluenoeats.github.io/index.php");
+                        window.location.replace("/series/bluenoeats/login.php");
                     } else {
                         window.location.replace(prev_page);
                     }
-                }, 3000);
+                }, 2000);
             } else {
                 document.getElementById("response").innerHTML = "Incorrect email or password. Please try again.";
             }
