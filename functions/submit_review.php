@@ -28,8 +28,11 @@ if (isset($review_id) && $review_id) {
       'error'     => $_FILES['review-img']['error'][$i],
       'size'      => $_FILES['review-img']['size'][$i],
     );
+
     // upload photos
-    $success = upload_img($target_dir, $file_info);
+    $imageFileType = strtolower(pathinfo($file_info["name"],PATHINFO_EXTENSION));
+    $file_name = bin2hex(random_bytes(12)).".".$imageFileType;
+    $success = upload_img($target_dir, $file_info, $file_name);
     if ($success) {
       echo "<p>image successfully uploaded</p>";
     }
@@ -37,13 +40,12 @@ if (isset($review_id) && $review_id) {
     // store img sources in database
     if ($success) {
       $db = REVIEW_IMAGES;
-      $img_src = "upload/".$file_info['name'];
+      $img_src = "upload".DIRECTORY_SEPARATOR.$file_name;
       $query = "INSERT INTO $db (`review_id`, `img_src`) VALUES ($review_id, '$img_src')";
       mysqli_query($dbc, $query);
     }
   }
 }
 
-echo $_SESSION['prev_page'];
 redirect($_SESSION['prev_page']);
 ?>
