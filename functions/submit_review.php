@@ -2,6 +2,7 @@
 include "../config/setup.php";
 include "upload_img.php";
 include "insert_review.php";
+include "redirect.php";
 
 if (isset($_SESSION['user_id'])) {
   $author_id = $_SESSION['user_id'];
@@ -42,4 +43,7 @@ if (isset($review_id) && $review_id) {
     }
   }
 }
+
+echo $_SESSION['prev_page'];
+redirect($_SESSION['prev_page']);
 ?>
