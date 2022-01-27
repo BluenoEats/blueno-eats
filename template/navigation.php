@@ -7,7 +7,7 @@
   <a href="index.php" class="nav-left"> Home</a>
   <a href="about.php" class="nav-left nav-hide"> About</a>
   <a href="contact.php" class="nav-left nav-hide"> Contacts</a>
-  <div class="dropdown" class="nav-left">
+  <div class="dropdown nav-left">
     <button class="dropbtn">Dining Halls
       <i class="fa fa-caret-down"></i>
     </button>
@@ -24,7 +24,17 @@
     <a href="login.php" class="nav-right"> Log in</a>
     <a href="signup.php" class="nav-right"> Sign up</a>
   <?php } else { ?>
-    <button class="log-btn nav-right" onclick="log_out()" class="nav-right">Log out</button>
+    <div class="dropdown nav-right">
+      <button class="dropbtn">Settings
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content setting">
+        <a href="account.php">Manage Account</a>
+        <a onclick="log_out()">Log out</a>
+      </div>
+  </div>
+
+    <!-- <button class="log-btn nav-right" onclick="log_out()">Log out</button> -->
     <script>
       function log_out() {
         document.getElementById("alert").style.display = "block";

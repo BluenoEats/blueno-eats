@@ -66,3 +66,20 @@
     margin-top: -10px;
     margin-bottom: 10px;
 }
+
+.account-header {
+    text-align: left;
+}
+
+.divide-account {
+    border: 1.5px solid #f3dbe4;
+    background-color: #f3dbe4;
+    width: 75%;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.account-user {
+    margin-top: 100px;
+    font-size: 35px;
+}

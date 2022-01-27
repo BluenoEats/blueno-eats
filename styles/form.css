@@ -6,6 +6,11 @@
     font-size: 14px;
 }
 
+.user-form h2{
+    font-family: League Spartan,Helvetica,Arial,sans-serif;
+    padding-bottom: 20px;
+}
+
 .user-form input, textarea {
     display: block;
     margin-top: 6px; /* Add a top margin */
@@ -66,8 +71,14 @@
     margin-right: 3px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
     .user-form {
         width: 80%;
     }
+
+    .user-form h2{
+        font-size: 20px;
+        padding: 0 20px;
+        padding-top: 30px;
+      }
 }

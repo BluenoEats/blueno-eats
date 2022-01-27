@@ -47,8 +47,8 @@
           <p> Already have an account? <a href="login.php">Log in</a></p>
       </div>
       <?php } else { ?>
-        <h2> Create a Review for <?php echo $page['name']; ?> </h2>
         <div class="user-form" style="margin-top:15px">
+          <h2> Create a Review for <?php echo $page['name']; ?> </h2>
           <form onsubmit="return validate_rate()" action="functions/submit_review.php" method="post" enctype="multipart/form-data" id="review_form">
               <label>Overall Rating</label>
               <!-- TODO: Hover effect -->

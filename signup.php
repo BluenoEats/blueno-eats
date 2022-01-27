@@ -32,11 +32,11 @@
          <input type="password" id="signup_password" minlength="8" required>
          <p class="signup-reminder"> Passwords must contain at least eight characters, including at least 1 letter and 1 number.</p>
 
-         <label for="comfirm password">Confirm Password</label>
+         <label for="comfirm password">Confirm password</label>
          <p class="signup-error-msg" id="signup-error-msg-rep-pass"> The passwords do not match. </p> 
          <input type="password" id="signup_password_repeat" required>
 
-         <input type="submit" value="Sign up" id="signup-form-submit" onclick="sign_up()">
+         <input type="submit" value="Sign Up" id="signup-form-submit" onclick="sign_up()">
       </form>
 
 
