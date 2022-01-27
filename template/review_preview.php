@@ -87,6 +87,7 @@
               <input type="submit" value="Submit" id="submit-review">
           </form>
         </div>
+        <!-- <script src="scripts/submit_review.js" type="text/javascript"> -->
         <script type="text/javascript">
           var loadFile = function(event) {
             for (let i = 0, numFiles = event.target.files.length; i < numFiles; i++) {
