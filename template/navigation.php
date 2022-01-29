@@ -48,7 +48,7 @@
           };
           xhttp.open("GET", "functions/logout_func.php", true);
           xhttp.send();
-        }, 3000);
+        }, 2000);
       
       }
     </script>

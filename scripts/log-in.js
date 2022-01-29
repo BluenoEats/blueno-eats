@@ -29,7 +29,7 @@ function log_in(prev_page) {
                     } else {
                         window.location.replace(prev_page);
                     }
-                }, 3000);
+                }, 2000);
             } else {
                 document.getElementById("response").innerHTML = "Incorrect email or password. Please try again.";
             }

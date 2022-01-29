@@ -26,3 +26,4 @@ if (!str_contains($_SERVER['REQUEST_URI'], 'functions'.DIRECTORY_SEPARATOR) && !
 //     $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
 // }
 ?>
+
