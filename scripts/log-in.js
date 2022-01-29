@@ -20,7 +20,7 @@ function log_in(prev_page) {
         xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("alert").style.display = "block";
-            if (this.responseText) {
+            if (this.responseText === 'invalid') {
                 document.getElementById("response").innerHTML = "You have successfully logged in! ";
                 setTimeout(function () {
                     // TODO: handle circumstance that previous page is log in
