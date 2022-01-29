@@ -41,12 +41,16 @@ function sign_up() {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("response").innerHTML = this.responseText;
-            if (this.responseText === "Your account has been successfully created.") {
+            if (this.responseText == 0) {
+                document.getElementById("response").innerHTML = "Your account has been successfully created.";
                 setTimeout(function () {
+                    document.getElementById("response").innerHTML = "redirecting...";
                     window.location.replace("login.php");
                 }, 2000);
-                
+            } else if (this.responseText == 1) {
+                document.getElementById("response").innerHTML = "Email $email has already been used.";
+            } else if (this.responseText == 2) {
+                document.getElementById("response").innerHTML = "A problem occurs while creating your account. Please try again later.";
             }
           }
         };
