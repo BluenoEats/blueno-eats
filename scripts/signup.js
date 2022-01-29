@@ -46,7 +46,6 @@ function sign_up() {
                 setTimeout(function () {
                     window.location.replace("login.php");
                 }, 2000);
-                
             }
           }
         };
