@@ -18,7 +18,7 @@ define('REVIEW_DB', 'reviews');
 define('REVIEW_IMAGES', 'review_images');
 
 session_start();
-if (!str_contains($_SERVER['REQUEST_URI'], 'login.php') && !str_contains($_SERVER['REQUEST_URI'], 'submit_review.php')) {
+if (!str_contains($_SERVER['REQUEST_URI'], 'functions'.DIRECTORY_SEPARATOR) && !str_contains($_SERVER['REQUEST_URI'], 'login.php') && !str_contains($_SERVER['REQUEST_URI'], 'submit_review.php')) {
     $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
 }
 
