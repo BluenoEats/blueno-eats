@@ -135,6 +135,7 @@
   height: 150px;
   width: auto;
   margin: 8px;
+  cursor: pointer;
 }
 
 #all-img-zoom {

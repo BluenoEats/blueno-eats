@@ -43,11 +43,12 @@
 /* width should vary based on num of images */
 .user-img {
     display: inline-block;
-    padding: 3px;
+    margin: 3px;
     object-fit: cover;
     vertical-align: middle;
     height: 170px;
     width: auto;
+    cursor: pointer;
 }
 
 /* The dropdown container */

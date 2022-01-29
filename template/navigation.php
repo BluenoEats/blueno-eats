@@ -3,7 +3,7 @@
     <p id="response"> </p>
 </div>
 
-<div class="nav">
+<div class="nav" id="myNavbar">
   <a href="index.php" class="nav-left"> Home</a>
   <a href="about.php" class="nav-left nav-hide"> About</a>
   <a href="contact.php" class="nav-left nav-hide"> Contacts</a>
@@ -53,6 +53,34 @@
       }
     </script>
   <?php } ?>
+
+  <a href="javascript:void(0);" style="font-size:15px;" class="menu" onclick="menu()">&#9776;</a>
+  <script>
+    function menu() {
+      var x = document.getElementById("myNavbar");
+      if (x.className === "nav") {
+        x.className += " responsive";
+      } else {
+        x.className = "nav";
+      }
+    }
+
+    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+      dropdown[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+      } else {
+      dropdownContent.style.display = "block";
+      }
+      });
+    }
+    </script>
   <!-- TODO: Profile manage page -->
     <!-- <a href="index.php" class="nav-home nav-right">
     <img src="img/profile.png" class="nav-logo" alt="Navigation Profile">

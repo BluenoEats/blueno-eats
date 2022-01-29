@@ -147,6 +147,7 @@
   height: 100px;
   width: auto;
   margin: 8px;
+  cursor: pointer;
 }
 
 @media (max-width: 800px) {
