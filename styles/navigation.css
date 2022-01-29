@@ -52,6 +52,7 @@
     background-color: inherit;
     font-family: inherit; /* Important for vertical align on mobile phones */
     margin: 0; /* Important for vertical align on mobile phones */
+    width: 100%;
 }
 
 /* Add a red background color to navbar links on hover */
@@ -94,8 +95,13 @@
     right: 0;
 }
 
-.nav .menu {
+.menu {
     display: none;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
 /* footer */
@@ -110,22 +116,72 @@ footer {
     color:white;
 }
 
+
+
+.nav-left {
+    float: left;
+}
+
+.nav-right {
+    float: right;
+}
+
+
 @media (max-width: 600px) {
     .nav-hide {
       display: none;
     }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 480px) {
+    .nav a:not(:first-child), .nav .dropdown {
+        display: none;
+    }
+
+    .nav a.menu {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav.responsive {
+        position: relative;
+    }
+
     .nav.responsive .menu {
         position: absolute;
         right: 0;
-        bottom:0;
+        top: 0;
     }
+
     .nav.responsive a {
-        float: none;
         display: block;
         text-align: left;
+    }
+
+    .nav.responsive .dropdown, .nav.responsive .dropbtn{
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav.responsive .dropdown-content {
+        position: relative;
+        background-color: #8a8bbe;
+        text-align: left;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #7475ad;
+    }
+
+    .nav.responsive .dropdown-content a{
+        color: white;
+    }
+
+    .nav.responsive .nav-left, .nav.responsive .nav-right {
+        float: none;
     }
 }
 
@@ -180,12 +236,3 @@ footer {
     cursor: pointer;
     transition: 0.3s;
   }
-
-
-.nav-left {
-    float: left;
-}
-
-.nav-right {
-    float: right;
-}

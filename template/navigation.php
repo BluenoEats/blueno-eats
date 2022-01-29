@@ -54,7 +54,7 @@
     </script>
   <?php } ?>
 
-  <a href="javascript:void(0);" style="font-size:15px;" class="menu" onclick="menu()">&#9776;</a>
+  <a href="javascript:void(0);" class="menu" onclick="menu()">&#9776;</a>
   <script>
     function menu() {
       var x = document.getElementById("myNavbar");
@@ -65,20 +65,29 @@
       }
     }
 
-    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-    var dropdown = document.getElementsByClassName("dropdown-btn");
-    var i;
-
-    for (i = 0; i < dropdown.length; i++) {
-      dropdown[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var dropdownContent = this.nextElementSibling;
-      if (dropdownContent.style.display === "block") {
-      dropdownContent.style.display = "none";
-      } else {
-      dropdownContent.style.display = "block";
+    if (window.innerWidth < 480) {
+      /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+      var dropdown = document.getElementsByClassName("dropbtn");
+      var i;
+      for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var dropdownContent = this.nextElementSibling;
+          if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+          } else {
+            dropdownContent.style.display = "block";
+          }
+        });
       }
-      });
+    } else {
+      var dropdown = document.getElementsByClassName("dropbtn");
+      var i;
+      for (i = 0; i < dropdown.length; i++) {
+        if (dropdown[i].classList.contains('active')){
+          dropdown[i].classList.toggle('active');
+        }
+      }
     }
     </script>
   <!-- TODO: Profile manage page -->

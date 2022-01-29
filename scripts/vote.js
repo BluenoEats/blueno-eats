@@ -1,7 +1,7 @@
 let numVotes = 0;
-const upvote = document.getElementById("upvote")
-const downvote = document.getElementById("downvote")
-const votenum = document.getElementById("votenum")
+const upvote = document.getElementById("upvote");
+const downvote = document.getElementById("downvote");
+const votenum = document.getElementById("votenum");
 
 upvote.addEventListener('click', event => {
     if (!(upvote.classList.contains('active') || downvote.classList.contains('active'))){
