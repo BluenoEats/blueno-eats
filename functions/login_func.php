@@ -23,8 +23,8 @@ if ($valid) {
   $_SESSION['user_id'] = $user['id'];
   $_SESSION['email'] = $user['email'];
   $_SESSION['username'] = $user['username'];
-  echo bin2hex(random_bytes(8));
+  echo 0; // success // bin2hex(random_bytes(8));
 } else {
-  echo "invalid";
+  echo 1; // incorrect email or password.
 }
 ?>

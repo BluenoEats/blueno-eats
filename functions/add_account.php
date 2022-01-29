@@ -11,7 +11,7 @@ $result = mysqli_query($dbc, $query);
 $exist = mysqli_num_rows($result);
 
 if ($exist) {
-  echo "Email $email has already been used.";
+  echo 1; // "Email $email has already been used."
 } else {
   $counter = 0;
   do {
@@ -20,9 +20,9 @@ if ($exist) {
               VALUES ($uuid, '$email', '$hashed', '$username')";
   } while (!mysqli_query($dbc, $query) && ++$counter < 100);
   if ($counter == 100) {
-    echo "A problem occurs while creating your account. Please try again later.";
+    echo 2; // "A problem occurs while creating your account. Please try again later."
   } else {
-    echo "Your account has been successfully created.";
+    echo 0; // success
   }
 }
 ?>

@@ -20,7 +20,7 @@ function log_in(prev_page) {
         xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("alert").style.display = "block";
-            if (this.responseText === 'invalid') {
+            if (this.responseText == 0) {
                 document.getElementById("response").innerHTML = "You have successfully logged in! ";
                 setTimeout(function () {
                     // TODO: handle circumstance that previous page is log in
@@ -30,7 +30,7 @@ function log_in(prev_page) {
                         window.location.replace(prev_page);
                     }
                 }, 2000);
-            } else {
+            } else if (this.responseText == 1) {
                 document.getElementById("response").innerHTML = "Incorrect email or password. Please try again.";
             }
         }
