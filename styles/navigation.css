@@ -116,6 +116,10 @@ footer {
     color:white;
 }
 
+.mini-footer {
+    display: none;
+}
+
 
 
 .nav-left {
@@ -140,6 +144,14 @@ footer {
 
     .nav a.menu {
         float: right;
+        display: block;
+    }
+
+    .long-footer {
+        display: none;
+    }
+
+    .mini-footer{
         display: block;
     }
 }

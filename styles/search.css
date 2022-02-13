@@ -1,5 +1,7 @@
 .search-bar {
   margin: 0 auto;
+  text-align: center;
+  margin-left: -40px;
 }
 
 .search-bar * {
@@ -8,9 +10,8 @@
 
 .search-bar form {
     position: relative;
-    display: block;
-    margin: auto;
-    width: 340px;
+    display: inline-block;
+    margin: 0 auto;
 }
 
 .input-icon {
@@ -26,6 +27,13 @@
 .autocomplete {
   position: relative;
   display: inline-block;
+  width: 45vh;
+}
+
+@media (max-width: 480px) {
+  .autocomplete {
+    width: 195px;
+  }
 }
 
 .search-bar input {

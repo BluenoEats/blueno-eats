@@ -23,12 +23,6 @@
     <!-- TODO: Cartoon image -->
     <img src="img/placeholding.png" class="cartoon" alt="Cartoon image">
 
-    <div class="additional-content">
-      <p> Want to learn more about Dining Services at Brown?
-        <a href="https://dining.brown.edu/" target="_blank">Click here...</a>
-      </p>
-    </div>
-
     <?php include D_TEMPLATE."food_rank.php"; ?>
     <?php include D_TEMPLATE."footer.php"; ?>
   </body>
