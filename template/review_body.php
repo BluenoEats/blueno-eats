@@ -1,5 +1,6 @@
 <?php
-function display_review($dbc, $review, $user_id) { ?>
+function display_review($dbc, $review, $user_id) {
+  // TODO: get all reviews voted by this user_id?>
   <div class="user-comment" id="<?php echo $review['id']; ?>">
     <p class="username">Username: <?php echo ($review['anonymous'] ? "Anonymous" : get_username($dbc, $review['author_id'])); ?></p>
 
@@ -15,10 +16,22 @@ function display_review($dbc, $review, $user_id) { ?>
 
     <p class="comment"><?php echo $review['content']; ?></p>
 
+    <!-- TODO: add active if review has been voted by the user-->
+    <!-- TODO: replace all 0's with proper query -->
     <div class="comment-control">
-      <button class="vote" id="upvote"><i class="fas fa-caret-up"></i></button>
-      <span id="votenum"> 0 </span>
-      <button class="vote" id="downvote"><i class="fas fa-caret-down"></i></button>
+      <button
+        class="vote"
+        id="upvote-<?php echo $review['id']; ?>"
+        onclick="upvote(<?php echo $review['id']; ?>, 0)">
+        <i class="fas fa-caret-up"></i>
+      </button>
+      <span id="votenum-<?php echo $review['id']; ?>"> 0 </span>
+      <button
+        class="vote"
+        id="downvote-<?php echo $review['id']; ?>"
+        onclick="downvote(<?php echo $review['id']; ?>, 0)">
+        <i class="fas fa-caret-down"></i>
+      </button>
       <script src="scripts/vote.js" type="text/javascript"></script>
 
       <div class="ellipsis">
@@ -54,7 +67,7 @@ function display_review($dbc, $review, $user_id) { ?>
     <?php
     $result = get_slideshow($dbc, REVIEW_IMAGES, 'review_id', $review['id']);
     $counter = 0;
-    while ($row = mysqli_fetch_assoc($result)) { 
+    while ($row = mysqli_fetch_assoc($result)) {
       $counter++; ?>
       <!-- TODO: Fix style -->
       <img src="<?php echo $row['img_src']; ?>" class="user-img" id="img-<?php echo $counter; ?>" onclick="change_img('<?php echo $row['img_src']; ?>'); openModal('comment_modal')">
