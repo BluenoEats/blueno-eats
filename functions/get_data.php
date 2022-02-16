@@ -49,4 +49,26 @@ function get_username($dbc, $user_id) {
     $username = mysqli_fetch_assoc($result)['username'];
     return $username;
 }
+
+function get_num_votes($dbc) {
+  $query = "SELECT review_id, SUM(vote) AS num_votes FROM ".VOTES." GROUP BY review_id";
+  $result = mysqli_query($dbc, $query);
+
+  $num_votes = array();
+  while ($row = mysqli_fetch_assoc($result)) {
+    $num_votes[$row['review_id']] = $row['num_votes'];
+  }
+  return $num_votes;
+}
+
+function get_votes_by($dbc, $user_id) {
+  $query = "SELECT review_id, vote FROM ".VOTES." WHERE user_id = $user_id";
+  $result = mysqli_query($dbc, $query);
+
+  $votes = array();
+  while ($row = mysqli_fetch_assoc($result)) {
+    $votes[$row['review_id']] = $row['vote'];
+  }
+  return $votes;
+}
 ?>

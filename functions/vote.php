@@ -3,7 +3,7 @@ include "../config/setup.php";
 echo vote($dbc, $_SESSION['user_id'], $_POST['review_id'], $_POST['vote']);
 
 function vote($dbc, $user_id, $review_id, $vote) {
-  if ($vote != '1' && $vote != '-1') {
+  if ($vote != '1' && $vote != '0' && $vote != '-1') {
     // false
     return 0;
   }

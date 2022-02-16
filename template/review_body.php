@@ -1,6 +1,7 @@
 <?php
 function display_review($dbc, $review, $user_id) {
-  // TODO: get all reviews voted by this user_id?>
+  $original_votes = $review['num_votes'];
+  if (isset($review['vote'])) $original_votes -= $review['vote']?>
   <div class="user-comment" id="<?php echo $review['id']; ?>">
     <p class="username">Username: <?php echo ($review['anonymous'] ? "Anonymous" : get_username($dbc, $review['author_id'])); ?></p>
 
@@ -17,19 +18,18 @@ function display_review($dbc, $review, $user_id) {
     <p class="comment"><?php echo $review['content']; ?></p>
 
     <!-- TODO: add active if review has been voted by the user-->
-    <!-- TODO: replace all 0's with proper query -->
     <div class="comment-control">
       <button
-        class="vote"
+        class="vote<?php if (isset($review['vote']) && $review['vote'] == 1) echo " active"; ?>"
         id="upvote-<?php echo $review['id']; ?>"
-        onclick="upvote(<?php echo $review['id']; ?>, 0)">
+        onclick="upvote(<?php echo $review['id']; ?>, <?php echo $original_votes; ?>)">
         <i class="fas fa-caret-up"></i>
       </button>
-      <span id="votenum-<?php echo $review['id']; ?>"> 0 </span>
+      <span id="votenum-<?php echo $review['id']; ?>"> <?php echo $review['num_votes']; ?> </span>
       <button
-        class="vote"
+        class="vote<?php if (isset($review['vote']) && $review['vote'] == -1) echo " active"; ?>"
         id="downvote-<?php echo $review['id']; ?>"
-        onclick="downvote(<?php echo $review['id']; ?>, 0)">
+        onclick="downvote(<?php echo $review['id']; ?>, <?php echo $original_votes; ?>)">
         <i class="fas fa-caret-down"></i>
       </button>
       <script src="scripts/vote.js" type="text/javascript"></script>

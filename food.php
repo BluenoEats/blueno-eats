@@ -6,6 +6,8 @@ include "functions/get_data.php";
 $page = get_dish_page($dbc, $_GET['dish']);
 [$rating, $num_reviews, $num_by_stars, $img_srcs, $reviews] = get_reviews($dbc, $_GET['dish']);
 $num_images = count($img_srcs);
+$num_votes = get_num_votes($dbc);
+$votes = get_votes_by($dbc, $_SESSION['user_id']);
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +30,7 @@ $num_images = count($img_srcs);
         <script src="scripts/manual-slide.js" type="text/javascript"></script>
         <script src="scripts/modal.js" type="text/javascript"></script>
         <script src="scripts/array-slide.js" type="text/javascript"></script>
-        <script> 
+        <script>
         var images = <?php echo json_encode($img_srcs); ?>;
         var num_slides = <?php echo $num_images; ?>;
         </script>
@@ -36,7 +38,7 @@ $num_images = count($img_srcs);
 
     <body>
       <?php include D_TEMPLATE."navigation.php" ?>
-      
+
       <?php if (isset($page['id'])) { ?>
       <div class="food-body food">
           <div class="food-item">
@@ -44,7 +46,7 @@ $num_images = count($img_srcs);
           </div>
           <?php include D_TEMPLATE."dish_slideshow.php"; ?>
       </div>
-      
+
       <p class="food-intro food-body"><?php echo $page['content']; ?></p>
 
       <?php include D_TEMPLATE."review_preview.php"; ?>
@@ -55,6 +57,8 @@ $num_images = count($img_srcs);
       include D_TEMPLATE.'review_body.php';
       while ($review = mysqli_fetch_assoc($reviews)) {
         if (!empty($review['content'])) {
+          $review['num_votes'] = $num_votes[$review['id']];
+          $review['vote'] = $votes[$review['id']];
           display_review($dbc, $review, $_SESSION['user_id']);
         }
       }
