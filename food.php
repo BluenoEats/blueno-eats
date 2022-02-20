@@ -7,7 +7,8 @@ $page = get_dish_page($dbc, $_GET['dish']);
 [$rating, $num_reviews, $num_by_stars, $img_srcs, $reviews] = get_reviews($dbc, $_GET['dish']);
 $num_images = count($img_srcs);
 $num_votes = get_num_votes($dbc);
-$votes = get_votes_by($dbc, $_SESSION['user_id']);
+if (isset($_SESSION['user_id']))
+  $votes = get_votes_by($dbc, $_SESSION['user_id']);
 ?>
 
 <!DOCTYPE html>
