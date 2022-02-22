@@ -1,7 +1,6 @@
 <?php
 function display_review($dbc, $review, $user_id) {
-  $votes = isset($review['num_votes']) ? $review['num_votes'] : 0;
-  $original_votes = $votes - isset($review['vote']) ? $review['vote'] : 0; ?>
+  $original_votes = $review['num_votes'] - $review['vote']; ?>
   <div class="user-comment" id="<?php echo $review['id']; ?>">
     <p class="username">Username: <?php echo ($review['anonymous'] ? "Anonymous" : get_username($dbc, $review['author_id'])); ?></p>
 
@@ -25,7 +24,7 @@ function display_review($dbc, $review, $user_id) {
         onclick="upvote(<?php echo $review['id']; ?>, <?php echo $original_votes; ?>)">
         <i class="fas fa-caret-up"></i>
       </button>
-      <span id="votenum-<?php echo $review['id']; ?>"><?php echo $votes; ?> </span>
+      <span id="votenum-<?php echo $review['id']; ?>"><?php echo $review['num_votes']; ?> </span>
       <button
         class="vote<?php if (isset($review['vote']) && $review['vote'] == -1) echo " active"; ?>"
         id="downvote-<?php echo $review['id']; ?>"

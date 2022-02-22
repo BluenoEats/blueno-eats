@@ -58,8 +58,8 @@ if (isset($_SESSION['user_id']))
       include D_TEMPLATE.'review_body.php';
       while ($review = mysqli_fetch_assoc($reviews)) {
         if (!empty($review['content'])) {
-          $review['num_votes'] = $num_votes[$review['id']];
-          $review['vote'] = $votes[$review['id']];
+          $review['num_votes'] = isset($num_votes[$review['id']]) ? $num_votes[$review['id']] : 0;
+          $review['vote'] = isset($votes[$review['id']]) ? $votes[$review['id']] : 0;
           display_review($dbc, $review, $_SESSION['user_id']);
         }
       }
