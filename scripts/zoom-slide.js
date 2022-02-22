@@ -1,11 +1,3 @@
-// var images = [
-//     'img/place4.jpeg',
-//     'img/place3.jpeg',
-//     'img/place2.jpeg',
-//     'img/placeholding.png',
-//     'upload/IMG_9088.JPG',
-// ];
-
 var n = images.length;
 
 function changeZoomImg(direction, id) {
