@@ -1,9 +1,14 @@
 <?php
-function search($dbc) {
-
-    //$stmt = $dbc->prepare("SELECT * FROM `dish_pages`  WHERE `name` LIKE ?");
-    $stmt = $dbc->prepare("SELECT * FROM `hall_pages` WHERE `name` LIKE ? OR `official_name` LIKE ?");
-    $stmt->execute(["%".$_POST["search"]."%", "%".$_POST["search"]."%"]);
-    $results = $stmt->fetchAll();
-    if (isset($_POST["ajax"])) { echo json_encode($results); }
-}
+    //bind to $name
+    if ($stmt = $dbc->prepare("SELECT name FROM dish_pages")) {
+        $stmt->bind_result($name);
+        $OK = $stmt->execute();
+    }
+    //put all of the resulting names into a PHP array
+    $result_array = Array();
+    while($stmt->fetch()) {
+        $result_array[] = $name;
+    }
+    //convert the PHP array into JSON format, so it works with javascript
+    $json_array = json_encode($result_array);
+?>
