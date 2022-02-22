@@ -1,7 +1,7 @@
 <?php
 function display_review($dbc, $review, $user_id) {
   $votes = isset($review['num_votes']) ? $review['num_votes'] : 0;
-  if (isset($review['vote'])) $original_votes = $votes - $review['vote']?>
+  $original_votes = $votes - isset($review['vote']) ? $review['vote'] : 0; ?>
   <div class="user-comment" id="<?php echo $review['id']; ?>">
     <p class="username">Username: <?php echo ($review['anonymous'] ? "Anonymous" : get_username($dbc, $review['author_id'])); ?></p>
 
