@@ -7,8 +7,15 @@ $page = get_dish_page($dbc, $_GET['dish']);
 [$rating, $num_reviews, $num_by_stars, $img_srcs, $reviews] = get_reviews($dbc, $_GET['dish']);
 $num_images = count($img_srcs);
 $num_votes = get_num_votes($dbc);
-if (isset($_SESSION['user_id']))
+
+$voted = 0;
+if (isset($_SESSION['user_id'])) {
   $votes = get_votes_by($dbc, $_SESSION['user_id']);
+  foreach ($reviews as $review) {
+    if ($review['author_id'] == $_SESSION['user_id'])
+      $voted = 1;
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +63,7 @@ if (isset($_SESSION['user_id']))
       <div class="food-body">
       <?php
       include D_TEMPLATE.'review_body.php';
-      while ($review = mysqli_fetch_assoc($reviews)) {
+      foreach ($reviews as $review) {
         if (!empty($review['content'])) {
           $review['num_votes'] = isset($num_votes[$review['id']]) ? $num_votes[$review['id']] : 0;
           $review['vote'] = isset($votes[$review['id']]) ? $votes[$review['id']] : 0;

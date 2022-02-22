@@ -45,7 +45,11 @@
           <h3> Join Blueno Eats to start rating and commenting!</h3>
           <a href="signup.php"><button class="review-signup">Sign up</button></a>
           <p> Already have an account? <a href="login.php">Log in</a></p>
-      </div>
+        </div>
+      <?php } else if ($voted) { ?>
+        <!-- TODO: style -->
+        <h2> you have already written a review on this page. </h2>
+        <h3> Please first delete you last review before proceding. </h3>
       <?php } else { ?>
         <div class="user-form" style="margin-top:15px">
           <h2> Create a Review for <?php echo $page['name']; ?> </h2>
@@ -73,8 +77,8 @@
               <label for="review-img" class="add-photo"><i class="fa fa-plus-square"></i></label>
               <div id="upload-preview"></div>
               <input type="file" id="review-img" name="review-img[]" accept="image/*" multiple style="display:none" onchange="loadFile(event);">
-          
-              <br>      
+
+              <br>
 
               <!-- <label for="review-img">Add a photo</label>
               <input type="file" id="review-img" name="review-img[]" accept="image/*" multiple> -->
@@ -106,7 +110,7 @@
             const rating = document.getElementsByClassName("rating__star fas fa-star").length;
             // document.getElementById("author").value = user_id;
             document.getElementById("rating").value = rating;
-            if(rating == 0) { 
+            if(rating == 0) {
               alert("validation failed false");
               return false;
             }
