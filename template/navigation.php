@@ -1,6 +1,6 @@
 <div class="alert" style="display:none;" id="alert">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <p id="response"> </p>
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  <p id="response"> </p>
 </div>
 
 <div class="nav" id="myNavbar">
@@ -13,7 +13,7 @@
     </button>
     <div class="dropdown-content">
       <?php
-      $query = "SELECT id, official_name FROM ".DINING_HALL_DB;
+      $query = "SELECT id, official_name FROM " . DINING_HALL_DB;
       $result = mysqli_query($dbc, $query);
       while ($row = mysqli_fetch_assoc($result)) { ?>
         <a href="dining.php?hall=<?php echo $row['id']; ?>"><?php echo $row['official_name']; ?></a>
@@ -32,24 +32,24 @@
         <a href="account.php">Manage Account</a>
         <a onclick="log_out()">Log out</a>
       </div>
-  </div>
+    </div>
 
     <!-- <button class="log-btn nav-right" onclick="log_out()">Log out</button> -->
     <script>
       function log_out() {
         document.getElementById("alert").style.display = "block";
         document.getElementById("response").innerHTML = "You have successfully logged out! ";
-        setTimeout(function () {
+        setTimeout(function() {
           var xhttp = new XMLHttpRequest();
           xhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            window.location.reload();
-          }
+            if (this.readyState == 4 && this.status == 200) {
+              window.location.reload();
+            }
           };
           xhttp.open("GET", "functions/logout_func.php", true);
           xhttp.send();
         }, 2000);
-      
+
       }
     </script>
   <?php } ?>
@@ -84,14 +84,14 @@
       var dropdown = document.getElementsByClassName("dropbtn");
       var i;
       for (i = 0; i < dropdown.length; i++) {
-        if (dropdown[i].classList.contains('active')){
+        if (dropdown[i].classList.contains('active')) {
           dropdown[i].classList.toggle('active');
         }
       }
     }
-    </script>
+  </script>
   <!-- TODO: Profile manage page -->
-    <!-- <a href="index.php" class="nav-home nav-right">
+  <!-- <a href="index.php" class="nav-home nav-right">
     <img src="img/profile.png" class="nav-logo" alt="Navigation Profile">
   </a>
    -->
