@@ -4,11 +4,11 @@
   $num_rows = mysqli_num_rows($result);
   if ($num_rows > 0) {
     while ($row = mysqli_fetch_assoc($result)) { ?>
-    <!-- photos -->
-    <div class="mySlides fade">
-      <img src=<?php echo $row['img_src']; ?> class="slide-img">
-      <div class="text"><?php echo $row['assoc_text']; ?></div>
-    </div>
+      <!-- photos -->
+      <div class="mySlides fade">
+        <img src=<?php echo $row['img_src']; ?> class="slide-img">
+        <div class="text"><?php echo $row['assoc_text']; ?></div>
+      </div>
     <?php } ?>
 
     <!-- arrows -->
@@ -19,9 +19,9 @@
 
     <!-- dots -->
     <div class="dot-container">
-    <?php for ($i=1; $i <= $num_rows; $i++) { ?>
-      <span class="dot" onclick=<?php echo "\"currentDiv($i)\""; ?>></span>
-    <?php } ?>
+      <?php for ($i = 1; $i <= $num_rows; $i++) { ?>
+        <span class="dot" onclick=<?php echo "\"currentDiv($i)\""; ?>></span>
+      <?php } ?>
     </div>
   <?php } ?>
 </div>

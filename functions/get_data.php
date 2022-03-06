@@ -30,16 +30,25 @@ function get_reviews($dbc, $dish) {
   $rating = ($num_reviews ? ($total_score / $num_reviews) : 0);
   $rating = number_format($rating, 1, '.', '');
 
+  // // constructing an array containing image sources
+  // $img_srcs = array();
+  // while ($review = mysqli_fetch_assoc($all_reviews)) {
+  //   $result = get_slideshow($dbc, REVIEW_IMAGES, 'review_id', $review['id']);
+  //   while ($row = mysqli_fetch_assoc($result)) {
+  //     $img_srcs[] = $row['img_src'];
+  //   }
+  // }
+
   // constructing an array containing image sources
+  $all_reviews = mysqli_fetch_all($all_reviews, MYSQLI_ASSOC);;
   $img_srcs = array();
-  while ($review = mysqli_fetch_assoc($all_reviews)) {
+  foreach ($all_reviews as $review) {
     $result = get_slideshow($dbc, REVIEW_IMAGES, 'review_id', $review['id']);
     while ($row = mysqli_fetch_assoc($result)) {
       $img_srcs[] = $row['img_src'];
     }
   }
 
-  mysqli_data_seek($all_reviews, 0);
   return [$rating, $num_reviews, $num_by_stars, $img_srcs, $all_reviews];
 }
 

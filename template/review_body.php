@@ -1,7 +1,6 @@
 <?php
 function display_review($dbc, $review, $user_id) {
-  $original_votes = isset($review['num_votes']) ? $review['num_votes'] : 0;
-  if (isset($review['vote'])) $original_votes -= $review['vote']?>
+  $original_votes = $review['num_votes'] - $review['vote']; ?>
   <div class="user-comment" id="<?php echo $review['id']; ?>">
     <p class="username">Username: <?php echo ($review['anonymous'] ? "Anonymous" : get_username($dbc, $review['author_id'])); ?></p>
 
@@ -17,22 +16,16 @@ function display_review($dbc, $review, $user_id) {
 
     <p class="comment"><?php echo $review['content']; ?></p>
 
-    <!-- TODO: add active if review has been voted by the user-->
     <div class="comment-control">
       <button
-        class="vote<?php if (isset($review['vote']) && $review['vote'] == 1) echo " active"; ?>"
-        id="upvote-<?php echo $review['id']; ?>"
-        onclick="upvote(<?php echo $review['id']; ?>, <?php echo $original_votes; ?>)">
+        class="vote upvote<?php if ($review['vote'] == 1) echo " active"; ?>">
         <i class="fas fa-caret-up"></i>
       </button>
-      <span id="votenum-<?php echo $review['id']; ?>"><?php echo $original_votes; ?> </span>
+      <span class="votenum"><?php echo $review['num_votes']; ?></span>
       <button
-        class="vote<?php if (isset($review['vote']) && $review['vote'] == -1) echo " active"; ?>"
-        id="downvote-<?php echo $review['id']; ?>"
-        onclick="downvote(<?php echo $review['id']; ?>, <?php echo $original_votes; ?>)">
+        class="vote downvote<?php if ($review['vote'] == -1) echo " active"; ?>">
         <i class="fas fa-caret-down"></i>
       </button>
-      <script src="scripts/vote.js" type="text/javascript"></script>
 
       <div class="ellipsis">
         <i class="ellipsis-btn fas fa-ellipsis-h" onclick="ellipsis(<?php echo $review['id']; ?>)"></i>
@@ -70,7 +63,7 @@ function display_review($dbc, $review, $user_id) {
     while ($row = mysqli_fetch_assoc($result)) {
       $counter++; ?>
       <!-- TODO: Fix style -->
-      <img src="<?php echo $row['img_src']; ?>" class="user-img" id="img-<?php echo $counter; ?>" onclick="change_img('<?php echo $row['img_src']; ?>'); openModal('comment_modal')">
+      <img src="<?php echo $row['img_src']; ?>" class="user-img" onclick="change_img('<?php echo $row['img_src']; ?>'); openModal('comment_modal')">
       <script text="JavaScript">
         function change_img(img_src) {
           document.getElementById("comment-modal-img").src = img_src;

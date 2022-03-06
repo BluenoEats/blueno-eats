@@ -19,7 +19,6 @@ function sign_up() {
         document.getElementById("signup-error-msg-rep-pass").style.display = "inline";
     } else {
         document.getElementById("alert").style.display = "block";
-        // SHA256(password).then(encrypted => send_to_server(username, email, encrypted));
 
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
