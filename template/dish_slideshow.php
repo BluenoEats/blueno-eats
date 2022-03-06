@@ -19,12 +19,12 @@
 
     <!-- dots -->
     <div class="dot-container"> <?php
-    for ($i=1; $i <= $num_rows; $i++) { ?>
-      <span class="dot" onclick=<?php echo "\"currentDiv($i)\""; ?>></span>
-    <?php } ?>
+                                for ($i = 1; $i <= $num_rows; $i++) { ?>
+        <span class="dot" onclick=<?php echo "\"currentDiv($i)\""; ?>></span>
+      <?php } ?>
     </div>
     <script src="scripts/auto-slide.js" type="text/javascript"></script>
-    <?php
+  <?php
   }
   ?>
 </div>

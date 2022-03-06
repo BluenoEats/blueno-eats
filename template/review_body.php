@@ -16,22 +16,16 @@ function display_review($dbc, $review, $user_id) {
 
     <p class="comment"><?php echo $review['content']; ?></p>
 
-    <!-- TODO: add active if review has been voted by the user-->
     <div class="comment-control">
       <button
-        class="vote<?php if (isset($review['vote']) && $review['vote'] == 1) echo " active"; ?>"
-        id="upvote-<?php echo $review['id']; ?>"
-        onclick="upvote(<?php echo $review['id']; ?>, <?php echo $original_votes; ?>)">
+        class="vote upvote<?php if ($review['vote'] == 1) echo " active"; ?>">
         <i class="fas fa-caret-up"></i>
       </button>
-      <span id="votenum-<?php echo $review['id']; ?>"><?php echo $review['num_votes']; ?> </span>
+      <span class="votenum"><?php echo $review['num_votes']; ?></span>
       <button
-        class="vote<?php if (isset($review['vote']) && $review['vote'] == -1) echo " active"; ?>"
-        id="downvote-<?php echo $review['id']; ?>"
-        onclick="downvote(<?php echo $review['id']; ?>, <?php echo $original_votes; ?>)">
+        class="vote downvote<?php if ($review['vote'] == -1) echo " active"; ?>">
         <i class="fas fa-caret-down"></i>
       </button>
-      <script src="scripts/vote.js" type="text/javascript"></script>
 
       <div class="ellipsis">
         <i class="ellipsis-btn fas fa-ellipsis-h" onclick="ellipsis(<?php echo $review['id']; ?>)"></i>
