@@ -66,19 +66,12 @@
               <input type="hidden" id="dish" name="dish" value="<?php echo $_GET['dish']; ?>"/>
               <input type="hidden" id="rating" name="rating"/>
 
-              <label for="review-img">Add a photo</label>
-              <br>
-              <!-- <button type="button" class="add-photo" onclick="document.getElementById('review-img').click()"><i class="far fa-plus-square"></i></button>
-              -->
+              <label for="review-img">Add a photo</label><br>
               <label for="review-img" class="add-photo"><i class="fa fa-plus-square"></i></label>
+              <button id="reset-review" type="button" onclick="cancelImg();">Reselect images</button>
               <div id="upload-preview"></div>
               <input type="file" id="review-img" name="review-img[]" accept="image/*" multiple style="display:none" onchange="loadFile(event);">
-          
               <br>      
-
-              <!-- <label for="review-img">Add a photo</label>
-              <input type="file" id="review-img" name="review-img[]" accept="image/*" multiple> -->
-
               <label for="review-msg">Add a written review</label>
               <textarea id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?"></textarea>
 
@@ -87,9 +80,8 @@
               <input type="submit" value="Submit" id="submit-review">
           </form>
         </div>
-        <!-- <script src="scripts/submit_review.js" type="text/javascript"> -->
         <script type="text/javascript">
-          var loadFile = function(event) {
+          function loadFile(event) {
             for (let i = 0, numFiles = event.target.files.length; i < numFiles; i++) {
               var output = document.createElement("img");
               output.className = "upload-img";
@@ -100,6 +92,46 @@
               document.getElementById("upload-preview").appendChild(output);
               }
           };
+
+          function cancelImg() {
+            document.getElementById('review-img').value = "";
+            document.getElementById('upload-preview').innerHTML = "";
+          }
+
+          // var inputElement = document.getElementById("review-img");
+          // var cancelButton = document.getElementById("cancel-img");
+          // var numFiles = 0;
+
+          // inputElement.onclick = function(event) {
+          //   var target = event.target || event.srcElement;
+          //   if (target.value.length == 0) {
+          //     cancelButton.onclick();
+          //   } else {
+          //     numFiles = target.files.length;
+          //   }
+          // }
+
+          // inputElement.onchange = function(event) {
+          //   var target = event.target || event.srcElement;
+          //   if (target.value.length == 0) {
+          //     if (numFiles == target.files.length) {
+          //       cancelButton.onclick();
+          //     }
+          //   } else {
+          //     numFiles = target.files.length;
+          //   }
+          // }
+
+          // inputElement.onblur = function(event) {
+          //   var target = event.target || event.srcElement;
+          //   if (target.value.length == 0) {
+          //     if (numFiles == target.files.length) {
+          //       cancelButton.onclick();
+          //     }
+          //   } else {
+          //     numFiles = target.files.length;
+          //   }
+          // }
 
           function validate_rate() {
             // const user_id = 31310; // temporary; wait for cookies to work
