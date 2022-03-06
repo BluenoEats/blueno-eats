@@ -39,8 +39,6 @@ if (isset($_SESSION['user_id'])) {
   <script src="scripts/manual-slide.js" type="text/javascript"></script>
   <script src="scripts/modal.js" type="text/javascript"></script>
   <script src="scripts/array-slide.js" type="text/javascript"></script>
-  <script src="scripts/vote.js" type="text/javascript"></script>
-  <script src="scripts/review_manage.js" type="text/javascript"></script>
   <script>
     var images = <?php echo json_encode($img_srcs); ?>;
     var num_slides = <?php echo $num_images; ?>;
@@ -77,6 +75,9 @@ if (isset($_SESSION['user_id'])) {
       }
       ?>
     </div>
+    <script src="scripts/vote.js" type="text/javascript"></script>
+    <script src="scripts/manage_review_images.js" type="text/javascript"></script>
+    <script src="scripts/review_manage.js" type="text/javascript"></script>
 
   <?php } else { ?>
     <h1> The page doesn't exist.</h1>

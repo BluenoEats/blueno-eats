@@ -63,7 +63,7 @@ function display_review($dbc, $review, $user_id) {
     while ($row = mysqli_fetch_assoc($result)) {
       $counter++; ?>
       <!-- TODO: Fix style -->
-      <img src="<?php echo $row['img_src']; ?>" class="user-img" id="img-<?php echo $counter; ?>" onclick="change_img('<?php echo $row['img_src']; ?>'); openModal('comment_modal')">
+      <img src="<?php echo $row['img_src']; ?>" class="user-img" onclick="change_img('<?php echo $row['img_src']; ?>'); openModal('comment_modal')">
       <script text="JavaScript">
         function change_img(img_src) {
           document.getElementById("comment-modal-img").src = img_src;
