@@ -46,7 +46,7 @@
           <a href="signup.php"><button class="review-signup">Sign up</button></a>
           <p> Already have an account? <a href="login.php">Log in</a></p>
         </div>
-      <?php } else if ($voted) { ?>
+      <?php } else if (isset($my_review)) { ?>
         <!-- TODO: style -->
         <h2> you have already written a review on this page. </h2>
         <h3> Please first delete you last review before proceding. </h3>
