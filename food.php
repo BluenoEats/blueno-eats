@@ -1,4 +1,7 @@
 <?php
+
+use function PHPSTORM_META\type;
+
 include "config/setup.php";
 include "functions/get_page.php";
 include "functions/get_data.php";
@@ -8,12 +11,30 @@ $page = get_dish_page($dbc, $_GET['dish']);
 $num_images = count($img_srcs);
 $num_votes = get_num_votes($dbc);
 
-$voted = 0;
+# get votes by the current user
 if (isset($_SESSION['user_id'])) {
   $votes = get_votes_by($dbc, $_SESSION['user_id']);
-  foreach ($reviews as $review) {
-    if ($review['author_id'] == $_SESSION['user_id'])
-      $voted = 1;
+}
+
+# assign votes to each 
+foreach ($reviews as $key => $review) {
+  $reviews[$key]['num_votes'] = isset($num_votes[$review['id']]) ? $num_votes[$review['id']] : 0;
+  $reviews[$key]['vote'] = isset($votes[$review['id']]) ? $votes[$review['id']] : 0;
+}
+
+# sort reviews by num_votes
+usort($reviews, function ($a, $b) {
+  return - $a["num_votes"] + $b["num_votes"];
+});
+
+# put the current user's review first
+if (isset($_SESSION['user_id'])) {
+  foreach ($reviews as $key => $review) {
+    if ($review['author_id'] == $_SESSION['user_id']) {
+      $my_review = $review;
+      unset($reviews[$key]);
+      array_unshift($reviews , $review);
+    }
   }
 }
 ?>
@@ -64,12 +85,10 @@ if (isset($_SESSION['user_id'])) {
     } ?>
 
     <div class="food-body">
-      <?php
+      <?php 
       include D_TEMPLATE . 'review_body.php';
       foreach ($reviews as $review) {
-        if (!empty($review['content'])) {
-          $review['num_votes'] = isset($num_votes[$review['id']]) ? $num_votes[$review['id']] : 0;
-          $review['vote'] = isset($votes[$review['id']]) ? $votes[$review['id']] : 0;
+        if (!empty($review['content']) || $review['author_id'] == $_SESSION['user_id']) {
           display_review($dbc, $review, $_SESSION['user_id']);
         }
       }
