@@ -3,13 +3,28 @@
         <div class="autocomplete">
             <input id="myInput" type="text" name="search-bar" placeholder="Search for food or Dining hall...">
         </div>
-        <i class="fa fa-search input-icon"></i>
-        <input type="submit" value="">
+        <i id="search-button" class="fa fa-search input-icon"></i>
+         <button type="button" value="" onclick="toPage();">
     </form>
 </div>
 
 
 <?php
+    if ($stmt = $dbc->prepare("SELECT name FROM dish_pages")) {
+          $stmt->bind_result($name1);
+          $OK = $stmt->execute();
+    }
+    //put all of the resulting names into a PHP array
+    $result_array1 = Array();
+    while($stmt->fetch()) {
+         $result_array1[] = $name1;
+    }
+    //convert the PHP array into JSON format, so it works with javascript
+        $json_array1 = json_encode($result_array1);
+
+
+
+
     //bind to $name
     if ($stmt = $dbc->prepare("SELECT name FROM dish_pages")) {
         $stmt->bind_result($name1);
@@ -35,6 +50,18 @@
     }
         //convert the PHP array into JSON format, so it works with javascript
     $json_array2 = json_encode($result_array2);
+
+    if ($stmt = $dbc->prepare("SELECT official_name FROM hall_pages")) {
+            $stmt->bind_result($name3);
+           $OK = $stmt->execute();
+    }
+    //put all of the resulting names into a PHP array
+    $result_array3 = Array();
+    while($stmt->fetch()) {
+        $result_array3[] = $name3;
+    }
+       //convert the PHP array into JSON format, so it works with javascript
+   $json_array3 = json_encode($result_array3);
 ?>
 
 
@@ -132,28 +159,6 @@ function autocomplete(inp, arr) {
         }
     }
 
-    function toPage() {
-        // (A) GET SEARCH TERM
-        var data = new FormData();
-        data.append("search", document.getElementById("search").value);
-        data.append("ajax", 1);
-
-        // (B) AJAX SEARCH REQUEST
-        fetch("functions/search.php", { method:"POST", body:data })
-        .then(res => res.json()).then((results) => {
-            var wrapper = document.getElementById("results");
-            if (results.length > 0) {
-            wrapper.innerHTML = "";
-            for (let res of results) {
-                let line = document.createElement("div");
-                line.innerHTML = `${res["name"]} - ${res["email"]}`;
-                wrapper.appendChild(line);
-            }
-            } else { wrapper.innerHTML = "No results found"; }
-        });
-        return false;
-    }
-
     function closeAllLists(elmnt) {
         /*close all autocomplete lists in the document,
         except the one passed as an argument:*/
@@ -170,11 +175,35 @@ function autocomplete(inp, arr) {
     });
 }
 
+    var db1 = <?php echo $json_array1; ?>;
+    var db2 = <?php echo $json_array2; ?>;
+    var db3 = <?php echo $json_array3; ?>;
+    var db = db1.concat(db3).concat(db2);
+    /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+    autocomplete(document.getElementById("myInput"), db);
 
-// let db = [ "bacon", "strawberry", "steak", "pizza", "apple", "cake"]
-var db1 = <?php echo $json_array1; ?>;
-var db2 = <?php echo $json_array2; ?>;
-var db = db1.concat(db2);
-/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
-autocomplete(document.getElementById("myInput"), db);
+function toPage() {
+    var x = document.getElementById("myInput").value;
+    const equal = (element) => element == x;
+
+    if (db1.includes(x)) {
+//         alert("hello")//search for id
+//        let id = 1
+       id = db1.findIndex(equal) + 1
+       let path = "food.php?dish=" + id
+     window.location.href = path;
+
+    } else if (db2.includes(x) || db3.includes(x)) {
+    //find if contain then find id then link to new page
+        let id = db3.findIndex(equal) + 1
+        if (id == -1) {
+            id = db2.findIndex(equal) + 1
+        }
+       let path = "dining.php?hall=" + id
+    window.location.href = path;
+    }
+}
+
 </script>
+
+
