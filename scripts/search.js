@@ -129,6 +129,14 @@ function autocomplete(inp, arr) {
     });
 }
 
-let db = [ "bacon", "strawberry", "steak", "pizza", "apple", "cake"]
+
+
+
+
+
+
+// let db = [ "bacon", "strawberry", "steak", "pizza", "apple", "cake"]
+// var db = <?= $json_array ?>;
+    // <?php echo $json_array; ?>;
 /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
-autocomplete(document.getElementById("myInput"), db);
+// autocomplete(document.getElementById("myInput"), db);

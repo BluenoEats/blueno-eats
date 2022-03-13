@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 06, 2022 at 04:19 PM
+-- Generation Time: Mar 09, 2022 at 08:36 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.13
 
@@ -41,18 +41,13 @@ CREATE TABLE `accounts` (
 INSERT INTO `accounts` (`id`, `email`, `password`, `username`) VALUES
 (566, 'something@gmail.com', 'adf541c6a8c9b8399d9010b4070fca8ef5bf8509200a70cc2cdbf0f9d56db0a7', 'Something'),
 (10375, 'something2@gmail.com', 'adf541c6a8c9b8399d9010b4070fca8ef5bf8509200a70cc2cdbf0f9d56db0a7', 'Something2'),
-(12421, 'austin@brown.edu', '56789', 'Austin'),
 (14777, 'ran@gmail.com', '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', 'ran'),
 (16050, 'blue@gmail.com', '837e84e40a6198f04e3e1361d21bb17f077e3eb5a2009b0b6a8c365f8b77e04a', 'Blueno'),
-(22800, 'wood@gmail.com', '@Password0', 'Wood3'),
+(18318, 'admin@gmail.com', 'a053b746b21e8959bef7c29e6ad67ac6111e1e394adb128f278960a01e407147', 'Admin'),
 (22863, 'a@brown.edu', '1f489582f7ea4c208b70219a2bb6a322227a7516630530a10ed7f2710cfbe447', 'slkdgn'),
-(31310, 'tiger@gmail.com', 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f', 'Tiger'),
-(33477, 'mikey@google.com', '12345', 'Mikey'),
 (35161, 'ran@brown.edu', '22114775bc6d67479370d57f32b247d1af8451fa0c82c4316c1c280e5d96d7e6', 'some'),
-(40082, 'r@r.edu', 'bdcc157f33bf1725e82d80189eda4410e8aa4405046ff4371f8c3f02a663d95e', 'tzhang'),
 (49322, 'wood4@gmail.com', 'adf541c6a8c9b8399d9010b4070fca8ef5bf8509200a70cc2cdbf0f9d56db0a7', 'Wood0'),
 (62888, 'wood0@gmail.com', 'adf541c6a8c9b8399d9010b4070fca8ef5bf8509200a70cc2cdbf0f9d56db0a7', 'Wood1'),
-(63654, '', 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', ''),
 (64691, 'tlamlert@gmail.com', 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f', 'tlamlert'),
 (65096, 'mikey@yahoo.com', '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', 'mikey'),
 (65175, 'something1@gmail.com', 'adf541c6a8c9b8399d9010b4070fca8ef5bf8509200a70cc2cdbf0f9d56db0a7', 'Something1');
@@ -167,13 +162,6 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`id`, `author_id`, `dish_id`, `rating`, `content`, `anonymous`) VALUES
-(1, 33477, 1, 3, 'This is the best food', 0),
-(3, 33477, 2, 3, 'Princeton is the best', 0),
-(4, 33477, 3, 3, 'Brown sucks', 0),
-(44, 12421, 1, 4, 'just fine', 0),
-(45, 12421, 2, 4, 'Love the pizza!', 0),
-(48, 31310, 1, 4, '', 0),
-(49, 31310, 2, 2, 'hello', 0),
 (51, 62888, 4, 5, 'gbhjk', 0),
 (53, 62888, 6, 5, 'cool', 0),
 (54, 62888, 2, 1, 'bad', 1),
@@ -196,10 +184,6 @@ CREATE TABLE `review_images` (
 --
 
 INSERT INTO `review_images` (`review_id`, `img_src`) VALUES
-(1, 'upload/149393877_2849454908652421_6832480318451813634_n.jpg'),
-(1, 'upload/F.R.I.E.N.D.S..jpg'),
-(44, 'upload/Statue_of_Liberty.jpeg'),
-(45, 'upload/IMG_9088.JPG'),
 (51, 'upload/IMG_2199.JPG'),
 (55, 'upload/195125406_3026961794296389_6565519286592869320_n.jpg'),
 (55, 'upload/201349050_1473488659671752_1408247074792011944_n.jpg'),
@@ -220,14 +204,6 @@ CREATE TABLE `votes` (
   `review_id` int(11) NOT NULL,
   `vote` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `votes`
---
-
-INSERT INTO `votes` (`user_id`, `review_id`, `vote`) VALUES
-(64691, 1, 0),
-(64691, 44, 0);
 
 --
 -- Indexes for dumped tables
@@ -256,8 +232,8 @@ ALTER TABLE `hall_pages`
 --
 ALTER TABLE `reviews`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `dish_id` (`dish_id`),
-  ADD KEY `author_id` (`author_id`);
+  ADD KEY `reviews_ibfk_1` (`dish_id`),
+  ADD KEY `reviews_ibfk_2` (`author_id`);
 
 --
 -- Indexes for table `review_images`
@@ -292,7 +268,7 @@ ALTER TABLE `hall_pages`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- Constraints for dumped tables
@@ -302,21 +278,21 @@ ALTER TABLE `reviews`
 -- Constraints for table `reviews`
 --
 ALTER TABLE `reviews`
-  ADD CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`dish_id`) REFERENCES `dish_pages` (`id`),
-  ADD CONSTRAINT `reviews_ibfk_2` FOREIGN KEY (`author_id`) REFERENCES `accounts` (`id`);
+  ADD CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`dish_id`) REFERENCES `dish_pages` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `reviews_ibfk_2` FOREIGN KEY (`author_id`) REFERENCES `accounts` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `review_images`
 --
 ALTER TABLE `review_images`
-  ADD CONSTRAINT `review_images_ibfk_1` FOREIGN KEY (`review_id`) REFERENCES `reviews` (`id`);
+  ADD CONSTRAINT `review_images_ibfk_1` FOREIGN KEY (`review_id`) REFERENCES `reviews` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `votes`
 --
 ALTER TABLE `votes`
-  ADD CONSTRAINT `votes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `accounts` (`id`),
-  ADD CONSTRAINT `votes_ibfk_2` FOREIGN KEY (`review_id`) REFERENCES `reviews` (`id`);
+  ADD CONSTRAINT `votes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `accounts` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `votes_ibfk_2` FOREIGN KEY (`review_id`) REFERENCES `reviews` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
