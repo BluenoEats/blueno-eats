@@ -26,13 +26,13 @@ function echo_food_list($dbc, $dish_list, $symbol)
 ?>
 
     <div class="rank-card">
-      <img src="<?php echo ($image != null) ? $image : 'img/place2.jpeg'; ?>" alt="img" style="width:100%">
+      <img src="<?php echo ($image != null) ? $image : 'img/place2.jpeg'; ?>" alt="img">
       <h2><?php for($i = 3; $i > $rank; $i--) {
-        echo '<i class="fa fa-' . $symbol . '"></i>';
+        echo '<i class="fa fa-' . $symbol . '"></i> ';
       } ?></h2>
       <p class="rank-title"><?php echo $name; ?></p>
       <p>Rating: <?php echo $rating; ?></p>
-      <p><button><a href="food.php?dish=<?php echo $dish['dish_id']; ?>">Check the Reviews</a></button></p>
+      <a href="food.php?dish=<?php echo $dish['dish_id']; ?>">Check the Reviews</a>
     </div>
 
 <?php

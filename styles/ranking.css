@@ -18,6 +18,7 @@
     max-width: 300px;
     margin: 15px;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .rank-title {
@@ -31,6 +32,11 @@
     text-decoration: none;
 }
 
+.rank-card img {
+    width: 100%;
+    object-fit: cover;
+}
+
 .rank-card h2 {
     color: #d26183;
     font-size: 20px;
@@ -38,11 +44,9 @@
     text-shadow: 0px;
 }
 
-.rank-card button {
-    border: none;
-    outline: 0;
+.rank-card a {
     display: inline-block;
-    padding: 8px;
+    padding: 8px 0px;
     color: white;
     background-color: #ee81a1;
     text-align: center;
@@ -57,7 +61,7 @@
     margin: 0px auto;
 }
 
-.rank-card button:hover, a:hover {
+.rank-card a:hover, a:hover {
     opacity: 0.7;
 }
 
