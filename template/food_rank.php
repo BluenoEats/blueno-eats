@@ -47,3 +47,51 @@ function echo_food_list($dbc, $result)
     </ol>
   </div>
 </div>
+
+<div class="rank">
+  <div class="rank-card flex-item">
+    <img src="img/place2.jpeg" alt="img" style="width:100%">
+    <h2><i class="fa fa-crown"></i> <i class="fa fa-crown"></i> <i class="fa fa-crown"></i></h2>
+    <p class="rank-title">Grilled Chicken</p>
+    <p>Rating: 5</p>
+    <p><button>Check the Reviews</button></p>
+  </div>
+  <div class="rank-card flex-item">
+    <img src="img/place2.jpeg" alt="img" style="width:100%">
+    <h2><i class="fa fa-crown"></i> <i class="fa fa-crown"></i></h2>
+    <p class="rank-title">Grilled Chicken</p>
+    <p>Rating: 5</p>
+    <p><button>Check the Reviews</button></p>
+  </div>
+  <div class="rank-card flex-item">
+    <img src="img/place2.jpeg" alt="img" style="width:100%">
+    <h2><i class="fa fa-crown"></i></h2>
+    <p class="rank-title">Grilled Chicken</p>
+    <p>Rating: 5</p>
+    <p><button>Check the Reviews</button></p>
+  </div>
+</div>
+
+<div class="rank">
+  <div class="rank-card flex-item">
+    <img src="img/place2.jpeg" alt="img" style="width:100%">
+    <h2><i class="fa-solid fa-ghost"></i> <i class="fa-solid fa-ghost"></i> <i class="fa fa-solid fa-ghost"></i></h2>
+    <p class="rank-title">Grilled Chicken</p>
+    <p>Rating: 5</p>
+    <p><button>Check the Reviews</button></p>
+  </div>
+  <div class="rank-card flex-item">
+    <img src="img/place2.jpeg" alt="img" style="width:100%">
+    <h2><i class="fa-solid fa-ghost"></i> <i class="fa-solid fa-ghost"></i></h2>
+    <p class="rank-title">Grilled Chicken</p>
+    <p>Rating: 5</p>
+    <p><button>Check the Reviews</button></p>
+  </div>
+  <div class="rank-card flex-item">
+    <img src="img/place2.jpeg" alt="img" style="width:100%">
+    <h2><i class="fa-solid fa-ghost"></i></h2>
+    <p class="rank-title">Grilled Chicken</p>
+    <p>Rating: 5</p>
+    <p><button>Check the Reviews</button></p>
+  </div>
+</div>

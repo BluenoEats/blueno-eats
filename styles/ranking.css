@@ -6,12 +6,8 @@
 }
 
 .flex-item {
-    flex: 50%;
     max-width: 400px;
     width: 80%;
-    padding: 30px 6px 20px;
-    background-color: #fff4e9;
-    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
 }
 
 .flex-left {
@@ -26,6 +22,47 @@
     font-size: 14px;
     color: black;
     text-decoration: none;
+}
+
+.rank-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+.rank-title {
+    font-size: 18px;
+    margin: 0 auto;
+}
+
+.rank-card h2 {
+    color: #d26183;
+    font-size: 20px;
+    margin: 10px auto;
+    text-shadow: 0px;
+}
+
+.rank-card button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #ee81a1;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-family: LibreBaskerville-Regular, Palatino Linotype,Times New Roman,serif;
+    font-size: 14px;
+}
+
+.rank-card p {
+    margin: 10px auto;
+}
+
+.rank-card button:hover, a:hover {
+    opacity: 0.7;
 }
 
 @media (max-width: 800px) {
