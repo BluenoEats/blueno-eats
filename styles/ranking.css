@@ -3,37 +3,26 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-}
-
-.flex-item {
-    max-width: 400px;
-    width: 80%;
-}
-
-.flex-left {
-    margin: 20px 20px 40px 40px;
-}
-
-.flex-right {
-    margin: 20px 40px 40px 20px;
-}
-
-.rank a {
-    font-size: 14px;
-    color: black;
-    text-decoration: none;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .rank-card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
-    margin: auto;
+    margin: 15px;
     text-align: center;
 }
 
 .rank-title {
     font-size: 18px;
     margin: 0 auto;
+}
+
+.rank-card a {
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
 }
 
 .rank-card h2 {
@@ -55,10 +44,11 @@
     width: 100%;
     font-family: LibreBaskerville-Regular, Palatino Linotype,Times New Roman,serif;
     font-size: 14px;
+    margin-top: 10px;
 }
 
 .rank-card p {
-    margin: 10px auto;
+    margin: 0px auto;
 }
 
 .rank-card button:hover, a:hover {
