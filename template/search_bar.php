@@ -3,49 +3,41 @@
         <div class="autocomplete">
             <input id="myInput" type="text" name="search-bar" placeholder="Search for food or Dining hall...">
         </div>
-        <i id="search-button" class="fa fa-search input-icon"></i>
-         <button type="button" value="" onclick="toPage();">
+         <button type="button" value="" onclick="toPage();"><i id="search-button" class="fa fa-search input-icon"></i></button>
     </form>
 </div>
 
 
 <?php
-    if ($stmt = $dbc->prepare("SELECT name FROM dish_pages")) {
-          $stmt->bind_result($name1);
+    if ($stmt = $dbc->prepare("SELECT id, name FROM dish_pages")) {
+          $stmt->bind_result($id1, $name1);
           $OK = $stmt->execute();
     }
     //put all of the resulting names into a PHP array
     $result_array1 = Array();
+    $id_array1 = Array();
     while($stmt->fetch()) {
          $result_array1[] = $name1;
+         $id_array1[] = $id1;
     }
     //convert the PHP array into JSON format, so it works with javascript
         $json_array1 = json_encode($result_array1);
+        $json_id_array1 = json_encode($id_array1);
 
-    //bind to $name
-    if ($stmt = $dbc->prepare("SELECT name FROM hall_pages")) {
-        $stmt->bind_result($name2);
-        $OK = $stmt->execute();
-    }
-        //put all of the resulting names into a PHP array
-    $result_array2 = Array();
-    while($stmt->fetch()) {
-        $result_array2[] = $name2;
-    }
-        //convert the PHP array into JSON format, so it works with javascript
-    $json_array2 = json_encode($result_array2);
-
-    if ($stmt = $dbc->prepare("SELECT official_name FROM hall_pages")) {
-            $stmt->bind_result($name3);
+    if ($stmt = $dbc->prepare("SELECT id, official_name FROM hall_pages")) {
+            $stmt->bind_result($id2, $name2);
            $OK = $stmt->execute();
     }
     //put all of the resulting names into a PHP array
-    $result_array3 = Array();
+    $result_array2 = Array();
+    $id_array2 = Array();
     while($stmt->fetch()) {
-        $result_array3[] = $name3;
+        $result_array2[] = $name2;
+        $id_array2[] = $id2;
     }
        //convert the PHP array into JSON format, so it works with javascript
-   $json_array3 = json_encode($result_array3);
+   $json_array2 = json_encode($result_array2);
+   $json_id_array2 = json_encode($id_array2);
 ?>
 
 
@@ -160,9 +152,12 @@ function autocomplete(inp, arr) {
 }
 
     var db1 = <?php echo $json_array1; ?>;
+    var id1 = <?php echo $json_id_array1; ?>;
     var db2 = <?php echo $json_array2; ?>;
-    var db3 = <?php echo $json_array3; ?>;
-    var db = db1.concat(db3).concat(db2);
+    var id2 = <?php echo $json_id_array2; ?>;
+
+    var db = db1.concat(db2);
+
     /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
     autocomplete(document.getElementById("myInput"), db);
 
@@ -171,20 +166,14 @@ function toPage() {
     const equal = (element) => element == x;
 
     if (db1.includes(x)) {
-//         alert("hello")//search for id
-//        let id = 1
-       id = db1.findIndex(equal) + 1
+       id = id1[db1.findIndex(equal)]
        let path = "food.php?dish=" + id
-     window.location.href = path;
+       window.location.href = path;
 
-    } else if (db2.includes(x) || db3.includes(x)) {
-    //find if contain then find id then link to new page
-        let id = db3.findIndex(equal) + 1
-        if (id == -1) {
-            id = db2.findIndex(equal) + 1
-        }
+    } else if (db2.includes(x)) {
+       id = id2[db2.findIndex(equal)]
        let path = "dining.php?hall=" + id
-    window.location.href = path;
+       window.location.href = path;
     }
 }
 

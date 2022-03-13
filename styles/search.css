@@ -15,12 +15,9 @@
 }
 
 .input-icon {
-  position: absolute;
   color: white;
-  font-size: 15px;
+  font-size: 13px;
   z-index: 3;
-  padding-top: 12px;
-  padding-left: 12px;
 }
 
 /*the container must be positioned relative:*/
@@ -54,13 +51,14 @@
   z-index: 1;
 }
 
-.search-bar input[type=submit] {
+.search-bar button {
   position: absolute;
   width: 40px;
+  height: 38px;
   padding: 9px;
   padding-left: 12px;
   padding-right: 15px;
-  background: #d26183;
+  background: #ff6a6a;
   color: white;
   font-size: 15px;
   border: none;
@@ -69,8 +67,8 @@
   z-index: 2;
 }
 
-.search-bar input[type=submit]:hover {
-  background: #ff6a6a;
+.search-bar button:hover {
+  background: #d26183;
 }
 
 .autocomplete-items {
