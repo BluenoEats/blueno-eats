@@ -3,11 +3,11 @@
   <div class="rate">
     <h3 id="rate-header"> User Rating</h3>
     <?php for ($i = 1; $i <= 5; $i++) {
-      if ($i <= $rating) {
-        echo '<span class="fas fa-star"></span>';
-      } else {
-        echo '<span class="far fa-star"></span>';
-      }
+      if ($i <= $rating) { ?>
+        <span class="fas fa-star"></span>
+      <?php } else { ?>
+        <span class="far fa-star"></span>
+      <?php }
     } ?>
     <p><?php echo "$rating average based on $num_reviews reviews"; ?>.</p>
     <hr style="border:3px solid #f1f1f1">
