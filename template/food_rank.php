@@ -1,3 +1,4 @@
+<script src="https://kit.fontawesome.com/fa6b154dde.js" crossorigin="anonymous"></script>
 <?php
 $num_dishes = 5;
 
