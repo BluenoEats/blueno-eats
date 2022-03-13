@@ -7,7 +7,6 @@
   <meta charset="utf-8">
   <title> Blueno Eats Website </title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://kit.fontawesome.com/fa6b154dde.js" crossorigin="anonymous"></script>
   <link href="styles/main.css" rel="stylesheet" type="text/css">
   <link href="styles/navigation.css" rel="stylesheet" type="text/css">
   <link href="styles/info.css" rel="stylesheet" type="text/css">
@@ -18,12 +17,12 @@
 <body>
   <?php include D_TEMPLATE . "navigation.php" ?>
 
-  <h1> Blueno Eats</h1>
+  <img src="img/Blueno_Logo.png" class="logo"></img>
   <p class="brief-content"> Intro to website intro to website intro to website</p>
   <?php include D_TEMPLATE . "search_bar.php"; ?>
 
   <!-- TODO: Cartoon image -->
-  <img src="img/placeholding.png" class="cartoon" alt="Cartoon image">
+  <img src="img/IMG_8984.JPG" class="cartoon" alt="Cartoon image">
 
   <?php include D_TEMPLATE . "food_rank.php"; ?>
   <?php include D_TEMPLATE . "footer.php"; ?>

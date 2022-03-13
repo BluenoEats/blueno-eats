@@ -3,8 +3,7 @@
         <div class="autocomplete">
             <input id="myInput" type="text" name="search-bar" placeholder="Search for food or Dining hall...">
         </div>
-        <i id="search-button" class="fa fa-search input-icon"></i>
-         <button type="button" value="" onclick="toPage();">
+         <button type="button" value="" onclick="toPage();"><i id="search-button" class="fa fa-search input-icon"></i></button>
     </form>
 </div>
 

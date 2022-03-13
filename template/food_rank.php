@@ -1,3 +1,4 @@
+<script src="https://kit.fontawesome.com/fa6b154dde.js" crossorigin="anonymous"></script>
 <?php
 $NUM_RECOMMENDATION = 3;
 
@@ -36,7 +37,7 @@ function echo_food_list($dbc, $dish_list)
 }
 ?>
 
-<h2>Best-rated Food</h2>
+<h1 class="rank-head">Best-rated Food</h1>
 <div class="rank">
   <?php
   $query = "SELECT dish_id, SUM(rating)/COUNT(rating) as rating FROM " . REVIEW_DB . " GROUP BY dish_id ORDER BY rating DESC LIMIT $NUM_RECOMMENDATION";
@@ -46,7 +47,7 @@ function echo_food_list($dbc, $dish_list)
   ?>
 </div>
 
-<h2>Worst-rated Food</h2>
+<h1 class="rank-head">Worst-rated Food</h1>
 <div class="rank">
 <?php
 $query = "SELECT dish_id, SUM(rating)/COUNT(rating) as rating FROM " . REVIEW_DB . " GROUP BY dish_id ORDER BY rating ASC LIMIT $NUM_RECOMMENDATION";
