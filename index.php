@@ -18,12 +18,12 @@
 <body>
   <?php include D_TEMPLATE . "navigation.php" ?>
 
-  <h1> Blueno Eats</h1>
+  <img src="img/Blueno_Logo.png" class="logo"></img>
   <p class="brief-content"> Intro to website intro to website intro to website</p>
   <?php include D_TEMPLATE . "search_bar.php"; ?>
 
   <!-- TODO: Cartoon image -->
-  <img src="img/placeholding.png" class="cartoon" alt="Cartoon image">
+  <img src="img/IMG_8984.JPG" class="cartoon" alt="Cartoon image">
 
   <?php include D_TEMPLATE . "food_rank.php"; ?>
   <?php include D_TEMPLATE . "footer.php"; ?>

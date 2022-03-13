@@ -24,7 +24,7 @@ function echo_food_list($dbc, $result)
 }
 ?>
 
-<div class="rank">
+<!-- <div class="rank">
   <div class="flex-item flex-left">
     <h2>Best-rated Food</h2>
     <ol>
@@ -34,9 +34,9 @@ function echo_food_list($dbc, $result)
       echo_food_list($dbc, $result);
       ?>
     </ol>
-  </div>
+  </div> -->
 
-  <div class="flex-item flex-right">
+  <!-- <div class="flex-item flex-right">
     <h2>Worst-rated Food</h2>
     <ol>
       <?php
@@ -46,8 +46,9 @@ function echo_food_list($dbc, $result)
       ?>
     </ol>
   </div>
-</div>
+</div> -->
 
+<h1 class="rank-head">Best-rated Food</h1>
 <div class="rank">
   <div class="rank-card">
     <img src="img/place2.jpeg" alt="img" style="width:100%">
@@ -72,6 +73,7 @@ function echo_food_list($dbc, $result)
   </div>
 </div>
 
+<h1 class="rank-head">Worst-rated Food</h1>
 <div class="rank">
   <div class="rank-card">
     <img src="img/place2.jpeg" alt="img" style="width:100%">
