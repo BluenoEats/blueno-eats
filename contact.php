@@ -33,12 +33,13 @@
             <label for="contact-message">Message</label>
             <textarea id="contact-message" name="contact-message" placeholder="Write something..." style="height:200px"></textarea>
 
-            <input type="submit" value="Submit" onclick="openMail()">
+            <input type="submit" value="Submit" onclick="sendEmail()">
 
         </form>
     </div>
 
     <script>
+        var pass =
         function openMail() {
             var emailTo = 'bluenoeats@gmail.com';
             var emailSub = 'Message from ' + document.getElementById('contact-name').value;

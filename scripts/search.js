@@ -130,13 +130,25 @@ function autocomplete(inp, arr) {
 }
 
 
+var db = db1.concat(db2);
 
-
-
-
-
-// let db = [ "bacon", "strawberry", "steak", "pizza", "apple", "cake"]
-// var db = <?= $json_array ?>;
-    // <?php echo $json_array; ?>;
 /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
-// autocomplete(document.getElementById("myInput"), db);
+autocomplete(document.getElementById("myInput"), db);
+
+function toPage() {
+    var x = document.getElementById("myInput").value;
+    const equal = (element) => element == x;
+
+    if (db1.includes(x)) {
+        id = id1[db1.findIndex(equal)]
+        let path = "food.php?dish=" + id
+        window.location.href = path;
+
+    } else if (db2.includes(x)) {
+        id = id2[db2.findIndex(equal)]
+        let path = "dining.php?hall=" + id
+        window.location.href = path;
+    }
+}
+
+
