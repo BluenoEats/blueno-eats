@@ -1,13 +1,13 @@
 <?php
 # Defining folders
-define('D_TEMPLATE', 'template'.DIRECTORY_SEPARATOR);
+define('D_TEMPLATE', 'template' . DIRECTORY_SEPARATOR);
 
 # Databse Connection
 define("DB_HOST", "localhost");
 define("DB_USER", "dev");
 define("DB_PASSWORD", "12345");
 define("DB_DATABASE", "blueno_eats");
-$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE) OR die('Could not connect because: '.mysqli_connect_error());
+$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE) or die('Could not connect because: ' . mysqli_connect_error());
 
 define('DINING_HALL_DB', 'hall_pages');
 define('DISH_DB', 'dish_pages');
@@ -18,8 +18,7 @@ define('REVIEW_DB', 'reviews');
 define('REVIEW_IMAGES', 'review_images');
 define('VOTES', 'votes');
 
+# avoid redirection back to some urls
+include "avoid_url.php";
 session_start();
-if (!str_contains($_SERVER['REQUEST_URI'], 'functions'.DIRECTORY_SEPARATOR) && !str_contains($_SERVER['REQUEST_URI'], 'login.php') && !str_contains($_SERVER['REQUEST_URI'], 'submit_review.php')) {
-    $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
-}
-?>
+$_SESSION['prev_page'] = avoid_url($_SERVER['REQUEST_URI']);

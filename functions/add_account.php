@@ -6,7 +6,7 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 $hashed = hash('sha256', $password);
 
-$query = "SELECT 1 FROM ".ACCOUNT_DB." WHERE email='$email'";
+$query = "SELECT 1 FROM " . ACCOUNT_DB . " WHERE email='$email'";
 $result = mysqli_query($dbc, $query);
 $exist = mysqli_num_rows($result);
 
@@ -16,7 +16,7 @@ if ($exist) {
   $counter = 0;
   do {
     $uuid = hexdec(bin2hex(random_bytes(2)));
-    $query = "INSERT INTO ".ACCOUNT_DB." (`id`, `email`, `password`, `username`)
+    $query = "INSERT INTO " . ACCOUNT_DB . " (`id`, `email`, `password`, `username`)
               VALUES ($uuid, '$email', '$hashed', '$username')";
   } while (!mysqli_query($dbc, $query) && ++$counter < 100);
   if ($counter == 100) {
@@ -25,4 +25,3 @@ if ($exist) {
     echo 0; // success
   }
 }
-?>

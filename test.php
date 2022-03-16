@@ -4,7 +4,7 @@
 <html>
 
 <body>
-  <p id="1">jello</p>
+  <p><?php echo $_SESSION['prev_page']; ?></p>
 </body>
 
 </html>

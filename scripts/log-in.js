@@ -9,27 +9,23 @@ function log_in(prev_page) {
         document.getElementById("login-error-msg-email").style.display = "inline";
     } else {
         var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("alert").style.display = "block";
-            if (this.responseText == 0) {
-                document.getElementById("response").innerHTML = "You have successfully logged in! ";
-                setTimeout(function () {
-                    // TODO: handle circumstance that previous page is log in
-                    if (typeof prev_page == "undefined") {
-                        window.location.replace("index.php");
-                    } else {
-                        window.location.replace(prev_page);
-                    }
-                }, 2000);
-            } else if (this.responseText == 1) {
-                document.getElementById("response").innerHTML = "Incorrect email or password. Please try again.";
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log("logged in. Redirectting to " + this.responseText);
+                document.getElementById("alert").style.display = "block";
+                if (this.responseText == "1") {
+                    document.getElementById("response").innerHTML = "Incorrect email or password. Please try again.";
+                } else {
+                    document.getElementById("response").innerHTML = "You have successfully logged in! ";
+                    setTimeout(function () {
+                        window.location.replace(this.responseText);
+                    }, 20000);
+                }
             }
-        }
         };
         xhttp.open("POST", "functions/login_func.php", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("email="+email+"&password="+password);
+        xhttp.send("email=" + email + "&password=" + password);
     }
 }
 
