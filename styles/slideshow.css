@@ -105,6 +105,11 @@
 }
 
 /* On smaller screens, decrease text size */
+@media (max-width: 600px) {
+    .slide-img {height: 300px};
+}
+
+/* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
     .text {font-size: 10px}
     .slide-img {height: 300px};

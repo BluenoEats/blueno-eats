@@ -32,11 +32,25 @@
 
 .about {
     width: 60%;
-    min-width: 400px;
     margin: 50px auto;
     padding: 30px 50px;
     background-color: #fff4e9;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 480px) {
+    .about {
+        background-color: #ffffff;
+        box-shadow: none;
+        width: 80%;
+        padding: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .brief-content {
+        margin-top: 0px;
+    }
 }
 
 .top-blank {
@@ -52,7 +66,6 @@
     font-size: 17px;
     margin: 0;
 }
-
 
 /* Add a background color and some padding around the form */
 .contact-container {
@@ -93,8 +106,3 @@
     font-size: 35px;
 }
 
-@media (max-width: 480px) {
-    .brief-content {
-        margin-top: 0px;
-    }
-  }

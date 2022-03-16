@@ -48,8 +48,8 @@
         </div>
       <?php } else if (isset($my_review)) { ?>
         <!-- TODO: style -->
-        <h2> you have already written a review on this page. </h2>
-        <h3> Please first delete you last review before proceding. </h3>
+        <h2> You have already post a review! </h2>
+        <p> Please delete you last review to submit a new one. </p>
       <?php } else { ?>
         <div class="user-form" style="margin-top:15px">
           <h2> Create a Review for <?php echo $page['name']; ?> </h2>

@@ -66,7 +66,19 @@
     opacity: 0.7;
 }
 
-@media (max-width: 800px) {
+
+@media (max-width: 900px) {
+    .rank-card img {
+        height: 130px;
+        width: 230px;
+    }
+
+    .rank-head {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 700px) {
     .rank {
       flex-direction: column;
     }
@@ -74,4 +86,4 @@
     .flex-item {
         margin: 20px auto;
     }
-  }
+}
