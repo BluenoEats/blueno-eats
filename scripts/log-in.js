@@ -11,15 +11,15 @@ function log_in(prev_page) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                console.log("logged in. Redirectting to " + this.responseText);
                 document.getElementById("alert").style.display = "block";
                 if (this.responseText == "1") {
                     document.getElementById("response").innerHTML = "Incorrect email or password. Please try again.";
                 } else {
+                    let redirect_to = this.responseText;
                     document.getElementById("response").innerHTML = "You have successfully logged in! ";
                     setTimeout(function () {
-                        window.location.replace(this.responseText);
-                    }, 20000);
+                        window.location.replace(redirect_to);
+                    }, 2000);
                 }
             }
         };
