@@ -51,9 +51,10 @@ a:hover {
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   h1 {
     font-size: 45px;
+    padding-top: 10px;
   }
   
   h2 {
@@ -72,14 +73,6 @@ a:hover {
     margin: 0px auto;
     margin-top: 60px;
     line-height: 1;
-  }
-  
-  h2 {
-    font-size: 20px;
-  }
-  
-  h3 {
-    font-size: 13px;
   }
 
   p{

@@ -40,7 +40,7 @@ function get_reviews($dbc, $dish) {
   // }
 
   // constructing an array containing image sources
-  $all_reviews = mysqli_fetch_all($all_reviews, MYSQLI_ASSOC);;
+  $all_reviews = mysqli_fetch_all($all_reviews, MYSQLI_ASSOC);
   $img_srcs = array();
   foreach ($all_reviews as $review) {
     $result = get_slideshow($dbc, REVIEW_IMAGES, 'review_id', $review['id']);

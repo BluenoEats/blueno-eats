@@ -3,11 +3,11 @@
   <div class="rate">
     <h3 id="rate-header"> User Rating</h3>
     <?php for ($i = 1; $i <= 5; $i++) {
-      if ($i <= $rating) {
-        echo '<span class="fas fa-star"></span>';
-      } else {
-        echo '<span class="far fa-star"></span>';
-      }
+      if ($i <= $rating) { ?>
+        <span class="fas fa-star"></span>
+      <?php } else { ?>
+        <span class="far fa-star"></span>
+      <?php }
     } ?>
     <p><?php echo "$rating average based on $num_reviews reviews"; ?>.</p>
     <hr style="border:3px solid #f1f1f1">
@@ -48,8 +48,8 @@
         </div>
       <?php } else if (isset($my_review)) { ?>
         <!-- TODO: style -->
-        <h2> you have already written a review on this page. </h2>
-        <h3> Please first delete you last review before proceding. </h3>
+        <h2> You have already post a review! </h2>
+        <p> Please delete you last review to submit a new one. </p>
       <?php } else { ?>
         <div class="user-form" style="margin-top:15px">
           <h2> Create a Review for <?php echo $page['name']; ?> </h2>

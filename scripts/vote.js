@@ -58,4 +58,3 @@ function setVoteButtons() {
 }
 
 setVoteButtons();
-console.log("completed");

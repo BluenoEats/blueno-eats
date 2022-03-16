@@ -10,18 +10,17 @@ function loadFile(event) {
     }
   };
 
-  function cancelImg() {
-    document.getElementById('review-img').value = "";
-    document.getElementById('upload-preview').innerHTML = "";
-  }
+function cancelImg() {
+  document.getElementById('review-img').value = "";
+  document.getElementById('upload-preview').innerHTML = "";
+}
 
-  function validate_rate() {
-    // const user_id = 31310; // temporary; wait for cookies to work
-    const rating = document.getElementsByClassName("rating__star fas fa-star").length;
-    // document.getElementById("author").value = user_id;
-    document.getElementById("rating").value = rating;
-    if (rating == 0) {
-      alert("validation failed false");
-      return false;
-    }
+function validate_rate() {
+  // const user_id = 31310; // temporary; wait for cookies to work
+  const rating = document.getElementsByClassName("rating__star fas fa-star").length;
+  document.getElementById("rating").value = rating;
+  if (rating == 0) {
+    alert("validation failed false");
+    return false;
   }
+}

@@ -4,6 +4,13 @@
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
 }
 
+.my-comment {
+    box-shadow: 0;
+    border: 2px dotted #f3dbe4;
+    border-radius: 5px;
+    padding: 30px 50px !important;
+}
+
 .username {
     padding-left: 6px;
 }
@@ -103,5 +110,18 @@
 @media (max-width: 800px) {
     .user-img-container {
         text-align: center;
+    }
+}    
+
+@media (max-width: 600px) {
+    .user-img {
+        height: auto;
+        width: 200px;
+    }
+
+    .user-comment {
+        box-shadow: none;
+        padding: 0;
+        border-bottom: 2px dotted #ddd;
     }
 }    
