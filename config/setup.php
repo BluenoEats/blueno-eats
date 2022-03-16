@@ -22,4 +22,3 @@ define('VOTES', 'votes');
 include "avoid_url.php";
 session_start();
 $_SESSION['prev_page'] = avoid_url($_SERVER['REQUEST_URI'], $_SESSION['prev_page']);
-echo($_SESSION['prev_page']);

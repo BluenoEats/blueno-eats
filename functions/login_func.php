@@ -15,9 +15,7 @@ if ($valid) {
   $_SESSION['user_id'] = $user['id'];
   $_SESSION['email'] = $user['email'];
   $_SESSION['username'] = $user['username'];
-  echo isset($_SESSION['prev_page'])
-    ? $_SESSION['prev_page']
-    : "/websites/bluenoeats.github.io/index.php"; // success
+  echo $_SESSION['prev_page'];  // success
 } else {
   echo 1; // incorrect email or password.
 }
