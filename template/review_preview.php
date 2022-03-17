@@ -7,7 +7,7 @@
         <span class="fas fa-star"></span>
       <?php } else { ?>
         <span class="far fa-star"></span>
-      <?php }
+    <?php }
     } ?>
     <p><?php echo "$rating average based on $num_reviews reviews"; ?>.</p>
     <hr style="border:3px solid #f1f1f1">
@@ -69,14 +69,14 @@
             <!-- <input type="hidden" id="author" name="author"/> -->
             <input type="hidden" id="dish" name="dish" value="<?php echo $_GET['dish']; ?>" />
             <input type="hidden" id="rating" name="rating" />
-              <label for="review-img">Add a photo</label><br>
-              <label for="review-img" class="add-photo"><i class="fa fa-plus-square"></i></label>
-              <button id="reset-review" type="button" onclick="cancelImg();">Reselect images</button>
-              <div id="upload-preview"></div>
-              <input type="file" id="review-img" name="review-img[]" accept="image/*" multiple style="display:none" onchange="loadFile(event);">
-              <br>      
-              <label for="review-msg">Add a written review</label>
-              <textarea id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?"></textarea>
+            <label for="review-img">Add a photo</label><br>
+            <label for="review-img" class="add-photo"><i class="fa fa-plus-square"></i></label>
+            <button id="reset-review" type="button" onclick="cancelImg();">Reselect images</button>
+            <div id="upload-preview"></div>
+            <input type="file" id="review-img" name="review-img[]" accept="image/*" multiple style="display:none" onchange="loadFile(event);">
+            <br>
+            <label for="review-msg">Add a written review</label>
+            <textarea id="review-msg" name="review-msg" placeholder="What did you like or dislike about this dish?"></textarea>
 
             <input type="checkbox" name="anonymous" value="anonymous"> anonymous <br>
 
