@@ -33,8 +33,7 @@
             <label for="contact-message">Message</label>
             <textarea id="contact-message" name="contact-message" placeholder="Write something..." style="height:200px"></textarea>
 
-            <input type="submit" value="Submit" onclick="sendEmail()">
-
+            <input type="submit" value="Submit" onclick="openmail()">
         </form>
     </div>
 
