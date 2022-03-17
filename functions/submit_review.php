@@ -6,9 +6,6 @@ include "redirect.php";
 
 if (isset($_SESSION['user_id'])) {
   $author_id = $_SESSION['user_id'];
-  // $dish_id = $_POST['dish'];
-  // $rating = $_POST['rating'];
-  // $content = $_POST['review-msg'];
   $review_id = insert_review($dbc, $author_id, $_POST);
 } else {
   echo "<p>Please log in first.</p>";

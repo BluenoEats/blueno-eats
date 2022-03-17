@@ -39,7 +39,9 @@ function downvote(review_id, original_votes, control) {
 }
 
 function setVoteButtons() {
-  const reviews = document.getElementsByClassName("user-comment");
+  const reviews = document.querySelectorAll('.user-comment,.my-comment')
+  // const reviews = document.getElementsByClassName("user-comment");
+
   // TODO: get vote num from server
   for (let i = 0; i < reviews.length; i++) {
     const review_id = reviews[i].id;

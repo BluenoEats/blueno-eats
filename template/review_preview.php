@@ -46,13 +46,14 @@
           <a href="signup.php"><button class="review-signup">Sign up</button></a>
           <p> Already have an account? <a href="login.php">Log in</a></p>
         </div>
-      <?php } else if (isset($my_review)) { ?>
-        <!-- TODO: style -->
-        <h2> You have already post a review! </h2>
-        <p> Please delete you last review to submit a new one. </p>
       <?php } else { ?>
         <div class="user-form" style="margin-top:15px">
           <h2> Create a Review for <?php echo $page['name']; ?> </h2>
+          <?php if (isset($my_review)) { ?>
+            <!-- TODO: Style this -->
+            <h2> You have already written a review for this page! </h3>
+            <h2> Submitting this review will overwrite your last review. </h3>
+          <?php } ?>
           <form onsubmit="return validate_rate()" action="functions/submit_review.php" method="post" enctype="multipart/form-data" id="review_form">
             <label>Overall Rating</label>
             <!-- TODO: Hover effect -->
