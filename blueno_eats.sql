@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 09, 2022 at 08:36 PM
+-- Generation Time: Mar 26, 2022 at 03:45 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.13
 
@@ -46,6 +46,7 @@ INSERT INTO `accounts` (`id`, `email`, `password`, `username`) VALUES
 (18318, 'admin@gmail.com', 'a053b746b21e8959bef7c29e6ad67ac6111e1e394adb128f278960a01e407147', 'Admin'),
 (22863, 'a@brown.edu', '1f489582f7ea4c208b70219a2bb6a322227a7516630530a10ed7f2710cfbe447', 'slkdgn'),
 (35161, 'ran@brown.edu', '22114775bc6d67479370d57f32b247d1af8451fa0c82c4316c1c280e5d96d7e6', 'some'),
+(48133, 'ad@gmail.com', '41e5653fc7aeb894026d6bb7b2db7f65902b454945fa8fd65a6327047b5277fb', 'hello'),
 (49322, 'wood4@gmail.com', 'adf541c6a8c9b8399d9010b4070fca8ef5bf8509200a70cc2cdbf0f9d56db0a7', 'Wood0'),
 (62888, 'wood0@gmail.com', 'adf541c6a8c9b8399d9010b4070fca8ef5bf8509200a70cc2cdbf0f9d56db0a7', 'Wood1'),
 (64691, 'tlamlert@gmail.com', 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f', 'tlamlert'),
@@ -75,7 +76,8 @@ INSERT INTO `dish_pages` (`id`, `hall_id`, `name`, `content`) VALUES
 (3, 1, 'French Fries', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
 (4, 1, 'Salad Bar', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
 (5, 1, 'Burger', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-(6, 1, 'Hot Dog', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
+(6, 1, 'Hot Dog', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+(7, 2, 'Pizza', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
 
 -- --------------------------------------------------------
 
@@ -94,7 +96,9 @@ CREATE TABLE `dish_slideshow` (
 
 INSERT INTO `dish_slideshow` (`dish_id`, `img_src`) VALUES
 (1, 'img/place2.jpeg'),
-(1, 'img/place3.jpeg');
+(2, 'img/place3.jpeg'),
+(3, 'img/plageholding.png'),
+(4, 'img/place4.jpeg');
 
 -- --------------------------------------------------------
 
@@ -113,11 +117,12 @@ CREATE TABLE `hall_pages` (
 --
 
 INSERT INTO `hall_pages` (`id`, `official_name`, `name`) VALUES
-(1, 'Sharpe Refectory', '\"The Ratty\"'),
-(2, 'Andrews Commons', '\"Andrews Commons\"'),
-(3, 'Verney-Woolley', '\"Verney-Woolley\"'),
-(4, 'Ivy Room', '\"Ivy Room\"'),
-(5, 'Josiah\'s', '\"Josiah\'s\"');
+(1, 'Sharpe Refectory', 'Ratty'),
+(2, 'Andrews Commons', 'Andrews Commons'),
+(3, 'Verney-Woolley', 'V Dub'),
+(4, 'Ivy Room', 'Ivy Room'),
+(5, 'Josiah\'s', 'Jo\'s'),
+(6, 'Blue Room', 'Blue Room');
 
 -- --------------------------------------------------------
 
@@ -166,7 +171,11 @@ INSERT INTO `reviews` (`id`, `author_id`, `dish_id`, `rating`, `content`, `anony
 (53, 62888, 6, 5, 'cool', 0),
 (54, 62888, 2, 1, 'bad', 1),
 (55, 62888, 1, 1, 'sth', 1),
-(69, 62888, 5, 5, 'hello', 0);
+(69, 62888, 5, 5, 'hello', 0),
+(74, 18318, 4, 4, 'hello', 0),
+(76, 18318, 1, 5, '', 0),
+(80, 48133, 7, 4, 'Hello', 0),
+(85, 48133, 6, 5, 'elll', 0);
 
 -- --------------------------------------------------------
 
@@ -206,6 +215,17 @@ CREATE TABLE `votes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `votes`
+--
+
+INSERT INTO `votes` (`user_id`, `review_id`, `vote`) VALUES
+(48133, 51, -1),
+(48133, 53, -1),
+(48133, 55, 0),
+(48133, 74, 1),
+(48133, 85, -1);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -220,6 +240,12 @@ ALTER TABLE `accounts`
 --
 ALTER TABLE `dish_pages`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `dish_slideshow`
+--
+ALTER TABLE `dish_slideshow`
+  ADD UNIQUE KEY `dish_id` (`dish_id`,`img_src`);
 
 --
 -- Indexes for table `hall_pages`
@@ -256,7 +282,7 @@ ALTER TABLE `votes`
 -- AUTO_INCREMENT for table `dish_pages`
 --
 ALTER TABLE `dish_pages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1005;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1006;
 
 --
 -- AUTO_INCREMENT for table `hall_pages`
@@ -268,7 +294,7 @@ ALTER TABLE `hall_pages`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- Constraints for dumped tables
