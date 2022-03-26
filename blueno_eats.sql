@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `blueno_eats`
 --
+CREATE DATABASE IF NOT EXISTS `blueno_eats` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `blueno_eats`;
 
 -- --------------------------------------------------------
 
