@@ -22,7 +22,7 @@
   <?php include D_TEMPLATE . "search_bar.php"; ?>
 
   <!-- TODO: Cartoon image -->
-  <img src="img/IMG_8984.JPG" class="cartoon" alt="Cartoon image">
+  <div class="cartoon"></div>
 
   <?php include D_TEMPLATE . "food_rank.php"; ?>
   <?php include D_TEMPLATE . "footer.php"; ?>

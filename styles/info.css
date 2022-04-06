@@ -9,12 +9,22 @@
 }
 
 .cartoon {
+    margin: 25px auto 0px;
+    background: url("../img/IMG_9124.jpg");
+    height: 300px;
     width: 100%;
     max-width: 300px;
-    display: block;
-    margin: 25px auto 0px;
+    background-size: 100%;
   }
-  
+
+.cartoon:hover {
+    background: url("../img/IMG_8984.JPG");
+    height: 300px;
+    width: 100%;
+    max-width: 300px;
+    background-size: 100%;
+}
+
 .brief-content {
     display: block;
     margin: 0 auto;
