@@ -18,30 +18,25 @@
   <div class="about top-blank">
     <h2> Our Mission</h2>
     <p>
-      “There is an invisible line eighteen inches ahead of the front row in far too many classes at Brown:
-      the instructor is on one side, the students on the other. Information flows from front to back,
-      and rarely the other way. Both students and instructors must make a conscious effort to erase this line,
-      for teaching and learning to be most effective “
+      Blueno Eats seeks to provide a convenient way that people can search for delicious dishes provided by
+      the Brown dining services. We hope to create a space for the Brown community to share their opinions
+      regarding on-campus dining services and have fun exploring the different food options.
     </p>
   </div>
   <div class="about">
     <h2> Development Team</h2>
-    <p>
-      “There is an invisible line eighteen inches ahead of the front row in far too many classes at Brown:
-      the instructor is on one side, the students on the other. Information flows from front to back,
-      and rarely the other way. Both students and instructors must make a conscious effort to erase this line,
-      for teaching and learning to be most effective “
-    </p>
+    <h3> Chayathorn Kulthonchalanan</h3>
+    <h3> Tanadol Lamlertprasertkul</h3>
+    <h3> Tianran Zhang</h3>
   </div>
   <div class="about">
     <h2> Diversity & Inclusion</h2>
     <p>
-      Blueno Eats recognizes and actively supports the diversity of Brown University community members
-      and considers an inclusive environment critical to serving the diverse perspectives of our website.
-      We believe that differences of race, ethnicity, gender, sexual orientation, socio-economic status, age, religion,
-      and disability enrich and broaden the intellectual discourse and scope of creative practices within the community.
-      We uphold as an essential value a supportive, open and tolerant environment in which users of Blueno Eats can explore and
-      respectfully discuss the full range of human experience in their work including controversial or difficult subject matter.
+      We actively support the diversity of Brown University community members and consider an inclusive environment
+      critical to serving the diverse perspectives of our website. Blueno Eats users should take into consideration
+      that the reviews, comments, and images are opinions expressed by other users who are subject to biases.
+      We uphold as an essential value a supportive, open, and tolerant environment in which users of Blueno Eats can
+      respectfully discuss and make constructive comments.
     </p>
   </div>
 

@@ -27,10 +27,10 @@ $page = get_hall_page($dbc, $_GET['hall']);
   <?php include D_TEMPLATE . "navigation.php"; ?>
 
   <h1><?php echo $page['official_name']; ?></h1>
-  <h2><?php echo $page['name']; ?></h2>
   <?php if (isset($page['id'])) {
     include D_TEMPLATE . "hall_slideshow.php";
   } ?>
+  <p><?php echo $page['description']; ?></p>
   <?php include D_TEMPLATE . "search_bar.php"; ?>
 
   <?php include D_TEMPLATE . "food_rank.php"; ?>

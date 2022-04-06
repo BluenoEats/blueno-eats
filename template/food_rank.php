@@ -53,12 +53,12 @@ $result = mysqli_query($dbc, $query);
 $worst_dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
 
-<h1 class="rank-head">Best-rated Food</h1>
+<h1 class="rank-head">Most-favored Dishes</h1>
 <div class="rank">
   <?php echo_food_list($dbc, $best_dishes, 'crown'); ?>
 </div>
 
-<h1 class="rank-head">Worst-rated Food</h1>
+<h1 class="rank-head">Least-favored Dishes</h1>
 <div class="rank">
   <?php echo_food_list($dbc, $worst_dishes, 'ghost'); ?>
 </div>

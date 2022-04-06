@@ -18,7 +18,7 @@
   <?php include D_TEMPLATE . "navigation.php" ?>
 
   <img src="img/Blueno_Logo.png" class="logo"></img>
-  <p class="brief-content"> Intro to website intro to website intro to website</p>
+  <p class="brief-content"> Find the food choices that you like!</p>
   <?php include D_TEMPLATE . "search_bar.php"; ?>
 
   <!-- TODO: Cartoon image -->
