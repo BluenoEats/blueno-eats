@@ -10,7 +10,7 @@
 
 .cartoon {
     margin: 25px auto 0px;
-    background: url("../img/IMG_9124.jpg");
+    background: url("../img/bl1.png");
     height: 300px;
     width: 100%;
     max-width: 300px;
@@ -18,7 +18,7 @@
   }
 
 .cartoon:hover {
-    background: url("../img/IMG_8984.JPG");
+    background: url("../img/bl2.png");
     height: 300px;
     width: 100%;
     max-width: 300px;

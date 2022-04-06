@@ -24,12 +24,6 @@
     </p>
   </div>
   <div class="about">
-    <h2> Development Team</h2>
-    <h3> Chayathorn Kulthonchalanan</h3>
-    <h3> Tanadol Lamlertprasertkul</h3>
-    <h3> Tianran Zhang</h3>
-  </div>
-  <div class="about">
     <h2> Diversity & Inclusion</h2>
     <p>
       We actively support the diversity of Brown University community members and consider an inclusive environment
@@ -38,6 +32,12 @@
       We uphold as an essential value a supportive, open, and tolerant environment in which users of Blueno Eats can
       respectfully discuss and make constructive comments.
     </p>
+  </div>
+  <div class="about">
+    <h2> Development Team</h2>
+    <p> Chayathorn Kulthonchalanan</p>
+    <p> Tanadol Lamlertprasertkul</p>
+    <p> Tianran Zhang</p>
   </div>
 
   <div class="additional-content">
