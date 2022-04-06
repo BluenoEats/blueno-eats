@@ -33,6 +33,7 @@ function autocomplete(inp, arr) {
                     /*close the list of autocompleted values,
                     (or any other open lists of autocompleted values:*/
                     closeAllLists();
+                    linkPage();
                 });
                 a.appendChild(b);
             }
@@ -135,7 +136,7 @@ var db = db1.concat(db2);
 /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"), db);
 
-function toPage() {
+function linkPage() {
     var x = document.getElementById("myInput").value;
     const equal = (element) => element == x;
 
