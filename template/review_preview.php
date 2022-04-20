@@ -31,10 +31,10 @@
         </div>
       <?php } ?>
     </div>
+    <!-- Trigger/Open The Modal -->
+    <button id="wr-btn" onclick="openModal('wr-modal')">Write a Review...</button>
   </div>
 
-  <!-- Trigger/Open The Modal -->
-  <button id="wr-btn" onclick="openModal('wr-modal')">Write a Review...</button>
 
   <!-- Write review Modal -->
   <div id="wr-modal" class="modal">
