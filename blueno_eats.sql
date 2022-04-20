@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 26, 2022 at 03:45 PM
+-- Generation Time: Apr 20, 2022 at 08:46 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.13
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `blueno_eats`
 --
-CREATE DATABASE IF NOT EXISTS `blueno_eats` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `blueno_eats`;
 
 -- --------------------------------------------------------
 
@@ -41,19 +39,7 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`id`, `email`, `password`, `username`) VALUES
-(566, 'something@gmail.com', 'adf541c6a8c9b8399d9010b4070fca8ef5bf8509200a70cc2cdbf0f9d56db0a7', 'Something'),
-(10375, 'something2@gmail.com', 'adf541c6a8c9b8399d9010b4070fca8ef5bf8509200a70cc2cdbf0f9d56db0a7', 'Something2'),
-(14777, 'ran@gmail.com', '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', 'ran'),
-(16050, 'blue@gmail.com', '837e84e40a6198f04e3e1361d21bb17f077e3eb5a2009b0b6a8c365f8b77e04a', 'Blueno'),
-(18318, 'admin@gmail.com', 'a053b746b21e8959bef7c29e6ad67ac6111e1e394adb128f278960a01e407147', 'Admin'),
-(22863, 'a@brown.edu', '1f489582f7ea4c208b70219a2bb6a322227a7516630530a10ed7f2710cfbe447', 'slkdgn'),
-(35161, 'ran@brown.edu', '22114775bc6d67479370d57f32b247d1af8451fa0c82c4316c1c280e5d96d7e6', 'some'),
-(48133, 'ad@gmail.com', '41e5653fc7aeb894026d6bb7b2db7f65902b454945fa8fd65a6327047b5277fb', 'hello'),
-(49322, 'wood4@gmail.com', 'adf541c6a8c9b8399d9010b4070fca8ef5bf8509200a70cc2cdbf0f9d56db0a7', 'Wood0'),
-(62888, 'wood0@gmail.com', 'adf541c6a8c9b8399d9010b4070fca8ef5bf8509200a70cc2cdbf0f9d56db0a7', 'Wood1'),
-(64691, 'tlamlert@gmail.com', 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f', 'tlamlert'),
-(65096, 'mikey@yahoo.com', '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', 'mikey'),
-(65175, 'something1@gmail.com', 'adf541c6a8c9b8399d9010b4070fca8ef5bf8509200a70cc2cdbf0f9d56db0a7', 'Something1');
+(16526, 'admin2022@gmail.com', '6b305ae2b9fc79d6c1bfb9c795f313ef9481c27d5f08b12a5a0de39fb184ea81', 'Admin2022');
 
 -- --------------------------------------------------------
 
@@ -73,13 +59,37 @@ CREATE TABLE `dish_pages` (
 --
 
 INSERT INTO `dish_pages` (`id`, `hall_id`, `name`, `content`) VALUES
-(1, 1, 'Grilled Chicken', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-(2, 1, 'Pizza', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-(3, 1, 'French Fries', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-(4, 1, 'Salad Bar', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-(5, 1, 'Burger', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-(6, 1, 'Hot Dog', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-(7, 2, 'Pizza', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
+(1, 1, 'Omelet', ''),
+(2, 1, 'Pancake', ''),
+(3, 1, 'Pizza', ''),
+(4, 1, 'Ravioli', ''),
+(5, 1, 'Tempeh', ''),
+(6, 1, 'Vegetables', ''),
+(7, 1, 'Yogurt', ''),
+(8, 2, 'Iced Coffee', ''),
+(9, 2, 'Pho', ''),
+(10, 2, 'Poke Bowl', ''),
+(11, 2, 'Taco', ''),
+(12, 2, 'Yogurt Bowl', ''),
+(13, 3, 'Taqueria Bar', ''),
+(14, 3, 'Burger', ''),
+(15, 3, 'Cookie', ''),
+(16, 3, 'Cupcake', ''),
+(17, 3, 'Grilled Chicken', ''),
+(18, 4, 'French Toast', ''),
+(19, 4, 'Salad', ''),
+(20, 4, 'Smootie', ''),
+(21, 4, 'Sushi roll', ''),
+(22, 5, 'Cheese Stick', ''),
+(23, 5, 'Fries', ''),
+(24, 5, 'Onion Ring', ''),
+(25, 5, 'Salad', ''),
+(26, 5, 'Sandwich', ''),
+(27, 6, 'Apple Turnover', ''),
+(28, 6, 'Cheese Cake', ''),
+(29, 6, 'Juice', ''),
+(30, 6, 'Muffin', ''),
+(31, 6, 'Yogurt Bowl', '');
 
 -- --------------------------------------------------------
 
@@ -97,10 +107,47 @@ CREATE TABLE `dish_slideshow` (
 --
 
 INSERT INTO `dish_slideshow` (`dish_id`, `img_src`) VALUES
-(1, 'img/place2.jpeg'),
-(2, 'img/place3.jpeg'),
-(3, 'img/plageholding.png'),
-(4, 'img/place4.jpeg');
+(1, 'img/ratty/ratty_omelet_01.jpeg'),
+(1, 'img/ratty/ratty_omelet_02.jpeg'),
+(2, 'img/ratty/ratty_pancake.jpeg'),
+(3, 'img/ratty/ratty_pizza.jpeg'),
+(4, 'img/ratty/ratty_ravioli.jpeg'),
+(5, 'img/ratty/ratty_tempeh.jpeg'),
+(6, 'img/ratty/ratty_veggies_01.jpeg'),
+(6, 'img/ratty/ratty_veggies_02.jpeg'),
+(7, 'img/ratty/ratty_yogury.jpeg'),
+(8, 'img/andrews/andrews_coffee_01.jpeg'),
+(9, 'img/andrews/andrews_pho_01.jpeg'),
+(9, 'img/andrews/andrews_pho_02.jpeg'),
+(10, 'img/andrews/andrews_poke_01.jpeg'),
+(10, 'img/andrews/andrews_poke_02.jpeg'),
+(11, 'img/andrews/andrews_taco_01.jpeg'),
+(12, 'img/andrews/andrews_yogurt_01.jpeg'),
+(13, 'img/vdub/vdub_bowl_01.jpeg'),
+(13, 'img/vdub/vdub_bowl_02.jpeg'),
+(14, 'img/vdub/vdub_burger_01.jpeg'),
+(15, 'img/vdub/vdub_cookie_01.jpeg'),
+(16, 'img/vdub/vdub_cupcake_01.jpeg'),
+(17, 'img/vdub/vdub_grilledchicken_01.jpeg'),
+(18, 'img/ivy/ivy_frenchtoast_01.JPG'),
+(19, 'img/ivy/ivy_salad_01.JPG'),
+(20, 'img/ivy/ivy_smoothie_01.jpeg'),
+(20, 'img/ivy/ivy_smoothie_02.jpeg'),
+(21, 'img/ivy/ivy_sushi_01.jpeg'),
+(21, 'img/ivy/ivy_sushi_02.jpeg'),
+(21, 'img/ivy/ivy_sushi_03.jpeg'),
+(22, 'img/jos/jos_cheesestick_01.JPG'),
+(23, 'img/jos/jos_fries_01.JPG'),
+(24, 'img/jos/jos_onionring_01.JPG'),
+(25, 'img/jos/jos_salad_01.JPG'),
+(26, 'img/jos/jos_sandwich_01.JPG'),
+(26, 'img/jos/jos_sandwich_02.JPG'),
+(27, 'img/blue_room/blue_apple_turnover.jpeg'),
+(28, 'img/blue_room/blue_cheesecake_01.jpeg'),
+(29, 'img/blue_room/blue_juice.jpeg'),
+(30, 'img/blue_room/blue_muffin_01.jpeg'),
+(31, 'img/blue_room/blue_yogurt_01.jpeg'),
+(31, 'img/blue_room/blue_yogurt_02.jpeg');
 
 -- --------------------------------------------------------
 
@@ -111,20 +158,20 @@ INSERT INTO `dish_slideshow` (`dish_id`, `img_src`) VALUES
 CREATE TABLE `hall_pages` (
   `id` int(11) NOT NULL,
   `official_name` varchar(100) NOT NULL,
-  `name` varchar(100) NOT NULL
+  `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `hall_pages`
 --
 
-INSERT INTO `hall_pages` (`id`, `official_name`, `name`) VALUES
-(1, 'Sharpe Refectory', 'Ratty'),
-(2, 'Andrews Commons', 'Andrews Commons'),
-(3, 'Verney-Woolley', 'V Dub'),
-(4, 'Ivy Room', 'Ivy Room'),
-(5, 'Josiah\'s', 'Jo\'s'),
-(6, 'Blue Room', 'Blue Room');
+INSERT INTO `hall_pages` (`id`, `official_name`, `description`) VALUES
+(1, 'Sharpe Refectory', 'The Sharpe Refectory, aka “the Ratty”, is the biggest dining hall and one of the social centers on campus. It serves all-day buffet-style dining which rotates from day to day and “builds your own” omelet station during breakfast time. Check out a wide variety of fusion foods along with pizza and salad at Ratty!'),
+(2, 'Andrews Commons', 'Andrews Commons offers pizzas, custom salads, sandwiches, pasta, and Asian-style wok stations. Stop by for brunch (burrito and granola bowls) on the weekends and the popular Pho bar on Friday nights!'),
+(3, 'Verney-Woolley', 'Verney-Wooley (“V-Dub”) serves buffet-style dining during weekdays. Stop by the Vdub for Mexican-style cuisine. Grill and salad stations are also available for you!'),
+(4, 'Ivy Room', 'Despite being located right below the Ratty, the Ivy room has its unique charm! Personalize your delicious smoothie here with a variety of fruits and drinks. Grab a to-go box of sushi, sandwich, or salad in your rush!'),
+(5, 'Josiah\'s', 'Find your midnight snacks from Jo’s, and get a “Spicy With” after a Friday night party with your friends. Good luck in finding onion rings, mozzarella sticks, or crumble-coated french fries as your sides!'),
+(6, 'Blue Room', 'The Blue Room Café features a wide range of pastries, coffee, as well as sandwiches, and salad. Enjoy the iced latte and freshly baked muffin with the view of our beloved Main Green while sitting outside of the Blue Room! ');
 
 -- --------------------------------------------------------
 
@@ -143,11 +190,25 @@ CREATE TABLE `hall_slideshow` (
 --
 
 INSERT INTO `hall_slideshow` (`hall_id`, `img_src`, `assoc_text`) VALUES
-(1, 'img/placeholding.png', 'The changes of the images may be automatic and at regular intervals or they may be manually controlled by a presenter or the viewer.'),
-(1, 'img/place2.jpeg', 'Today in this blog I\'ll share the image slideshow effect using javascript. In this program, there are five images, and these images automatically change after a certain period. I used JavaScript to change the image after a certain time interval.'),
-(1, 'img/place3.jpeg', 'You can copy the codes from the given boxes or download the code files from the given link but I recommend you to download the source code files instead of copying codes because you won\'t get images if you copy the codes'),
-(2, 'img/place4.jpeg', 'some text(1)'),
-(2, 'img/placeholding.png', 'some text(2)');
+(1, 'img/ratty/ratty_01.jpeg', ''),
+(1, 'img/ratty/ratty_02.jpeg', ''),
+(1, 'img/ratty/ratty_03.jpeg', ''),
+(1, 'img/ratty/ratty_04.jpeg', ''),
+(1, 'img/ratty/ratty_05.jpeg', ''),
+(1, 'img/ratty/ratty_06.jpeg', ''),
+(2, 'img/andrews/andrews_01.jpeg', ''),
+(2, 'img/andrews/andrews_02.jpeg', ''),
+(2, 'img/andrews/andrews_03.jpeg', ''),
+(3, 'img/vdub/vdub_01.jpeg', ''),
+(3, 'img/vdub/vdub_02.jpeg', ''),
+(4, 'img/ivy/ivy_01.jpeg', ''),
+(4, 'img/ivy/ivy_02.jpeg', ''),
+(4, 'img/ivy/ivy_03.jpeg', ''),
+(4, 'img/ivy/ivy_04.jpeg', ''),
+(5, 'img/jos/jos_01.JPG', ''),
+(5, 'img/jos/jos_02.JPG', ''),
+(5, 'img/jos/jos_03.JPG', ''),
+(6, 'img/blue_room/blue_01.jpeg', '');
 
 -- --------------------------------------------------------
 
@@ -169,15 +230,37 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`id`, `author_id`, `dish_id`, `rating`, `content`, `anonymous`) VALUES
-(51, 62888, 4, 5, 'gbhjk', 0),
-(53, 62888, 6, 5, 'cool', 0),
-(54, 62888, 2, 1, 'bad', 1),
-(55, 62888, 1, 1, 'sth', 1),
-(69, 62888, 5, 5, 'hello', 0),
-(74, 18318, 4, 4, 'hello', 0),
-(76, 18318, 1, 5, '', 0),
-(80, 48133, 7, 4, 'Hello', 0),
-(85, 48133, 6, 5, 'elll', 0);
+(1001, 16526, 1, 0, '', 0),
+(1002, 16526, 2, 0, '', 0),
+(1003, 16526, 3, 0, '', 0),
+(1004, 16526, 4, 0, '', 0),
+(1005, 16526, 5, 0, '', 0),
+(1006, 16526, 6, 0, '', 0),
+(1007, 16526, 7, 0, '', 0),
+(1008, 16526, 8, 0, '', 0),
+(1009, 16526, 9, 0, '', 0),
+(1010, 16526, 10, 0, '', 0),
+(1011, 16526, 11, 0, '', 0),
+(1012, 16526, 12, 0, '', 0),
+(1013, 16526, 13, 0, '', 0),
+(1014, 16526, 14, 0, '', 0),
+(1015, 16526, 15, 0, '', 0),
+(1016, 16526, 16, 0, '', 0),
+(1017, 16526, 17, 0, '', 0),
+(1018, 16526, 18, 0, '', 0),
+(1019, 16526, 19, 0, '', 0),
+(1020, 16526, 20, 0, '', 0),
+(1021, 16526, 21, 0, '', 0),
+(1022, 16526, 22, 0, '', 0),
+(1023, 16526, 23, 0, '', 0),
+(1024, 16526, 24, 0, '', 0),
+(1025, 16526, 25, 0, '', 0),
+(1026, 16526, 26, 0, '', 0),
+(1027, 16526, 27, 0, '', 0),
+(1028, 16526, 28, 0, '', 0),
+(1029, 16526, 29, 0, '', 0),
+(1030, 16526, 30, 0, '', 0),
+(1031, 16526, 31, 0, '', 0);
 
 -- --------------------------------------------------------
 
@@ -190,20 +273,6 @@ CREATE TABLE `review_images` (
   `img_src` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `review_images`
---
-
-INSERT INTO `review_images` (`review_id`, `img_src`) VALUES
-(51, 'upload/IMG_2199.JPG'),
-(55, 'upload/195125406_3026961794296389_6565519286592869320_n.jpg'),
-(55, 'upload/201349050_1473488659671752_1408247074792011944_n.jpg'),
-(55, 'upload/download.jpg'),
-(55, 'upload/pab1fk107z3tzK399d6J-o.jpg'),
-(69, 'upload/731ca770b9bfc6f952e0a5ff.jpeg'),
-(69, 'upload/7feb1858165e7d7b9522fb54.jpeg'),
-(69, 'upload/f397e0896f35efb0a4a7f941.jpeg');
-
 -- --------------------------------------------------------
 
 --
@@ -215,17 +284,6 @@ CREATE TABLE `votes` (
   `review_id` int(11) NOT NULL,
   `vote` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `votes`
---
-
-INSERT INTO `votes` (`user_id`, `review_id`, `vote`) VALUES
-(48133, 51, -1),
-(48133, 53, -1),
-(48133, 55, 0),
-(48133, 74, 1),
-(48133, 85, -1);
 
 --
 -- Indexes for dumped tables
@@ -254,6 +312,12 @@ ALTER TABLE `dish_slideshow`
 --
 ALTER TABLE `hall_pages`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `hall_slideshow`
+--
+ALTER TABLE `hall_slideshow`
+  ADD UNIQUE KEY `hall_id` (`hall_id`,`img_src`);
 
 --
 -- Indexes for table `reviews`
@@ -296,7 +360,7 @@ ALTER TABLE `hall_pages`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1032;
 
 --
 -- Constraints for dumped tables
