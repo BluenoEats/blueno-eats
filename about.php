@@ -33,11 +33,11 @@
       respectfully discuss and make constructive comments.
     </p>
   </div>
-  <div class="about">
+  <div class="about" style="text-align: center">
     <h2> Development Team</h2>
-    <p> Chayathorn Kulthonchalanan</p>
-    <p> Tanadol Lamlertprasertkul</p>
-    <p> Tianran Zhang</p>
+    <p> Chayathorn Kulthonchalanan<br>
+      Tanadol Lamlertprasertkul<br>
+      Tianran Zhang</p>
   </div>
 
   <div class="additional-content">
