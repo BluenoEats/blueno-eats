@@ -77,8 +77,6 @@ if (isset($_SESSION['user_id'])) {
       <?php include D_TEMPLATE . "dish_slideshow.php"; ?>
     </div>
 
-    <p class="food-intro food-body"><?php echo $page['content']; ?></p>
-
     <?php include D_TEMPLATE . "review_preview.php"; ?>
     <?php if ($num_images) {
       include D_TEMPLATE . "review_slideshow.php";

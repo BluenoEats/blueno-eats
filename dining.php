@@ -30,7 +30,6 @@ $page = get_hall_page($dbc, $_GET['hall']);
   <?php if (isset($page['id'])) {
     include D_TEMPLATE . "hall_slideshow.php";
   } ?>
-  <p><?php echo $page['description']; ?></p>
   <?php include D_TEMPLATE . "search_bar.php"; ?>
 
   <?php include D_TEMPLATE . "food_rank.php"; ?>
