@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Apr 27, 2022 at 07:56 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.13
+-- Host: 127.0.0.1
+-- Generation Time: Apr 27, 2022 at 09:06 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,7 +40,9 @@ CREATE TABLE `accounts` (
 
 INSERT INTO `accounts` (`id`, `email`, `password`, `username`) VALUES
 (7934, 'r@b.com', '492668a16fb06de09821aecfc6eac887811543e68428ecb749ca6ac74dd9a9ca', 'ranzh'),
+(10156, 'user1showup@gmail.com', '0e713cf586d6c33d3cc64c72f71685511ac26c04e9efbe1f56a5b9d6a561b42e', 'User1isMe'),
 (16526, 'admin2022@gmail.com', '6b305ae2b9fc79d6c1bfb9c795f313ef9481c27d5f08b12a5a0de39fb184ea81', 'Admin2022'),
+(44085, 'user2showup@gmail.com', 'dabef3a894b2424264f86b0a592d3e6f24f4f0dad68b3c0fbf4410eb9ef98f47', 'User2isMe'),
 (46355, 'admin@brown.edu', 'fba961885a5bc90d4966a41f0a6a2014caad976003df91e90bb5c8786e8b6efd', 'funky_star'),
 (57136, 'hi@brown.edu', '47045493c9de6bf241402d3787e91f26c39a1108fcf8c519fb806efdb9deadc7', 'peach');
 
@@ -285,7 +287,27 @@ INSERT INTO `reviews` (`id`, `author_id`, `dish_id`, `rating`, `content`, `anony
 (1053, 57136, 12, 5, 'Andrews brunch is the best', 0),
 (1054, 57136, 2, 3, '', 0),
 (1055, 57136, 3, 5, 'Hawaii pizza is the best', 0),
-(1056, 57136, 8, 1, 'Its sour', 0);
+(1056, 57136, 8, 1, 'Its sour', 0),
+(1057, 10156, 4, 2, '', 1),
+(1059, 10156, 5, 1, '', 0),
+(1060, 10156, 6, 2, '', 1),
+(1061, 10156, 7, 4, '', 0),
+(1062, 10156, 2, 5, 'so so goooood', 0),
+(1063, 10156, 9, 5, 'love it to the moon', 1),
+(1064, 10156, 24, 4, 'so dry but so good', 0),
+(1065, 10156, 26, 5, 'actually good. should try it!', 0),
+(1066, 44085, 14, 5, '', 0),
+(1068, 44085, 17, 1, '', 0),
+(1069, 44085, 9, 5, '', 0),
+(1070, 44085, 10, 4, '', 1),
+(1071, 44085, 11, 5, '', 0),
+(1072, 44085, 27, 3, '', 0),
+(1073, 44085, 16, 1, '', 1),
+(1074, 44085, 23, 5, '', 0),
+(1075, 44085, 30, 3, 'ok', 0),
+(1076, 44085, 29, 2, 'Not too bad', 0),
+(1077, 44085, 31, 5, '', 0),
+(1078, 44085, 1, 3, '', 1);
 
 -- --------------------------------------------------------
 
@@ -385,7 +407,7 @@ ALTER TABLE `hall_pages`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1057;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1079;
 
 --
 -- Constraints for dumped tables
