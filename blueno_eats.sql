@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 20, 2022 at 08:46 PM
+-- Generation Time: Apr 27, 2022 at 07:56 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.13
 
@@ -39,7 +39,10 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`id`, `email`, `password`, `username`) VALUES
-(16526, 'admin2022@gmail.com', '6b305ae2b9fc79d6c1bfb9c795f313ef9481c27d5f08b12a5a0de39fb184ea81', 'Admin2022');
+(7934, 'r@b.com', '492668a16fb06de09821aecfc6eac887811543e68428ecb749ca6ac74dd9a9ca', 'ranzh'),
+(16526, 'admin2022@gmail.com', '6b305ae2b9fc79d6c1bfb9c795f313ef9481c27d5f08b12a5a0de39fb184ea81', 'Admin2022'),
+(46355, 'admin@brown.edu', 'fba961885a5bc90d4966a41f0a6a2014caad976003df91e90bb5c8786e8b6efd', 'funky_star'),
+(57136, 'hi@brown.edu', '47045493c9de6bf241402d3787e91f26c39a1108fcf8c519fb806efdb9deadc7', 'peach');
 
 -- --------------------------------------------------------
 
@@ -260,7 +263,29 @@ INSERT INTO `reviews` (`id`, `author_id`, `dish_id`, `rating`, `content`, `anony
 (1028, 16526, 28, 0, '', 0),
 (1029, 16526, 29, 0, '', 0),
 (1030, 16526, 30, 0, '', 0),
-(1031, 16526, 31, 0, '', 0);
+(1031, 16526, 31, 0, '', 0),
+(1034, 7934, 10, 4, '', 1),
+(1035, 7934, 9, 5, '', 0),
+(1036, 7934, 11, 2, '', 0),
+(1037, 7934, 12, 5, '', 0),
+(1038, 7934, 22, 5, '', 0),
+(1039, 7934, 18, 2, '', 0),
+(1040, 7934, 15, 3, '', 0),
+(1041, 7934, 28, 3, '', 0),
+(1042, 7934, 1, 5, '', 0),
+(1043, 7934, 20, 5, '', 0),
+(1045, 57136, 1, 5, '', 0),
+(1046, 57136, 10, 5, '', 0),
+(1047, 57136, 13, 5, '', 0),
+(1048, 57136, 25, 5, '', 0),
+(1049, 57136, 21, 5, '', 0),
+(1050, 57136, 19, 5, '', 0),
+(1051, 57136, 20, 5, 'The best thing at the Ivy Room', 0),
+(1052, 57136, 9, 5, 'I waited 30 min for the Pho and its worth the time', 0),
+(1053, 57136, 12, 5, 'Andrews brunch is the best', 0),
+(1054, 57136, 2, 3, '', 0),
+(1055, 57136, 3, 5, 'Hawaii pizza is the best', 0),
+(1056, 57136, 8, 1, 'Its sour', 0);
 
 -- --------------------------------------------------------
 
@@ -360,7 +385,7 @@ ALTER TABLE `hall_pages`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1032;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1057;
 
 --
 -- Constraints for dumped tables
