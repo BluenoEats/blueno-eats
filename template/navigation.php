@@ -32,7 +32,7 @@
       <div class="dropdown-content setting">
         <a href="account.php">Manage Account</a>
         <a onclick="log_out()">Log out</a>
-        <script src="scripts/log_out.js" type="text/javascript"></script>
+        <script src="scripts/log-out.js" type="text/javascript"></script>
       </div>
     </div>
   <?php } ?>
