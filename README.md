@@ -23,7 +23,11 @@ Students and campus visitors often find themselves lost among the extensive opti
 
 **User interface and user experience**
 
--
+- Search and navigation
+    - The navigation bar appears on every page of our website so that the user can easily go to the page they expect. 
+    - The search bar with autofill-in functionality would redirect the users to intended dining hall or food page. 
+- CSS design
+    - We seek to create responsive styles that accomadates different screen sizes. 
 
 **Database management**
 
