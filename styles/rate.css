@@ -11,8 +11,12 @@
 
 .rate {
     margin: 20px auto; /* Center website */
+    padding: 20px;
     max-width: 800px; /* Max width */
     line-height: 1.5;
+    border: 2px solid rgb(240, 240, 240);
+    border-radius: 10px;
+    background-color: #fff;
 }
 
 .fa-star {
@@ -76,7 +80,7 @@
 
 #wr-btn {
   display: block;
-  margin: 0;
+  margin-top: 20px;
   background-color: #ee81a1;
   color: white;
   font-family: LibreBaskerville-Regular, Palatino Linotype,Times New Roman,serif;
