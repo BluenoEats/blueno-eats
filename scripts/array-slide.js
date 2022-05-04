@@ -22,9 +22,9 @@ function changeImg(direction) {
     //showing the images
     for (let i = 0; i < 4 && i < num_slides; i++) {
         if (index + i >= n) {
-            document.getElementById("slide-im" + (i+1)).src = images[index + i - n];
+            document.getElementById("slide-im" + (i + 1)).src = images[index + i - n];
         } else {
-            document.getElementById("slide-im" + (i+1)).src = images[index + i];
+            document.getElementById("slide-im" + (i + 1)).src = images[index + i];
         }
     }
 }

@@ -1,6 +1,5 @@
 <?php
 function upload_img($target_dir, $file_info, $file_name) {
-  // $target_file = $target_dir.basename($file_info["name"]);
   // replace file name with random string to avoid duplicate names;
   $target_file = $target_dir.$file_name;
 

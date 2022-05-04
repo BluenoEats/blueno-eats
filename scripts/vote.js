@@ -9,13 +9,13 @@ function upvote(review_id, original_votes, control) {
   votenum.textContent = original_votes + vote;
 
   var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
+  xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
     }
   };
   xhttp.open("POST", "functions/vote.php", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send("review_id="+review_id+"&vote="+vote);
+  xhttp.send("review_id=" + review_id + "&vote=" + vote);
 }
 
 function downvote(review_id, original_votes, control) {
@@ -29,13 +29,13 @@ function downvote(review_id, original_votes, control) {
   votenum.textContent = original_votes + vote;
 
   var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
+  xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
     }
   };
   xhttp.open("POST", "functions/vote.php", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send("review_id="+review_id+"&vote="+vote);
+  xhttp.send("review_id=" + review_id + "&vote=" + vote);
 }
 
 function setVoteButtons() {

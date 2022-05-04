@@ -3,7 +3,7 @@ function change_user() {
     const password = document.getElementById("username-password").value;
     const error_message = document.getElementById("username-error-msg-pass");
     error_message.style.display = "none";
-    
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {

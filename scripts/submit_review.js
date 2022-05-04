@@ -21,18 +21,18 @@ function sign_up() {
         document.getElementById("alert").style.display = "block";
 
         var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("response").innerHTML = this.responseText;
-            if (this.responseText === "Your account has been successfully created.") {
-                setTimeout(function () {
-                    window.location.replace("login.php");
-                }, 3000);
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("response").innerHTML = this.responseText;
+                if (this.responseText === "Your account has been successfully created.") {
+                    setTimeout(function () {
+                        window.location.replace("login.php");
+                    }, 3000);
+                }
             }
-          }
         };
         xhttp.open("POST", "functions/add_account.php", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("username="+username+"&email="+email+"&password="+password);
+        xhttp.send("username=" + username + "&email=" + email + "&password=" + password);
     }
 }

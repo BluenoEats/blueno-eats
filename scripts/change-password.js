@@ -4,7 +4,7 @@ function change_pass() {
     const password = document.getElementById("old-password").value;
     const error_message = document.getElementById("password-error-msg-pass");
     error_message.style.display = "none";
-    
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {

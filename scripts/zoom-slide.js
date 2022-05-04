@@ -3,7 +3,7 @@ var n = images.length;
 function changeZoomImg(direction, id) {
     //change the index when the button is clicked
     var x = document.getElementById(id).src;
-    for (let i = 0; i < n ;i++) {
+    for (let i = 0; i < n; i++) {
         if (x.includes(images[i])) {
             x = images[i];
         }
