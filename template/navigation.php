@@ -39,11 +39,4 @@
 
   <a href="javascript:void(0);" class="menu" onclick="menu()">&#9776;</a>
   <script src="scripts/navigation_bar.js" type="text/javascript"></script>
-  <!-- TODO: Profile manage page -->
-  <!-- <a href="index.php" class="nav-home nav-right">
-    <img src="img/profile.png" class="nav-logo" alt="Navigation Profile">
-  </a>
-   -->
-  <!-- TODO: add profile -->
-  <!-- <a href="logout.php" class="nav-right"> Log out</a> -->
 </div>
