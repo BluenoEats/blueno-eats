@@ -21,10 +21,10 @@
   <p class="brief-content"> Find the food choices that you like!</p>
   <?php include D_TEMPLATE . "search_bar.php"; ?>
 
-  <!-- TODO: Cartoon image -->
   <div class="cartoon"></div>
 
   <?php include D_TEMPLATE . "food_rank.php"; ?>
+
   <?php include D_TEMPLATE . "footer.php"; ?>
 </body>
 

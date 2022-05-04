@@ -1,7 +1,4 @@
 <?php
-
-use function PHPSTORM_META\type;
-
 include "config/setup.php";
 include "functions/get_page.php";
 include "functions/get_data.php";

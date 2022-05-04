@@ -29,12 +29,9 @@ function openModal(n) {
 }
 
 function openSlideModal(n, i) {
-  // document.getElementById("myImg").src = s;
   document.getElementById("zoom-myImg").src = document.getElementById("slide-im"+i).src;
   document.getElementById(n).style.display = "block";
 }
-
-
 
 function closeModal(n) {
   document.getElementById(n).style.display = "none";
