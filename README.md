@@ -1,7 +1,7 @@
 # Blueno Eats
 
 ## Demo
-[![Checkout out demo!](https://img.youtube.com/vi/nTQUwghvy5Q/default.jpg)](https://www.youtube.com/embed/CSRKgqFPG0k)
+[![Checkout out demo!](https://github.com/BluenoEats/blueno-eats/blob/master/img/cover.png)](https://www.youtube.com/embed/CSRKgqFPG0k)
 
 ## Project Description
 
