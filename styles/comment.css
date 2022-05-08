@@ -10,6 +10,7 @@
     border: 2px dotted #f3dbe4;
     border-radius: 5px;
     padding: 30px 50px !important;
+    background-color: white;
 }
 
 .username {

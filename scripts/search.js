@@ -144,7 +144,6 @@ function linkPage() {
         id = id1[db1.findIndex(equal)]
         let path = "food.php?dish=" + id
         window.location.href = path;
-
     } else if (db2.includes(x)) {
         id = id2[db2.findIndex(equal)]
         let path = "dining.php?hall=" + id

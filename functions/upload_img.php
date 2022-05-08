@@ -31,12 +31,6 @@ function upload_img($target_dir, $file_info, $file_name)
     $uploadOk = 0;
   }
 
-  // // Check file size
-  // if ($file_info["size"] > 500000) {
-  //   echo "Sorry, your file is too large.";
-  //   $uploadOk = 0;
-  // }
-
   // Check if $uploadOk is set to 0 by an error
   if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
@@ -83,13 +77,5 @@ function upload_img($target_dir, $file_info, $file_name)
         }
       }
     }
-
-    // if (move_uploaded_file($file_info["tmp_name"], $target_file)) {
-    //   echo "The file " . $file_name . " has been uploaded.";
-    //   return 1;
-    // } else {
-    //   echo "Sorry, there was an error uploading your file.";
-    //   return 0;
-    // }
   }
 }
