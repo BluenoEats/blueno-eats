@@ -14,7 +14,6 @@
       <button type="button" class="all-btn all-left" onclick="changeImg('left')"><i class="fas fa-angle-double-left"></i></button>
       <button onclick="openModal('all-food-modal')" class="all-img"> See all image here </button>
       <button type="button" class="all-btn all-right" onclick="changeImg('right')"><i class="fas fa-angle-double-right"></i></i></button>
-      <script src="scripts/array-slide.js" type="text/javascript"></script>
     </div>
 
     <div id="all-food-modal" class="modal">
