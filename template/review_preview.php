@@ -1,4 +1,4 @@
-<div class="food-body">
+<div class="food-body review-section">
   <h2> Reviews</h2>
   <div class="rate">
     <h3 id="rate-header"> User Rating</h3>
@@ -50,8 +50,8 @@
         <div class="user-form" style="margin-top:15px">
           <h2> Create a Review for <?php echo $page['name']; ?> </h2>
           <?php if (isset($my_review)) { ?>
-            <h2> You have already written a review for this page! </h3>
-              <h2> Submitting this review will overwrite your last review. </h3>
+            <h3> You have already written a review for this page! <br>
+              Submitting this review will overwrite your last review. </h3>
               <?php } ?>
               <form onsubmit="return validate_rate()" action="functions/submit_review.php" method="post" enctype="multipart/form-data" id="review_form">
                 <label>Overall Rating</label>

@@ -67,10 +67,8 @@ if (isset($_SESSION['user_id'])) {
   <?php include D_TEMPLATE . "navigation.php" ?>
 
   <?php if (isset($page['id'])) { ?>
-    <div class="food-body food">
-      <div class="food-item">
-        <h1 id="food-name"><?php echo $page['name']; ?></h1>
-      </div>
+    <div class="food-body">
+        <h1><?php echo $page['name']; ?></h1>
       <?php include D_TEMPLATE . "dish_slideshow.php"; ?>
     </div>
 
