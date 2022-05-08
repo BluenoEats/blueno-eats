@@ -1,6 +1,7 @@
 # Blueno Eats
 
-TODO: front-end, demo
+## Demo
+https://www.youtube.com/watch?v=CSRKgqFPG0k
 
 ## Project Description
 
@@ -71,11 +72,6 @@ Also make sure that your MySQL server have a user with the following configurati
 | root | localhost | No | ALL PRIVILEGES | Yes |
 
 Now you should be able to visit the demo website at [http://localhost/bluenoeats.github.io/](http://localhost/bluenoeats.github.io/)
-
-## Demo
-
-1. Add demo video with create account, log in, log out
-2. screenshots
 
 ## Reflection
 
